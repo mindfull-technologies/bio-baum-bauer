@@ -14,10 +14,15 @@ app.use(express.json())
 
 // routes
 app.use('/api/users', userRoute)
+// app.use('/api/product', producRoute)
 
 
 // connecting to database
-// mongoose.connect();
+mongoose.connect(`${process.env.DB_CONNECTION}`).then(() => {
+    console.log("Database connected..!");
+}).catch(error => {
+    console.log("Failed to connect :", error.message);
+})
 
 app.listen(process.env.SERVER_PORT, () => {
     console.log("Server is listening...");
