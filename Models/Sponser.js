@@ -1,6 +1,6 @@
 import { Schema,model } from "mongoose";
 
-const sponserSchema = new Schema({
+const sponsorSchema = new Schema({
     dateCreated:{type:Date, default:Date.now},
     firstName:{type:String, required:true},
     lastName:{type:String, required:true},
@@ -9,5 +9,5 @@ const sponserSchema = new Schema({
     
 })
 
-const Sponser = model('sponser',sponserSchema)
-export default Sponser;
+const Sponsor = model('sponsor',sponsorSchema)
+export default Sponsor;
