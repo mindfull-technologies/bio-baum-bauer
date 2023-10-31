@@ -13,6 +13,12 @@ const userSchema = new Schema({
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
     mobilePhone: { type: String, required: true },
+    userType: {
+        type: String, required: true, default: "CUSTOMER", enum: {
+            values: ['ADMIN', 'SPONSOR', 'CUSTOMER'],
+            message: '{VALUE} is not supported'
+        }
+    }
 
 }, { timestamps: true });
 

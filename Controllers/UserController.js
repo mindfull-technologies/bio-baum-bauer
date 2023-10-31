@@ -7,13 +7,13 @@ import { generateJwt, verifyJWT } from "../Helpers/jwt.js";
 
 /**
  * the function named createNewUser is for creating new User.
- * @param {*} req ( firstName, lastName, address, email, password, mobilePhone)
+ * @param {*} req ( firstName, lastName, address, email, password, mobilePhone,userType)
  * @param {*} res
  * @returns
  */
 
 export const createNewUser = async (req, res) => {
-    const { firstName, lastName, address, email, password, mobilePhone } =
+    const { firstName, lastName, address, email, password, mobilePhone, userType } =
         req.body;
     const hashedPassword = await bcrypt.hash(password, 12);
 
@@ -25,6 +25,7 @@ export const createNewUser = async (req, res) => {
             email,
             password: hashedPassword,
             mobilePhone,
+            userType
         });
         return res
             .status(StatusCodes.CREATED)
@@ -164,10 +165,10 @@ export const findByEmailAndUpdate = async (req, res) => {
  * @returns
  */
 export const updateAllField = async (req, res) => {
-    const { firstName, lastName, address, email, password, mobilePhone } =
+    const { firstName, lastName, address, email, password, mobilePhone, userType } =
         req.body;
     const filter = { _id: req.params.uId };
-    const update = { firstName, lastName, address, email, password, mobilePhone };
+    const update = { firstName, lastName, address, email, password, mobilePhone, userType };
     const returnNew = { new: true };
 
     try {
