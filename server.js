@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import userRoute from "./Routes/userRoutes.js"
+import farmRoute from './Routes/farmRoutes.js'
 import mongoose from "mongoose";
 
 const app = express();
@@ -13,8 +14,10 @@ app.use(cors());
 app.use(express.json())
 
 // routes
-app.use('/api/users', userRoute)
+app.use('/api/users', userRoute);
 // app.use('/api/product', producRoute)
+app.use('/api/farm', farmRoute)
+
 
 
 // connecting to database
