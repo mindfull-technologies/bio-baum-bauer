@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import userRoute from "./Routes/userRoutes.js";
 import productRoutes from "./Routes/productRoutes.js";
+import commentRoute from "./Routes/commentRoute.js";
 import mongoose from "mongoose";
 
 const app = express();
@@ -16,6 +17,7 @@ app.use(express.json());
 // routes
 app.use("/api/users", userRoute);
 app.use("/api/products", productRoutes);
+app.use("/api/comments", commentRoute);
 
 // connecting to database
 mongoose
