@@ -65,7 +65,7 @@ Delete farm
 export const deleteFarm = async(req,res)=>{
     try {
         const deleteFarm=await Farm.findByIdAndDelete(req.params.id)
-        return res.status(StatusCodes.OK).json({message:'updated fieldtype', deleteFarm})
+        return res.status(StatusCodes.OK).json({message:'deleted', deleteFarm})
 
     } catch (error) {
         return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({error:error.toString()})
