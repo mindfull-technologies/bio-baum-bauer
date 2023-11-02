@@ -1,8 +1,10 @@
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
-import userRoute from "./Routes/userRoutes.js"
 import mongoose from "mongoose";
+import userRoute from "./Routes/userRoutes.js"
+import contactRoute from "./Routes/contactRoutes.js"
+
 
 const app = express();
 // loading all .env file here
@@ -14,7 +16,7 @@ app.use(express.json())
 
 // routes
 app.use('/api/users', userRoute)
-// app.use('/api/product', producRoute)
+app.use('/api/contacts', contactRoute)
 
 
 // connecting to database
