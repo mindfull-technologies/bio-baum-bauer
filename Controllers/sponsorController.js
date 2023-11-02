@@ -36,7 +36,7 @@ export const deleteSponsor = async (req, res) => {
     try {
       const { sponsorId } = req.params; 
       
-      const deletedSponsor = await Sponsor.deleteOne(sponsorId);
+      const deletedSponsor = await Sponsor.findOneAndDelete(sponsorId);
   
       if (!deletedSponsor) {
         return res.status(StatusCodes.NOT_FOUND).json({ message: "Sponsor not found" });
