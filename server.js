@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import userRoute from "./Routes/userRoutes.js"
+import sponsorRoute from './Routes/sponsorRoutes.js'
 import mongoose from "mongoose";
 
 const app = express();
@@ -15,6 +16,7 @@ app.use(express.json())
 // routes
 app.use('/api/users', userRoute)
 // app.use('/api/product', producRoute)
+app.use('/api/sponsors',sponsorRoute)
 
 
 // connecting to database
