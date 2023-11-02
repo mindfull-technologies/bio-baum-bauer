@@ -25,16 +25,12 @@ export const getAllfarms =async (req, res) => {
  */
 export const createFarm = async(req, res) => {
     try {const { farmName, ownerName, fieldType, GPScoordinates, contactInfo } = req.body;
-    const { longitude, latitude } = GPScoordinates; // Extract latitude and longitude
-
+   
         const createFarm=await Farm.create({
             farmName,
             ownerName,
             fieldType,
-            GPScoordinates: {
-              longitude,
-              latitude,
-            },
+            GPScoordinates,
             contactInfo,
         })      
           return res.status(StatusCodes.CREATED).json({message:'Farm created', createFarm})
@@ -50,7 +46,7 @@ export const createFarm = async(req, res) => {
 
 export const updateFarm = async(req,res)=>{
     try {
-        const updateFarm=await Farm.findByIdAndUpdate({_id:req.params.id},{
+        const updateFarm=await Farm.findByIdAndUpdate(req.params.id,{
             $set:{
                 fieldType:req.body.fieldType,
             }
@@ -68,7 +64,7 @@ Delete farm
 */
 export const deleteFarm = async(req,res)=>{
     try {
-        const deleteFarm=await Farm.deleteOne({_id:req.params.id})
+        const deleteFarm=await Farm.findByIdAndDelete(req.params.id)
         return res.status(StatusCodes.OK).json({message:'updated fieldtype', deleteFarm})
 
     } catch (error) {
