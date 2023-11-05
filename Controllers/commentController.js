@@ -4,7 +4,7 @@ import Comment from "../Models/Comment.js";
 // Create a new comment
 export const createComment = async (req, res) => {
   try {
-    const createdComment = await Comment.create(req.body);
+    const createdComment = await Comment.create({ content: req.body.content });
     res.status(StatusCodes.CREATED).json(createdComment);
   } catch (error) {
     res
@@ -46,7 +46,7 @@ export const updateCommentById = async (req, res) => {
   try {
     const updatedComment = await Comment.findByIdAndUpdate(
       req.params.id,
-      req.body,
+      { content: req.body.content },
       { new: true }
     );
     if (!updatedComment) {

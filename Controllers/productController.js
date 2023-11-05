@@ -4,7 +4,14 @@ import Product from "../Models/Product.js";
 // Create a new product
 export const createProduct = async (req, res) => {
   try {
-    const createdProduct = await Product.create(req.body);
+    const { name, description, category, photo } = req.body;
+
+    const createdProduct = await Product.create({
+      name,
+      description,
+      category,
+      photo,
+    });
     res.status(StatusCodes.CREATED).json(createdProduct);
   } catch (error) {
     res
