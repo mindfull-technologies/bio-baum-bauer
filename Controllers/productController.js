@@ -1,10 +1,105 @@
 import { StatusCodes } from "http-status-codes";
 import Product from "../Models/Product.js";
+import { validationResult } from "express-validator";
+import { body } from "express-validator";
+
+// Product Create Validator Middleware
+export const productValidationRules = () => {
+  return [
+    body("name")
+      .notEmpty()
+      .withMessage("Product name is required.")
+      .isString()
+      .withMessage("Product name must be a string.")
+      .isLength({ min: 3, max: 50 })
+      .withMessage("Product name must be between 3 and 50 characters.")
+      .trim()
+      .escape(),
+
+    body("description")
+      .notEmpty()
+      .withMessage("Product description is required.")
+      .isString()
+      .withMessage("Product description must be a string.")
+      .isLength({ min: 10, max: 500 })
+      .withMessage("Product description must be between 10 and 500 characters.")
+      .trim()
+      .escape(),
+
+    body("category")
+      .notEmpty()
+      .withMessage("Product category is required.")
+      .isString()
+      .withMessage("Product category must be a string.")
+      .isIn(["fruits", "vegetables"])
+      .withMessage('Product category must be either "fruits" or "vegetables".'),
+
+    body("photo")
+      .notEmpty()
+      .withMessage("Product photo URL is required.")
+      .isString()
+      .withMessage("Product photo URL must be a string.")
+      .isURL()
+      .withMessage("Product photo URL must be a valid URL."),
+  ];
+};
+
+// Product Update Validator Middleware
+export const productUpdateValidationRules = () => {
+  return [
+    body("name")
+      .optional()
+      .isString()
+      .withMessage("Product name must be a string.")
+      .isLength({ min: 3, max: 50 })
+      .withMessage("Product name must be between 3 and 50 characters.")
+      .trim()
+      .escape(),
+
+    body("description")
+      .optional()
+      .isString()
+      .withMessage("Product description must be a string.")
+      .isLength({ min: 10, max: 500 })
+      .withMessage("Product description must be between 10 and 500 characters.")
+      .trim()
+      .escape(),
+
+    body("category")
+      .optional()
+      .isString()
+      .withMessage("Product category must be a string.")
+      .isIn(["fruits", "vegetables"])
+      .withMessage('Product category must be either "fruits" or "vegetables".'),
+
+    body("photo")
+      .optional()
+      .isString()
+      .withMessage("Product photo URL must be a string.")
+      .isURL()
+      .withMessage("Product photo URL must be a valid URL."),
+  ];
+};
+
+export const validate = (req, res, next) => {
+  const errors = validationResult(req);
+  if (errors.isEmpty()) {
+    return next();
+  }
+  res.status(StatusCodes.BAD_REQUEST).json({ errors: errors.array() });
+};
 
 // Create a new product
 export const createProduct = async (req, res) => {
   try {
-    const createdProduct = await Product.create(req.body);
+    const { name, description, category, photo } = req.body;
+
+    const createdProduct = await Product.create({
+      name,
+      description,
+      category,
+      photo,
+    });
     res.status(StatusCodes.CREATED).json(createdProduct);
   } catch (error) {
     res

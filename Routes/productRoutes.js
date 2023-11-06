@@ -5,12 +5,15 @@ import {
   getProductById,
   updateProductById,
   deleteProductById,
+  productValidationRules,
+  productUpdateValidationRules,
+  validate,
 } from "../Controllers/productController.js";
 
 const router = express.Router();
 
 // Create a new product
-router.post("/create", createProduct);
+router.post("/create", productValidationRules(), validate, createProduct);
 
 // Get all products
 router.get("/", getAllProducts);
@@ -19,7 +22,12 @@ router.get("/", getAllProducts);
 router.get("/:id", getProductById);
 
 // Update a product by ID
-router.put("/update/:id", updateProductById);
+router.patch(
+  "/update/:id",
+  productUpdateValidationRules(),
+  validate,
+  updateProductById
+);
 
 // Delete a product by ID
 router.delete("/delete/:id", deleteProductById);
