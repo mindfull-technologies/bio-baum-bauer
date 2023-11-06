@@ -1,5 +1,38 @@
 import { StatusCodes } from "http-status-codes";
 import Comment from "../Models/Comment.js";
+import { body, validationResult } from "express-validator";
+import Filter from "bad-words";
+
+const filter = new Filter();
+
+// Filter comments including profanity
+export const profanityFilter = (req, res, next) => {
+  if (filter.isProfane(req.body.content)) {
+    return res.status(StatusCodes.BAD_REQUEST).json({
+      message: "Comments cannot include profanity.",
+    });
+  }
+  next();
+};
+
+// Validator Middleware
+export const validateComment = [
+  body("content")
+    .notEmpty()
+    .withMessage("Content is required.")
+    .trim()
+    .isLength({ min: 3, max: 300 })
+    .withMessage("Content must be between 3 and 300 characters."),
+  (req, res, next) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res
+        .status(StatusCodes.BAD_REQUEST)
+        .json({ errors: errors.array() });
+    }
+    next();
+  },
+];
 
 // Create a new comment
 export const createComment = async (req, res) => {

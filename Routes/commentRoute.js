@@ -5,12 +5,14 @@ import {
   getCommentById,
   updateCommentById,
   deleteCommentById,
+  profanityFilter,
+  validateComment,
 } from "../Controllers/commentController.js";
 
 const router = express.Router();
 
 // Create a new comment
-router.post("/create", createComment);
+router.post("/create", validateComment, profanityFilter, createComment);
 
 // Get all comments
 router.get("/", getAllComments);
@@ -19,7 +21,12 @@ router.get("/", getAllComments);
 router.get("/:id", getCommentById);
 
 // Update a comment by ID
-router.patch("/update/:id", updateCommentById);
+router.patch(
+  "/update/:id",
+  validateComment,
+  profanityFilter,
+  updateCommentById
+);
 
 // Delete a comment by ID
 router.delete("/delete/:id", deleteCommentById);
