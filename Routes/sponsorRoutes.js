@@ -1,5 +1,5 @@
 import express from 'express'
-import { createSponsor, deleteSponsor, getAllSponsors, updateSponsor } from '../Controllers/sponsorController.js'
+import { createSponsor, deleteSponsor, getAllSponsors, updateSponsor } from '../controllers/sponsorController.js'
 
 
 const router  = express.Router()

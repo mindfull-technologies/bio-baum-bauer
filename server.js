@@ -1,44 +1,32 @@
-import express from "express";
-import dotenv from "dotenv";
-import cors from "cors";
-import userRoute from "./Routes/userRoutes.js"
-import sponsorRoutes from './Routes/sponsorRoutes.js'
-import newsRoutes from './Routes/newsRoutes.js'
-import productRoutes from "./Routes/productRoutes.js";
-import commentRoute from "./Routes/commentRoute.js";
-import mongoose from "mongoose";
-import cookieParser from "cookie-parser";
-import userRoute from "./Routes/userRoutes.js"
-import contactRoute from "./Routes/contactRoutes.js"
+import express from 'express';
+import dotenv from 'dotenv';
+import cookieParser from 'cookie-parser';
+import morgan from 'morgan';
+import helmet from 'helmet';
+import allowCors from './middlewares/cors.js'
+import allRoutes from './routes/allRoutes.js'
+import db from './db.js';
+
+const port = process.env.PORT || 4000;
+dotenv.config();
 
 const app = express();
-// loading all .env file here
-dotenv.config();
-// allow which client should have access to our server
-app.use(cors());
-// changing JsonString to Js Object and back
+app.use(helmet()); //provide basic securites
+allowCors(app);
 app.use(express.json());
+app.use(cookieParser()); // parse cookies
 
-// Middleware to parse cookies
-app.use(cookieParser());
-// routes
-app.use("/api/users", userRoute);
-app.use("/api/products", productRoutes);
-app.use("/api/comments", commentRoute);
-app.use('/api/sponsors',sponsorRoutes)
-app.use('/api/news',newsRoutes)
-app.use('/api/contact', contactRoute)
+if (app.get('env') === 'development') {
+  app.use(morgan('tiny')); // provide logging to the console
+}
 
-// connecting to database
-mongoose
-  .connect(`${process.env.DB_CONNECTION}`)
-  .then(() => {
-    console.log("Database connected..!");
-  })
-  .catch((error) => {
-    console.log("Failed to connect :", error.message);
-  });
+app.get('/', (_, res) => {
+  res.send('<h1>Backend is running!!!</h1>');
+});
 
-app.listen(process.env.SERVER_PORT, () => {
-  console.log("Server is listening...");
+app.use('/api', allRoutes);
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}}`);
+  db.connect();
 });

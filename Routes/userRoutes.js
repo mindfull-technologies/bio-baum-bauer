@@ -10,7 +10,7 @@ import {
     login,
     changePassword,
     logoutUser
-} from "../Controllers/UserController.js";
+} from "../controllers/UserController.js";
 const router = express.Router();
 import {
     nameValidator,
@@ -22,7 +22,7 @@ import {
     passwordValidator,
     parameterValidator,
     validate
-} from "../Helpers/userValidation.js"
+} from "../helpers/userValidation.js"
 
 // route for user
 router.post('/create-user',

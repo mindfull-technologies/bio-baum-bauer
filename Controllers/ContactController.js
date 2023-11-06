@@ -1,4 +1,4 @@
-import Contact from "../Models/Contact.js";
+import Contact from "../models/Contact.js";
 import { StatusCodes } from "http-status-codes";
 
 
