@@ -1,15 +1,14 @@
 import express from "express";
-import dotenv from "dotenv";
-import cors from "cors";
-import userRoute from "./Routes/userRoutes.js"
-import sponsorRoutes from './Routes/sponsorRoutes.js'
-import newsRoutes from './Routes/newsRoutes.js'
-import productRoutes from "./Routes/productRoutes.js";
-import commentRoute from "./Routes/commentRoute.js";
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
-import userRoute from "./Routes/userRoutes.js"
-import contactRoute from "./Routes/contactRoutes.js"
+import dotenv from "dotenv";
+import cors from "cors";
+import userRoutes from "./Routes/userRoutes.js"
+import productRoutes from "./Routes/productRoutes.js";
+import commentRoutes from "./Routes/commentRoute.js";
+import sponsorRoutes from './Routes/sponsorRoutes.js'
+import newsRoutes from './Routes/newsRoutes.js'
+import contactRoutes from "./Routes/contactRoutes.js"
 
 const app = express();
 // loading all .env file here
@@ -22,12 +21,12 @@ app.use(express.json());
 // Middleware to parse cookies
 app.use(cookieParser());
 // routes
-app.use("/api/users", userRoute);
+app.use("/api/users", userRoutes);
 app.use("/api/products", productRoutes);
-app.use("/api/comments", commentRoute);
+app.use("/api/comments", commentRoutes);
 app.use('/api/sponsors',sponsorRoutes)
 app.use('/api/news',newsRoutes)
-app.use('/api/contact', contactRoute)
+app.use('/api/contacts', contactRoutes)
 
 // connecting to database
 mongoose
