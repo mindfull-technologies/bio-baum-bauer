@@ -48,6 +48,12 @@ export const passwordValidator = () => body('password')
     .withMessage('Password needs to contain at least 8 characters, minimum one lower case character, minimum one uppercase character, minimum one number and minimum one symbol.')
 
 
+
+export const parameterValidator = () => param('uId')
+    .notEmpty()
+    .withMessage("parameter should not left empty!")
+    
+
 /**
  * for validating
  * @param {*} req 

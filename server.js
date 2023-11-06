@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import mongoose from "mongoose";
+import cookieParser from "cookie-parser";
 import userRoute from "./Routes/userRoutes.js"
 import contactRoute from "./Routes/contactRoutes.js"
 
@@ -14,9 +15,11 @@ app.use(cors());
 // changing JsonString to Js Object and back
 app.use(express.json())
 
+// Middleware to parse cookies
+app.use(cookieParser());
 // routes
-app.use('/api/users', userRoute)
-app.use('/api/contacts', contactRoute)
+app.use('/api/user', userRoute)
+app.use('/api/contact', contactRoute)
 
 
 // connecting to database

@@ -7,9 +7,8 @@ import {
     updateById,
     findByEmailAndUpdate,
     deleteUserBasedOnId,
-    updateAllField,
     login,
-    changingPassword,
+    changePassword,
     logoutUser
 } from "../Controllers/UserController.js";
 const router = express.Router();
@@ -21,11 +20,12 @@ import {
     mobilePhoneValidator,
     zipCodeValidator,
     passwordValidator,
+    parameterValidator,
     validate
 } from "../Helpers/userValidation.js"
 
 // route for user
-router.post('/createUser',
+router.post('/create-user',
     nameValidator(),
     houseNumberValidator(),
     emailValidator(),
@@ -35,24 +35,14 @@ router.post('/createUser',
     passwordValidator(),
     validate, createNewUser);
 
-router.get('/getAllUsers', getAllUsers);
-router.get('/findById/:uId', findUserById);
-router.get('/findByEmail', findUserByEmail);
-router.patch('/updateById/:uId', updateById);
-router.patch('/findByEmailAndUpdate/', findByEmailAndUpdate);
-router.put('/findByIdAndUpdate/:uId',
-    nameValidator(),
-    houseNumberValidator(),
-    emailValidator(),
-    cityValidator(),
-    zipCodeValidator(),
-    mobilePhoneValidator(),
-    passwordValidator(),
-    validate,
-    updateAllField);
-router.delete('/findByIdAndDelete/:uId', deleteUserBasedOnId);
+router.get('/get-all-users', getAllUsers);
+router.get('/find-by-id/:uId', parameterValidator, validate, findUserById);
+router.get('/find-by-email', findUserByEmail);
+router.patch('/update-by-id/:uId', parameterValidator, validate, updateById);
+router.patch('/find-by-email-and-update/', findByEmailAndUpdate);
+router.delete('/find-by-id-and-delete/:uId', parameterValidator, validate, deleteUserBasedOnId);
 router.post('/login', login);
-router.post('/changPass', changingPassword);
+router.post('/chang-password', changePassword);
 router.get('/logout', logoutUser)
 
 export default router;

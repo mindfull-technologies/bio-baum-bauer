@@ -158,34 +158,6 @@ export const findByEmailAndUpdate = async (req, res) => {
     }
 };
 
-/**
- * this function update all field of a user
- * @param {*} req (firstName, lastName, address, email, password, mobilePhone)
- * @param {*} res
- * @returns
- */
-export const updateAllField = async (req, res) => {
-    const { firstName, lastName, address, email, password, mobilePhone, userType } =
-        req.body;
-    const filter = { _id: req.params.uId };
-    const update = { firstName, lastName, address, email, password, mobilePhone, userType };
-    const returnNew = { new: true };
-
-    try {
-        const user = await User.findOneAndUpdate(filter, update, returnNew);
-
-        if (user) {
-            return res.status(StatusCodes.OK).json({ user });
-        }
-        return res
-            .status(StatusCodes.NOT_FOUND)
-            .json({ message: `user with id=(${req.params._id}) not found..!` });
-    } catch (error) {
-        return res
-            .status(StatusCodes.INTERNAL_SERVER_ERROR)
-            .json({ message: error.toString() });
-    }
-};
 
 
 
@@ -219,21 +191,23 @@ export const deleteUserBasedOnId = async (req, res) => {
  * @param {*} res 
  */
 export const login = async (req, res) => {
+    const isProduction = process.env.NODE_ENV === 'production';
     const { email, password } = req.body;
     try {
         const user = await User.findOne({ email: email })
         if (!user) {
             return res.status(StatusCodes.NOT_FOUND).json({ message: 'Email or password does not exist' });
         }
-        const checkPassword = bcrypt.compare(password, user.password);
+        const checkPassword = await bcrypt.compare(password, user.password);
         if (checkPassword) {
             const token = generateJwt(user.id);
             return res.cookie("jwt", token, {
+                secure: isProduction,
                 httpOnly: true,
                 secure: false,
             }).status(StatusCodes.OK).json({ message: 'logged in successfully...!' })
         } else {
-            return res.status(StatusCodes.NOT_FOUND).json({ message: 'Email or password does not exist' });
+            return res.status(StatusCodes.UNAUTHORIZED).json({ message: 'Email or password does not exist' });
         }
 
     } catch (error) {
@@ -249,7 +223,7 @@ export const login = async (req, res) => {
  * @param {*} req 
  * @param {*} res 
  */
-export const changingPassword = (req, res) => {
+export const changePassword = (req, res) => {
     try {
         /*
         
