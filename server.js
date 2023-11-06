@@ -6,9 +6,10 @@ import cors from "cors";
 import userRoutes from "./Routes/userRoutes.js"
 import productRoutes from "./Routes/productRoutes.js";
 import commentRoutes from "./Routes/commentRoute.js";
-import sponsorRoutes from './Routes/sponsorRoutes.js'
-import newsRoutes from './Routes/newsRoutes.js'
-import contactRoutes from "./Routes/contactRoutes.js"
+import sponsorRoutes from "./Routes/sponsorRoutes.js"
+import newsRoutes from "./Routes/newsRoutes.js"
+import contactRoutes from "./Routes/contactRoutes.js";
+import treeRoutes from "./Routes/treeRoutes.js";
 
 const app = express();
 // loading all .env file here
@@ -27,6 +28,7 @@ app.use("/api/comments", commentRoutes);
 app.use('/api/sponsors',sponsorRoutes)
 app.use('/api/news',newsRoutes)
 app.use('/api/contacts', contactRoutes)
+app.use('/api/trees', treeRoutes)
 
 // connecting to database
 mongoose

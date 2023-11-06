@@ -2,7 +2,7 @@ import Tree from '../Models/Tree.js';
 
 export const getAllTrees = async (req, res) => {
     try {
-        const trees = await Tree.find().populate('children');
+        const trees = await Tree.find();
         res.json(trees);
     } catch (err) {
         res.status(500).send(err.message);
@@ -11,7 +11,7 @@ export const getAllTrees = async (req, res) => {
 
 export const getTreeById = async (req, res) => {
     try {
-        const tree = await Tree.findById(req.params.id).populate('children');
+        const tree = await Tree.findById(req.params.id);
         if (!tree) {
             return res.status(404).send('Tree not found');
         }
@@ -23,9 +23,9 @@ export const getTreeById = async (req, res) => {
 
 export const addTree = async (req, res) => {
     try {
-        const treeNode = new Tree(req.body);
-        await treeNode.save();
-        res.status(201).json(treeNode);
+        const tree = new Tree(req.body);
+        await tree.save();
+        res.status(201).json(tree);
     } catch (err) {
         res.status(500).send(err.message);
     }
@@ -49,7 +49,7 @@ export const deleteTree = async (req, res) => {
         if (!deletedTree) {
             return res.status(404).send('Tree not found');
         }
-        res.json({ message: 'Tree deleted successfully' });
+        res.json({ message: 'Tree deleted successfully'});
     } catch (err) {
         res.status(500).send(err.message);
     }
