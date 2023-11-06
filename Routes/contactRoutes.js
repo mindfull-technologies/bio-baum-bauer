@@ -17,13 +17,17 @@ router.post('/create',
     validateFullContact,
     validate,
     createContact);
+
 router.get('/getAll', getAllContacts);
+
 router.get('/find/:cId', findContactById);
+
 router.put('/update/:cId',
     nameValidator(),
     validateFullContact,
     validate,
     updateContactById);
+    
 router.delete('/delete/:cId', deleteContactById);
 
 export default router;
