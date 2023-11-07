@@ -1,5 +1,5 @@
 import { StatusCodes } from "http-status-codes";
-import Sponsor from "../Models/Sponsor.js";
+import Sponsor from "../models/Sponsor.js";
 
 //get the list of sponsors
 export const getAllSponsors = async (req, res) => {
@@ -34,9 +34,9 @@ export const createSponsor = async (req, res) => {
 //delete a sponsor
 export const deleteSponsor = async (req, res) => {
     try {
-      const { sponsorId } = req.params; 
+      const sponsorId  = req.params.id; 
       
-      const deletedSponsor = await Sponsor.findOneAndDelete(sponsorId);
+      const deletedSponsor = await Sponsor.findByIdAndDelete(sponsorId);
   
       if (!deletedSponsor) {
         return res.status(StatusCodes.NOT_FOUND).json({ message: "Sponsor not found" });
