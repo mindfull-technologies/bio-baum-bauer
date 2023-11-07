@@ -1,5 +1,5 @@
 import { StatusCodes } from "http-status-codes";
-import Sponsor from "../Models/Sponsor.js";
+import Sponsor from "../models/Sponsor.js";
 
 //get the list of sponsors
 export const getAllSponsors = async (req, res) => {

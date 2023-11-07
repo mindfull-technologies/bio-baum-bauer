@@ -5,10 +5,10 @@ import {
     findContactById,
     updateContactById,
     deleteContactById
-} from "../Controllers/ContactController.js";
+} from "../controllers/ContactController.js";
 
-import { nameValidator, validate } from "../Helpers/userValidation.js"
-import { validateFullContact } from "../Helpers/contactValidationSanit.js"
+import { nameValidator, validate } from "../helpers/userValidation.js"
+import { validateFullContact } from "../helpers/contactValidationSanit.js"
 
 const router = express.Router();
 
