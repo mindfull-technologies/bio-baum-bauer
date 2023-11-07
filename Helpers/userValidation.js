@@ -1,7 +1,7 @@
 import { body, param, validationResult } from "express-validator";
 import { changeToUpperCase } from "./userSanitization.js";
 import { StatusCodes } from "http-status-codes";
-import User from "../Models/User.js";
+import User from "../models/User.js";
 export const nameValidator = () => body(['firstName', 'lastName'])
     .notEmpty()
     .withMessage('FirstName and LastName should not be empty..!')

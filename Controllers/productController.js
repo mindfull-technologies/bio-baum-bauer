@@ -1,5 +1,5 @@
 import { StatusCodes } from "http-status-codes";
-import Product from "../Models/Product.js";
+import Product from "../models/Product.js";
 import { validationResult } from "express-validator";
 import { body } from "express-validator";
 
