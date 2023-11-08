@@ -18,7 +18,9 @@ export const faqValidator=[
     .notEmpty()
     .withMessage("Answers should not left empty!")
     .isLength({ min: 2 })
-    .withMessage("The length of Answer should be at least 3 characters!")
+    .withMessage("The length of Answer should be at least 3 characters!") 
+         .customSanitizer(value => validationMiddleWare(value))
+
     
 ]
 export const validate = (req, res, next) => {
@@ -43,5 +45,6 @@ export const validate = (req, res, next) => {
     const filter = new Filter();
     filter.addWords(...badWords);
     return filter.clean(paragraph);
+
   };
   
