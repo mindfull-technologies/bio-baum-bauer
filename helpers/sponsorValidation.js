@@ -1,20 +1,16 @@
 import { body, param, validationResult } from "express-validator";
 import { StatusCodes } from "http-status-codes";
 
-/**
- * for validating
- * @param {*} req 
- * @param {*} res 
- * @param {*} next 
- * @returns 
- */
-export const validate = (req, res, next) => {
-    const errors = validationResult(req);
-    //if there are errors 
-    if (!errors.isEmpty()) {
-        //response code 400
-        return res.status(StatusCodes.BAD_REQUEST).json({ errors: errors.array() })
-    }
+export const sponsorshipFullValidation = [
+  body("price")
+    .trim()
+    .notEmpty()
+    .withMessage("price of tree should be added for sponsorship")
+    .isNumeric()
+    .withMessage("please enter a number"),
 
-    next();
-}
+  body('location').notEmpty().withMessage('please specify the location of tree')
+];
+
+
+//*************************the validation of userId and treeId should be added here???? */
