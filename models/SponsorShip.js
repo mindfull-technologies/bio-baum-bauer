@@ -1,13 +1,16 @@
-import { Schema, model } from "mongoose";
+import { Schema, model ,mongoose} from "mongoose";
+import User from "./User.js";
+import Tree from './Tree.js'
 
-const sponsorSchema = new Schema({
-    price: { type: String, required: true },
+
+const sponsorshipSchema = new Schema({
+    price: { type: Number, required: true },
     certification: { type: String, required: true },
     location: { type: String, required: true },
-    userId: { type: String, required: true },
-    treeId: { type: String, required: true },
+    userId: { type: mongoose.Schema.Types.ObjectId, ref: User, required: true },
+    treeId: { type: mongoose.Schema.Types.ObjectId, ref: Tree, required: true },
 
 }, { timestamps: true })
 
-const Sponsor = model('sponsor', sponsorSchema)
-export default Sponsor;
+const Sponsorship = model('sponsoship', sponsorshipSchema)
+export default Sponsorship;
