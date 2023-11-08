@@ -1,5 +1,5 @@
 import { StatusCodes } from "http-status-codes";
-import Comment from "../Models/Comment.js";
+import Comment from "../models/Feedback.js";
 import { body, validationResult } from "express-validator";
 import Filter from "bad-words";
 

@@ -1,6 +1,6 @@
 import express from "express";
-import { getAllfarms,createFarm,updateFarm,deleteFarm } from "../Controllers/FarmController.js";
-import  {validateFarm ,validate } from "../Helpers/farmValidator.js"
+import { getAllfarms,createFarm,updateFarm,deleteFarm } from "../controllers/farmController.js";
+import  {validateFarm ,validate } from "../helpers/farmValidator.js"
 
 const router = express.Router();
 

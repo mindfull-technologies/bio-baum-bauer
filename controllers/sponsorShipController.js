@@ -1,11 +1,11 @@
 import { StatusCodes } from "http-status-codes";
-import Sponsor from "../models/Sponsor.js";
+import Sponsor from "../models/SponsorShip.js";
 
 //get the list of sponsors
 export const getAllSponsors = async (req, res) => {
   try {
-    const sponsers = await Sponsor.find();
-    return res.status(StatusCodes.OK).json(sponsers);
+    const sponserShip = await Sponsor.find();
+    return res.status(StatusCodes.OK).json(sponserShip);
   } catch (error) {
     return res
       .status(StatusCodes.NOT_FOUND)
@@ -16,16 +16,16 @@ export const getAllSponsors = async (req, res) => {
 //create a new sponsor
 export const createSponsor = async (req, res) => {
   try {
-    const newSponsor = await Sponsor.create({
+    const newSponsorShip = await Sponsor.create({
       firstName: req.body.firstName,
       lastName: req.body.lastName,
       email: req.body.email,
       password: req.body.password,
     });
-    return res.status(StatusCodes.OK).json({message: 'the new sponsor is created', newSponsor})
+    return res.status(StatusCodes.OK).json({ message: 'the new sponsor is created', newSponsorShip })
   } catch (error) {
 
-    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({message: error.toString()})
+    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: error.toString() })
 
   }
 };
@@ -33,21 +33,21 @@ export const createSponsor = async (req, res) => {
 
 //delete a sponsor
 export const deleteSponsor = async (req, res) => {
-    try {
-      const sponsorId  = req.params.id; 
-      
-      const deletedSponsor = await Sponsor.findByIdAndDelete(sponsorId);
-  
-      if (!deletedSponsor) {
-        return res.status(StatusCodes.NOT_FOUND).json({ message: "Sponsor not found" });
-      }
-  
-      return res.status(StatusCodes.OK).json({ message: "Sponsor deleted successfully" });
-    } catch (error) {
-      return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: "Internal Server Error", error: error.toString() });
+  try {
+    const sponsorId = req.params.id;
+
+    const deletedSponsor = await Sponsor.findByIdAndDelete(sponsorId);
+
+    if (!deletedSponsor) {
+      return res.status(StatusCodes.NOT_FOUND).json({ message: "Sponsor not found" });
     }
-  };
-  
+
+    return res.status(StatusCodes.OK).json({ message: "Sponsor deleted successfully" });
+  } catch (error) {
+    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: "Internal Server Error", error: error.toString() });
+  }
+};
+
 
 //update sponsor's info
 
@@ -81,4 +81,3 @@ export const updateSponsor = async (req, res) => {
 
 
 
-  
