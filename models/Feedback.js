@@ -1,6 +1,6 @@
 import { Schema, model } from "mongoose";
 
-const commentSchema = new Schema({
+const feedbackSchema = new Schema({
   date: { type: Date, default: Date.now },
   content: {
     type: String,
@@ -8,8 +8,14 @@ const commentSchema = new Schema({
     minlength: [3, "Content must be at least 3 characters long"],
     maxlength: [300, "Content must be less than 300 characters"],
   },
+  rating: {
+    type: Number,
+    required: [true, "Rating is required"],
+    min: [1, "Rating must be at least 1"],
+    max: [5, "Rating must be no more than 5"],
+  },
 });
 
-const Comment = model("Comment", commentSchema);
+const Feedback = model("feedback", feedbackSchema);
 
-export default Comment;
+export default Feedback;
