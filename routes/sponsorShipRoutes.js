@@ -6,7 +6,7 @@ import { validate } from '../helpers/sponsorValidation.js'
 const router  = express.Router();
 
 router.get('/allSponsors', getAllSponsors)
-router.post('/newSponsor', nameValidator(),emailValidator(),passwordValidator(), validate, createSponsor)
+router.post('/newSponsor', createSponsor)
 router.delete('/deleteSponsor/:id',deleteSponsor)
 router.patch('/updateSponsor/:id',updateSponsor)
 

@@ -1,83 +1,94 @@
 import { StatusCodes } from "http-status-codes";
-import Sponsor from "../models/SponsorShip.js";
+import Sponsorship from "../models/SponsorShip.js";
 
-//get the list of sponsors
-export const getAllSponsors = async (req, res) => {
+//create a new sponsorship
+export const createSponsor = async (req, res) => {
   try {
-    const sponserShip = await Sponsor.find();
-    return res.status(StatusCodes.OK).json(sponserShip);
+    const { price, certification, location, userId, treeId } = req.body;
+    const newSponsorShip = await Sponsor.create({
+      price,
+      certification,
+      location,
+      userId,
+      treeId,
+    });
+    return res
+      .status(StatusCodes.OK)
+      .json({ message: "the new sponsorship is added", newSponsorShip });
   } catch (error) {
     return res
-      .status(StatusCodes.NOT_FOUND)
+      .status(StatusCodes.INTERNAL_SERVER_ERROR)
       .json({ message: error.toString() });
   }
 };
 
-//create a new sponsor
-export const createSponsor = async (req, res) => {
+//get the list of sponsors
+export const getAllSponsors = async (req, res) => {
   try {
-    const newSponsorShip = await Sponsor.create({
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      email: req.body.email,
-      password: req.body.password,
-    });
-    return res.status(StatusCodes.OK).json({ message: 'the new sponsor is created', newSponsorShip })
+    const sponsors = await Sponsorship.find()
+      .populate("userId")
+      .populate("treeId");
+
+    return res.status(StatusCodes.OK).json(sponsors);
   } catch (error) {
-
-    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: error.toString() })
-
+    return res
+      .status(StatusCodes.INTERNAL_SERVER_ERROR)
+      .json({ message: error.toString() });
   }
 };
-
 
 //delete a sponsor
 export const deleteSponsor = async (req, res) => {
   try {
     const sponsorId = req.params.id;
 
-    const deletedSponsor = await Sponsor.findByIdAndDelete(sponsorId);
+    const deletedSponsor = await Sponsorship.findByIdAndDelete(sponsorId);
 
     if (!deletedSponsor) {
-      return res.status(StatusCodes.NOT_FOUND).json({ message: "Sponsor not found" });
+      return res
+        .status(StatusCodes.NOT_FOUND)
+        .json({ message: "Sponsor not found" });
     }
 
-    return res.status(StatusCodes.OK).json({ message: "Sponsor deleted successfully" });
+    return res
+      .status(StatusCodes.OK)
+      .json({ message: "Sponsor deleted successfully" });
   } catch (error) {
-    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: "Internal Server Error", error: error.toString() });
+    return res
+      .status(StatusCodes.INTERNAL_SERVER_ERROR)
+      .json({ message: "Internal Server Error", error: error.toString() });
   }
 };
 
-
 //update sponsor's info
-
-
 
 export const updateSponsor = async (req, res) => {
   try {
     const { sponsorId } = req.params;
-    const { firstName, lastName, email, password } = req.body;
+    const { price, certification, location, userId, treeId } = req.body;
 
-    const updatedSponsor = await Sponsor.findOneAndUpdate(
+    const updatedSponsor = await Sponsorship.findOneAndUpdate(
       sponsorId,
       {
-        firstName,
-        lastName,
-        email,
-        password,
+        price,
+        certification,
+        location,
+        userId,
+        treeId,
       },
       { new: true }
     );
 
     if (!updatedSponsor) {
-      return res.status(StatusCodes.NOT_FOUND).json({ message: 'Sponsor not found' });
+      return res
+        .status(StatusCodes.NOT_FOUND)
+        .json({ message: "Sponsor not found" });
     }
 
     return res.status(StatusCodes.OK).json(updatedSponsor);
   } catch (error) {
-    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: 'Internal Server Error', error: error.toString() });
+    return res
+      .status(StatusCodes.INTERNAL_SERVER_ERROR)
+      .json({ message: "Internal Server Error", error: error.toString() });
   }
 };
-
-
-
