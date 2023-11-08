@@ -5,7 +5,7 @@ import {
     findContactById,
     updateContactById,
     deleteContactById
-} from "../controllers/ContactController.js";
+} from "../controllers/contactController.js";
 
 import { nameValidator, validate } from "../helpers/userValidation.js"
 import { validateFullContact } from "../helpers/contactValidationSanit.js"

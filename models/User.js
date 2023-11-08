@@ -14,8 +14,8 @@ const userSchema = new Schema({
     password: { type: String, required: true },
     mobilePhone: { type: String, required: true },
     userType: {
-        type: String, required: true, default: "CUSTOMER", enum: {
-            values: ['ADMIN', 'SPONSOR', 'CUSTOMER'],
+        type: String, required: true, default: "SPONSOR", enum: {
+            values: ['ADMIN', 'SPONSOR'],
             message: '{VALUE} is not supported'
         }
     }

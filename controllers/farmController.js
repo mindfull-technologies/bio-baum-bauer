@@ -1,4 +1,4 @@
-import Farm from "../Models/Farm.js";
+import Farm from "../models/Farm.js";
 import { StatusCodes } from "http-status-codes"
 
 

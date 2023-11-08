@@ -1,19 +1,17 @@
 import express from 'express';
 import userRoutes from './userRoutes.js'
-import productRoutes from './productRoutes.js';
-import commentRoutes from './commentRoutes.js';
-import sponsorRoutes from './sponsorRoutes.js'
+import feedbackRoutes from './feedbackRoutes.js';
+import sponsorShipRoutes from './sponsorShipRoutes.js'
 import contactRoutes from './contactRoutes.js'
 import newsRoutes from './newsRoutes.js'
-import farmRoute from './Routes/farmRoutes.js'
-import faqRoute from './Routes/faqRoutes.js'
+import farmRoute from './farmRoutes.js'
+import faqRoute from './faqRoutes.js'
 
 const router = express.Router();
 
 router.use('/users', userRoutes);
-router.use('/products', productRoutes);
-router.use('/comments', commentRoutes);
-router.use('/sponsors', sponsorRoutes);
+router.use('/feedback', feedbackRoutes);
+router.use('/sponsorShip', sponsorShipRoutes);
 router.use('/contact', contactRoutes);
 router.use('/news', newsRoutes);
 router.use('/farm', farmRoute)

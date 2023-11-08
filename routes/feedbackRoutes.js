@@ -7,7 +7,7 @@ import {
   deleteCommentById,
   profanityFilter,
   validateComment,
-} from "../Controllers/commentController.js";
+} from "../controllers/feedbackController.js";
 
 const router = express.Router();
 
