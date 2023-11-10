@@ -1,33 +1,34 @@
 import express from "express";
 import {
-  createComment,
-  getAllComments,
-  getCommentById,
-  updateCommentById,
-  deleteCommentById,
+  createFeedback,
+  getAllFeedbacks,
+  getFeedbackById,
+  updateFeedbackById,
+  deleteFeedbackById,
   profanityFilter,
-  validateComment,
+  validateFeedback,
 } from "../controllers/feedbackController.js";
 
 const router = express.Router();
 
-// Create a new comment
-router.post("/create", validateComment, profanityFilter, createComment);
+// Create a new feedback
+router.post("/create", validateFeedback, profanityFilter, createFeedback);
 
-// Get all comments
-router.get("/", getAllComments);
+// Get all feedbacks
+router.get("/", getAllFeedbacks);
 
-// Get a comment by ID
-router.get("/:id", getCommentById);
+// Get feedback by ID
+router.get("/:id", getFeedbackById);
 
-// Update a comment by ID
+// Update feedback by ID
 router.patch(
   "/update/:id",
-  validateComment,
+  validateFeedback,
   profanityFilter,
-  updateCommentById
+  updateFeedbackById
 );
 
-// Delete a comment by ID
-router.delete("/delete/:id", deleteCommentById);
+// Delete feedback by ID
+router.delete("/delete/:id", deleteFeedbackById);
+
 export default router;
