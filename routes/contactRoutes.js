@@ -7,27 +7,25 @@ import {
     deleteContactById
 } from "../controllers/contactController.js";
 
-import { nameValidator, validate } from "../helpers/userValidation.js"
-import { validateFullContact } from "../helpers/contactValidationSanit.js"
+import { validateFullContact, paramValidatorContact, validationResultContact } from "../helpers/contactValidationSanit.js"
 
 const router = express.Router();
 
 router.post('/create',
-    nameValidator(),
     validateFullContact,
-    validate,
+    validationResultContact,
     createContact);
 
-router.get('/getAll', getAllContacts);
+router.get('/get-all', getAllContacts);
 
-router.get('/find/:cId', findContactById);
+router.get('/find/:cId', paramValidatorContact, validationResultContact, findContactById);
 
 router.put('/update/:cId',
-    nameValidator(),
     validateFullContact,
-    validate,
+    paramValidatorContact,
+    validationResultContact,
     updateContactById);
-    
-router.delete('/delete/:cId', deleteContactById);
+
+router.delete('/delete/:cId', paramValidatorContact, validationResultContact, deleteContactById);
 
 export default router;

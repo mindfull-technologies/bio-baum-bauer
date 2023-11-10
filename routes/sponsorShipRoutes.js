@@ -1,5 +1,6 @@
 import express from 'express'
 import { createSponsor, deleteSponsor, getAllSponsors, updateSponsor } from '../controllers/sponsorShipController.js'
+
 import { sponsorshipFullValidation } from '../helpers/sponsorValidation.js';
 
 
