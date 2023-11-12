@@ -2,7 +2,7 @@ import User from "../models/User.js";
 import { validationResult } from "express-validator";
 import { StatusCodes } from "http-status-codes";
 import bcrypt from "bcrypt";
-import { generateJwt, verifyJWT } from "../helpers/jwt.js";
+import { generateJwt } from "../helpers/jwt.js";
 
 
 /**
