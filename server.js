@@ -6,6 +6,7 @@ import helmet from "helmet";
 import allowCors from "./middlewares/cors.js";
 import allRoutes from "./routes/allRoutes.js";
 import db from "./db.js";
+import fs from "fs"
 
 dotenv.config();
 const app = express();
@@ -15,6 +16,9 @@ app.use(helmet()); //provide basic securites
 allowCors(app);
 app.use(express.json());
 app.use(cookieParser()); // parse cookies
+// applying logging 
+const accessLogStream = fs.createWriteStream('./logs/access.log', { flags: 'a' });
+app.use(morgan('combined', { stream: accessLogStream }));
 
 if (app.get("env") === "development") {
   app.use(morgan("tiny")); // provide logging to the console
