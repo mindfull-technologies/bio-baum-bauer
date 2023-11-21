@@ -1,4 +1,4 @@
-import Tree from '../Models/Tree.js';
+import Tree from '../models/Tree.js';
 
 export const getAllTrees = async (req, res) => {
     try {
