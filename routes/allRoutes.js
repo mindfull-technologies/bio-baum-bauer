@@ -6,6 +6,7 @@ import contactRoutes from "./contactRoutes.js";
 import newsRoutes from "./newsRoutes.js";
 import farmRoute from "./farmRoutes.js";
 import faqRoute from "./faqRoutes.js";
+import galleryRoute from "./galleryRoutes.js";
 
 const router = express.Router();
 
@@ -16,5 +17,6 @@ router.use("/contact", contactRoutes);
 router.use("/news", newsRoutes);
 router.use("/farm", farmRoute);
 router.use("/faq", faqRoute);
+router.use("/gallery", galleryRoute);
 
 export default router;
