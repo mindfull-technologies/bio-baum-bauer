@@ -33,7 +33,7 @@ export const addTree = async (req, res) => {
 
 export const updateTree = async (req, res) => {
     try {
-        const updatedTree = await Tree.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        const updatedTree = await Tree.findByIdAndUpdate(req.params._id, req.body, { new: true });
         if (!updatedTree) {
             return res.status(404).send('Tree not found');
         }
