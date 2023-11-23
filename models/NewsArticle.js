@@ -1,12 +1,13 @@
 // NewsArticle.js
 import mongoose from 'mongoose';
+import User from './User.js';
 
 const newsArticleSchema = new mongoose.Schema({
   dateCreated: { type: Date, default: Date.now },
   writer: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
-    ref: 'user'
+    ref: User
   },
   title: { type: String, required: true },
   description: { type: String, required: true },
