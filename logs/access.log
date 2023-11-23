@@ -430,3 +430,7 @@
 ::1 - - [23/Nov/2023:10:59:40 +0000] "GET /api/newsArticle/655dfe667c3f923858030b36 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
 ::1 - - [23/Nov/2023:10:59:44 +0000] "GET /api/newsArticle/655dfe667c3f923858030b36 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
 ::1 - - [23/Nov/2023:10:59:44 +0000] "GET /api/newsArticle/655dfe667c3f923858030b36 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+::1 - - [23/Nov/2023:12:17:36 +0000] "GET /api/newsArticle HTTP/1.1" 200 1260 "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+::1 - - [23/Nov/2023:12:17:36 +0000] "GET /api/newsArticle HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+::1 - - [23/Nov/2023:12:17:46 +0000] "GET /api/newsArticle/655dfe667c3f923858030b36 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+::1 - - [23/Nov/2023:12:17:46 +0000] "GET /api/newsArticle/655dfe667c3f923858030b36 HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
