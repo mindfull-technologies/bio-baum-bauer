@@ -7,12 +7,16 @@ import { StatusCodes } from "http-status-codes"
  * @returns 
  */
 export const getAllFaq = async (req, res) => {
+    // console.log("Query:",req.query);
+    const limitValue = Number(req.query.limit);
+    const skipValue = Number(req.query.skip)
     try {
-        const allFaq = await Faq.find();
-        return res.status(StatusCodes.OK).json(allFaq);
+        const allFaq = await Faq.find({}).limit(limitValue).select('Question Answers').skip(skipValue).lean();
+        const total = await Faq.find({}).count();
+        return res.status(StatusCodes.OK).json({ data: allFaq, count: total });
     }
     catch (error) {
-        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: error.toString() })
+        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error })
     }
 }
 
