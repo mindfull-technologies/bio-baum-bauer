@@ -11,8 +11,8 @@ export const getAllNewsArticles = async (req, res) => {
 
 export const getNewsArticleById = async (req, res) => {
   try {
-      const article = await NewsArticle.findById(req.params.id)
-          .populate('writer', 'firstName lastName username');
+      const article = await NewsArticle.findById(req.params.id).populate("writer");
+      
       if (!article) {
           return res.status(404).send('Article not found');
       }
