@@ -7,6 +7,7 @@ import allowCors from "./middlewares/cors.js";
 import allRoutes from "./routes/allRoutes.js";
 import db from "./db.js";
 import fs from "fs";
+import newsArticlesRouter from './routes/newsArticlesRoutes.js';
 
 dotenv.config();
 const app = express();
@@ -31,6 +32,10 @@ app.get("/", (_, res) => {
 });
 
 app.use("/api", allRoutes);
+
+// New news articles routes
+app.use("/api/newsArticles", newsArticlesRouter);
+
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
