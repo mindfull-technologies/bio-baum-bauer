@@ -18,7 +18,7 @@ router.use("/sponsorShip", sponsorShipRoutes);
 router.use("/contact", contactRoutes);
 router.use("/news", newsRoutes);
 // New news articles routes
-router.use("/newsArticle", newsArticleRouter);
+router.use("/newsArticles", newsArticleRouter);
 router.use("/farm", farmRoute);
 router.use("/faq", faqRoute);
 router.use("/gallery", galleryRoute);
