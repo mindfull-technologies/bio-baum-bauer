@@ -50,6 +50,7 @@ export const paramValidatorContact = [
  */
 export const validationResultContact = (req, res, next) => {
     const errors = validationResult(req);
+    console.log("Req: ", errors);
     //if there are errors 
     if (!errors.isEmpty()) {
         //response code 400
