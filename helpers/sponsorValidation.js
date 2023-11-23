@@ -14,3 +14,23 @@ export const sponsorshipFullValidation = [
 
 
 //*************************the validation of userId and treeId should be added here???? */
+
+
+/**
+ * this function is for showing validation result
+ * @param {*} req 
+ * @param {*} res 
+ * @param {*} next 
+ * @returns 
+ */
+
+export const validationResultSponsor = (req, res, next) => {
+  const errors = validationResult(req);
+  //if there are errors 
+  if (!errors.isEmpty()) {
+      //response code 400
+      return res.status(StatusCodes.BAD_REQUEST).json({ errors: errors.array() })
+  }
+  // if there is not any error, should pass the control to next middleware
+  next();
+}
