@@ -24,7 +24,7 @@ const treeSchema = new Schema({
         type: String,
         trim: true
     },
-    images: {type:String},
+    images: [String],
     status: {
         type: String,
         enum: ['Available', 'Sold Out', 'Backorder'],

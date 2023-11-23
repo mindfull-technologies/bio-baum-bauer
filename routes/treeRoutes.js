@@ -6,7 +6,7 @@ const router = express.Router();
 router.get('/get', treeController.getAllTrees);
 router.get('/:id', treeController.getTreeById);
 router.post('/create', treeController.addTree);
-router.put('/:id', treeController.updateTree);
+router.patch('/update/:_id', treeController.updateTree);
 router.delete('/:id', treeController.deleteTree);
 
 export default router;
