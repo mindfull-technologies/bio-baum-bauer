@@ -8,20 +8,15 @@ const router = express.Router();
 // Validator Middleware
 export const validateGallery = [
   body("title")
+    .trim()
     .notEmpty()
     .withMessage("Title is required.")
-    .trim()
     .isLength({ max: 50 })
     .withMessage("Title must be at most 50 characters."),
-  body("image")
+  body("image") // the name "image" should be the same as name attribute in form
     .notEmpty()
     .withMessage("Image URL is required.")
-    .custom((value) => {
-      if (!/^https?:\/\/\S+$/.test(value)) {
-        throw new Error("Invalid URL format for image.");
-      }
-      return true;
-    }),
+  ,
   (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -35,9 +30,10 @@ export const validateGallery = [
 
 // Create a new gallery item
 export const createGalleryItem = async (req, res) => {
+  const { title } = req.body;
+  const imageName = req.file.path;
   try {
-    const { title, image } = req.body;
-    const createdGalleryItem = await Gallery.create({ title, image });
+    const createdGalleryItem = await Gallery.create({ title, image: imageName });
     res.status(StatusCodes.CREATED).json(createdGalleryItem);
   } catch (error) {
     res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
