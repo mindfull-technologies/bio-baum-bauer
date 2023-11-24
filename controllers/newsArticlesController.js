@@ -2,7 +2,7 @@ import NewsArticle from "../models/NewsArticle.js";
 
 export const getAllNewsArticles = async (req, res) => {
   try {
-    const articles = await NewsArticle.find().populate('writer', 'firstName lastName');
+    const articles = await NewsArticle.find().populate('writer');
     res.json(articles);
   } catch (error) {
     res.status(500).json({ message: error.message });
