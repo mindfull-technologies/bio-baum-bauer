@@ -20,7 +20,16 @@ export const getTreeById = async (req, res) => {
     res.status(500).send(err.message);
   }
 };
-
+export const searchByName = async (req, res) => {
+  try {
+      const searchParam=req.params.searchParam
+      const trees = await Tree.find({name:searchParam});
+      console.log("Search Tree Back:",trees)
+      res.status(StatusCodes.OK).json(trees);
+  } catch (err) {
+      res.status(500).send(err.message);
+  }
+}; 
 export const addTree = async (req, res) => {
   try {
     const tree = new Tree(req.body);
