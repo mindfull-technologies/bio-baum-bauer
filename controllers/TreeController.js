@@ -1,4 +1,5 @@
 import Tree from "../models/Tree.js";
+import { StatusCodes } from 'http-status-codes';
 
 export const getAllTrees = async (req, res) => {
   try {
@@ -27,7 +28,7 @@ export const searchByName = async (req, res) => {
       console.log("Search Tree Back:",trees)
       res.status(StatusCodes.OK).json(trees);
   } catch (err) {
-      res.status(500).send(err.message);
+      res.status(statusCode.error).send(err.message);
   }
 }; 
 export const addTree = async (req, res) => {
