@@ -1,9 +1,6 @@
-import express from "express";
 import { StatusCodes } from "http-status-codes";
 import { body, validationResult } from "express-validator";
 import Gallery from "../models/Gallery.js";
-
-const router = express.Router();
 
 // Validator Middleware
 export const validateGallery = [
@@ -14,19 +11,23 @@ export const validateGallery = [
     .isLength({ max: 50 })
     .withMessage("Title must be at most 50 characters."),
   body("image") // the name "image" should be the same as name attribute in form
-    .notEmpty()
-    .withMessage("Image URL is required.")
-  ,
-  (req, res, next) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res
-        .status(StatusCodes.BAD_REQUEST)
-        .json({ errors: errors.array() });
-    }
-    next();
-  },
+    .custom((value, { req }) => {
+      if (!req.file) {
+        throw new Error('Please upload an image');
+      }
+      return true;
+    })
 ];
+
+export const showValidateResult = (req, res, next) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res
+      .status(StatusCodes.BAD_REQUEST)
+      .json({ errors: errors.array() });
+  }
+  next();
+}
 
 // Create a new gallery item
 export const createGalleryItem = async (req, res) => {

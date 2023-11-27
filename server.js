@@ -33,8 +33,6 @@ app.get("/", (_, res) => {
 
 app.use("/api", allRoutes);
 
-
-
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
   db.connect();

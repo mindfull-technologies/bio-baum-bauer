@@ -4,7 +4,7 @@ const treeSchema = new Schema({
     name: {
         type: String,
         required: true,
-        trim: true 
+        trim: true
     },
     category: {
         type: String,

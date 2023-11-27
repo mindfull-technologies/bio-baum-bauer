@@ -7,7 +7,7 @@ import Filter from 'bad-words';
  * @returns 
  */
 export const changeToUpperCase = (word) => {
-    if (!word.length === 0) {
+    if (word.length !== 0) {
         const parts = word.split(' ');
         const changedParts = parts.map(el => el[0].toUpperCase() + el.slice(1));
         return changedParts.join(' ');
