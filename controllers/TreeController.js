@@ -1,5 +1,6 @@
 import Tree from "../models/Tree.js";
 import { StatusCodes } from "http-status-codes";
+
 export const getAllTrees = async (req, res) => {
   try {  const limitValue = Number(req.query.limit);
     const skipValue = Number(req.query.skip)
@@ -38,12 +39,23 @@ export const searchByName = async (req, res) => {
   }
 }; 
 export const addTree = async (req, res) => {
+  const { category, treeName, treePrice, status, availableQuantity, description } = req.body;
+  const treeImage = req.file.path;
+  console.log('Data: ', req.body, treeImage);
   try {
-    const tree = new Tree(req.body);
-    await tree.save();
-    res.status(201).json(tree);
+    const newTree = new Tree({
+      name: treeName,
+      category: category,
+      price: treePrice,
+      availableQuantity: availableQuantity,
+      status: status,
+      description: description,
+      image: treeImage
+    });
+    const savedTree = await newTree.save();
+    res.status(StatusCodes.CREATED).json(savedTree);
   } catch (err) {
-    res.status(500).send(err.message);
+    res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: err.message });
   }
 };
 
