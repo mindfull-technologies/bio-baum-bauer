@@ -19,6 +19,8 @@ const upload = multer({
 });
 
 router.get("/get", treeController.getAllTrees);
+router.get('/search/:searchParam', treeController.searchByName);
+
 router.get("/:id", treeController.getTreeById);
 router.post("/create",
     upload.single('treeImage'),

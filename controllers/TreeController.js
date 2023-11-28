@@ -21,7 +21,16 @@ export const getTreeById = async (req, res) => {
     res.status(500).send(err.message);
   }
 };
-
+export const searchByName = async (req, res) => {
+  try {
+      const searchParam=req.params.searchParam
+      const trees = await Tree.find({name:searchParam});
+      console.log("Search Tree Back:",trees)
+      res.status(StatusCodes.OK).json(trees);
+  } catch (err) {
+      res.status(statusCode.error).send(err.message);
+  }
+}; 
 export const addTree = async (req, res) => {
   const { category, treeName, treePrice, status, availableQuantity, description } = req.body;
   const treeImage = req.file.path;
