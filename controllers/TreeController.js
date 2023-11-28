@@ -3,6 +3,7 @@ import { StatusCodes } from "http-status-codes";
 export const getAllTrees = async (req, res) => {
   try {  const limitValue = Number(req.query.limit);
     const skipValue = Number(req.query.skip)
+    
     const trees = await Tree.find({}).limit(limitValue).skip(skipValue).lean();
     const total= await Tree.find({}).count()
 
