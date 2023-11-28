@@ -1,9 +1,9 @@
 import Tree from "../models/Tree.js";
-import { StatusCodes } from 'http-status-codes';
-
+import { StatusCodes } from "http-status-codes";
 export const getAllTrees = async (req, res) => {
   try {
     const trees = await Tree.find();
+    const page=
     res.json(trees);
   } catch (err) {
     res.status(500).send(err.message);
@@ -28,7 +28,8 @@ export const searchByName = async (req, res) => {
       console.log("Search Tree Back:",trees)
       res.status(StatusCodes.OK).json(trees);
   } catch (err) {
-      res.status(statusCode.error).send(err.message);
+    res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: 'Internal Server Error' });
+      
   }
 }; 
 export const addTree = async (req, res) => {
