@@ -1,5 +1,13 @@
 import Filter from 'bad-words';
 
+export const changeToNumber = (str) => {
+    if (str.length !== 0) {
+        const numberOfStr = Number(str);
+        return numberOfStr;
+    } else {
+        return str;
+    }
+}
 
 /**
  * this sanitizer is used for changing the first Character of a word to uppercase
