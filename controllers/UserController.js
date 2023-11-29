@@ -253,8 +253,9 @@ export const logoutUser = (req, res) => {
     res.clearCookie("jwt", {
         httpOnly: true,
         secure: false
-    }).send('User logged out');
-}
+    });
+    res.status(StatusCodes.OK).json({ message: 'User logged out successfully' });
+};
 
 
 
