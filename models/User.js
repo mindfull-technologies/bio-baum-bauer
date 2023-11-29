@@ -5,10 +5,11 @@ const userSchema = new Schema({
     lastName: { type: String, required: true },
     address: {
         country: { type: String, default: "Germany" },
+        state: { type: String },
         city: { type: String, required: true },
         zipCode: { type: Number, required: true },
-        street: { type: String, required: true },
-        houseNumber: { type: String, required: true }
+        address1: { type: String, required: true },
+        address2: { type: String }
     },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
