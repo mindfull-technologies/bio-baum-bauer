@@ -22,10 +22,10 @@ export const allUserFieldValidator = [
         .trim()
         .notEmpty()
         .withMessage('zipCode is required'),
-    body('address.houseNumber')
+    body('address.address1')
         .trim()
         .notEmpty()
-        .withMessage('House Number is required!'),
+        .withMessage('Address line 1 is required!'),
     body('email')
         .trim()
         .notEmpty()
@@ -76,6 +76,19 @@ export const parameterValidator = [
             return true;
         })
 ]
+
+
+export const loginUserValidator = [
+    body('email')
+        .trim()
+        .isEmail()
+        .withMessage('provide an email'),
+    body('password')
+        .trim()
+        .isStrongPassword()
+        .withMessage('Password should be strong')
+
+];
 
 /**
  * for validating

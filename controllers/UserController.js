@@ -191,29 +191,32 @@ export const deleteUserBasedOnId = async (req, res) => {
  * @param {*} res 
  */
 export const login = async (req, res) => {
+
     const isProduction = process.env.NODE_ENV === 'production';
     const { email, password } = req.body;
     try {
-        const user = await User.findOne({ email: email })
+        const user = await User.findOne({ email: email, userType: "SPONSOR" })
+
         if (!user) {
-            return res.status(StatusCodes.NOT_FOUND).json({ message: 'Email or password does not exist' });
+            return res.status(StatusCodes.NOT_FOUND).json({ message: 'Email or password does not match' });
         }
         const checkPassword = await bcrypt.compare(password, user.password);
+
         if (checkPassword) {
-            const token = generateJwt(user.id);
+            const token = generateJwt(user._id);
             return res.cookie("jwt", token, {
                 secure: isProduction,
                 httpOnly: true,
                 secure: false,
-            }).status(StatusCodes.OK).json({ message: 'logged in successfully...!' })
+            }).status(StatusCodes.OK).json({ user: user, message: 'logged in successfully...!' })
         } else {
-            return res.status(StatusCodes.UNAUTHORIZED).json({ message: 'Email or password does not exist' });
+            return res.status(StatusCodes.UNAUTHORIZED).json({ message: 'Email or password does not match' });
         }
 
     } catch (error) {
         return res
             .status(StatusCodes.INTERNAL_SERVER_ERROR)
-            .json({ message: error.toString() });
+            .json({ message: "Internal Server Error Happened" });
     }
 }
 
