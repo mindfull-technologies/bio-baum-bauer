@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ::1 - - [24/Nov/2023:10:25:24 +0000] "GET /api/newsArticle HTTP/1.1" 404 154 "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
 ::1 - - [24/Nov/2023:10:25:24 +0000] "GET /api/newsArticle HTTP/1.1" 404 154 "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
 ::1 - - [24/Nov/2023:10:27:25 +0000] "GET /api/newsArticle HTTP/1.1" 404 154 "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
@@ -3588,3 +3589,5 @@
 ::1 - - [29/Nov/2023:14:21:21 +0000] "GET /api/logout HTTP/1.1" 404 149 "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
 ::1 - - [29/Nov/2023:14:21:51 +0000] "GET /api/logout HTTP/1.1" 404 149 "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
 ::1 - - [29/Nov/2023:14:21:51 +0000] "GET /api/logout HTTP/1.1" 404 149 "http://localhost:3000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+=======
+>>>>>>> main
