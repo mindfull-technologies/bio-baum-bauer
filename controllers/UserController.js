@@ -12,35 +12,33 @@ import { generateJwt } from "../helpers/jwt.js";
  */
 
 export const createNewUser = async (req, res) => {
-    const {
-        firstName,
-        lastName,
-        address,
-        email,
-        password,
-        mobilePhone,
-        userType,
-    } = req.body;
-    const hashedPassword = await bcrypt.hash(password, 12);
+  const { firstName, lastName, email, password, mobilePhone, userType } =
+    req.body;
+  const address = {
+    city: req.body.city,
+    zipCode: req.body.zipCode,
+    address1: req.body.address1,
+  };
+  const hashedPassword = await bcrypt.hash(password, 12);
 
-    try {
-        const user = await User.create({
-            firstName,
-            lastName,
-            address,
-            email,
-            password: hashedPassword,
-            mobilePhone,
-            userType,
-        });
-        return res
-            .status(StatusCodes.CREATED)
-            .json({ message: "user created successfully", user });
-    } catch (error) {
-        return res
-            .status(StatusCodes.INTERNAL_SERVER_ERROR)
-            .json({ message: error.toString() });
-    }
+  try {
+    const user = await User.create({
+      firstName,
+      lastName,
+      address: address,
+      email,
+      password: hashedPassword,
+      mobilePhone,
+      userType,
+    });
+    return res
+      .status(StatusCodes.CREATED)
+      .json({ message: "user created successfully", user });
+  } catch (error) {
+    return res
+      .status(StatusCodes.INTERNAL_SERVER_ERROR)
+      .json({ message: error.toString() });
+  }
 };
 
 /**
@@ -50,16 +48,16 @@ export const createNewUser = async (req, res) => {
  * @returns
  */
 export const getAllUsers = async (req, res) => {
-    try {
-        const users = await User.find({}).lean(true);
-        return res
-            .status(StatusCodes.OK)
-            .json({ users, message: "all users were retrieved...!" });
-    } catch (error) {
-        return res
-            .status(StatusCodes.NOT_FOUND)
-            .json({ message: "could not get all users...!" });
-    }
+  try {
+    const users = await User.find({}).lean(true);
+    return res
+      .status(StatusCodes.OK)
+      .json({ users, message: "all users were retrieved...!" });
+  } catch (error) {
+    return res
+      .status(StatusCodes.NOT_FOUND)
+      .json({ message: "could not get all users...!" });
+  }
 };
 
 /**
@@ -70,19 +68,19 @@ export const getAllUsers = async (req, res) => {
  * @returns
  */
 export const findUserById = async (req, res) => {
-    try {
-        const user = await User.findById(req.params.uId).lean(true);
-        if (user) {
-            return res.status(StatusCodes.OK).json({ user });
-        }
-        return res
-            .status(StatusCodes.NOT_FOUND)
-            .json({ message: `user with id=(${req.params.uId}) not found...!` });
-    } catch (error) {
-        return res
-            .status(StatusCodes.NOT_FOUND)
-            .json({ message: error.toString() });
+  try {
+    const user = await User.findById(req.params.uId).lean(true);
+    if (user) {
+      return res.status(StatusCodes.OK).json({ user });
     }
+    return res
+      .status(StatusCodes.NOT_FOUND)
+      .json({ message: `user with id=(${req.params.uId}) not found...!` });
+  } catch (error) {
+    return res
+      .status(StatusCodes.NOT_FOUND)
+      .json({ message: error.toString() });
+  }
 };
 
 /**
@@ -91,19 +89,19 @@ export const findUserById = async (req, res) => {
  * @param {*} res
  */
 export const findUserByEmail = async (req, res) => {
-    try {
-        const user = await User.findOne({ email: req.body.email }).lean(true);
-        if (user) {
-            return res.status(StatusCodes.OK).json({ user });
-        }
-        return res.status(StatusCodes.NOT_FOUND).json({
-            message: `user with Email Address=(${req.body.email}) not found...!`,
-        });
-    } catch (error) {
-        return res
-            .status(StatusCodes.NOT_FOUND)
-            .json({ message: error.toString() });
+  try {
+    const user = await User.findOne({ email: req.body.email }).lean(true);
+    if (user) {
+      return res.status(StatusCodes.OK).json({ user });
     }
+    return res.status(StatusCodes.NOT_FOUND).json({
+      message: `user with Email Address=(${req.body.email}) not found...!`,
+    });
+  } catch (error) {
+    return res
+      .status(StatusCodes.NOT_FOUND)
+      .json({ message: error.toString() });
+  }
 };
 
 /**
@@ -151,23 +149,23 @@ export const updateById = async (req, res) => {
  * @returns
  */
 export const findByEmailAndUpdate = async (req, res) => {
-    const { email, firstName } = req.body;
-    const filter = { email };
-    const update = { firstName };
-    const renderNew = { new: true };
-    try {
-        const user = await User.findOneAndUpdate(filter, update, renderNew);
-        if (!user) {
-            return res
-                .status(StatusCodes.NOT_FOUND)
-                .json({ message: `user with email=(${email}) not found..!` });
-        }
-        return res.status(StatusCodes.OK).json({ user });
-    } catch (error) {
-        return res
-            .status(StatusCodes.INTERNAL_SERVER_ERROR)
-            .json({ message: error.toString() });
+  const { email, firstName } = req.body;
+  const filter = { email };
+  const update = { firstName };
+  const renderNew = { new: true };
+  try {
+    const user = await User.findOneAndUpdate(filter, update, renderNew);
+    if (!user) {
+      return res
+        .status(StatusCodes.NOT_FOUND)
+        .json({ message: `user with email=(${email}) not found..!` });
     }
+    return res.status(StatusCodes.OK).json({ user });
+  } catch (error) {
+    return res
+      .status(StatusCodes.INTERNAL_SERVER_ERROR)
+      .json({ message: error.toString() });
+  }
 };
 
 /**
@@ -177,20 +175,20 @@ export const findByEmailAndUpdate = async (req, res) => {
  * @returns
  */
 export const deleteUserBasedOnId = async (req, res) => {
-    const paramId = req.params.uId;
-    try {
-        const user = await User.findByIdAndDelete(paramId);
-        if (!user) {
-            return res
-                .status(StatusCodes.NOT_FOUND)
-                .json({ message: `user with id=(${paramId}) not found..!` });
-        }
-        return res.status(StatusCodes.OK).json({ message: "user was deleted..!" });
-    } catch (error) {
-        return res
-            .status(StatusCodes.INTERNAL_SERVER_ERROR)
-            .json({ message: error.toString() });
+  const paramId = req.params.uId;
+  try {
+    const user = await User.findByIdAndDelete(paramId);
+    if (!user) {
+      return res
+        .status(StatusCodes.NOT_FOUND)
+        .json({ message: `user with id=(${paramId}) not found..!` });
     }
+    return res.status(StatusCodes.OK).json({ message: "user was deleted..!" });
+  } catch (error) {
+    return res
+      .status(StatusCodes.INTERNAL_SERVER_ERROR)
+      .json({ message: error.toString() });
+  }
 };
 
 /**
@@ -199,37 +197,35 @@ export const deleteUserBasedOnId = async (req, res) => {
  * @param {*} res
  */
 export const login = async (req, res) => {
-    const isProduction = process.env.NODE_ENV === "production";
-    const { email, password } = req.body;
-    try {
-        const user = await User.findOne({ email: email });
-        if (!user) {
-            return res
-                .status(StatusCodes.NOT_FOUND)
-                .json({ message: "Email or password does not exist" });
-        }
-        const checkPassword = await bcrypt.compare(password, user.password);
-        if (checkPassword) {
-            const token = generateJwt(user.id);
-            return res
-                .cookie("jwt", token, {
-                    secure: isProduction,
-                    httpOnly: true,
-                    secure: false,
-                })
-                .status(StatusCodes.OK)
-                .json({ message: "logged in successfully...!" });
-        } else {
-            return res
-                .status(StatusCodes.UNAUTHORIZED)
-                .json({ message: "Email or password does not exist" });
-        }
-    } catch (error) {
-        return res
-            .status(StatusCodes.INTERNAL_SERVER_ERROR)
-            .json({ message: error.toString() });
+
+  const isProduction = process.env.NODE_ENV === 'production';
+  const { email, password } = req.body;
+  try {
+    const user = await User.findOne({ email: email, userType: "SPONSOR" })
+
+    if (!user) {
+      return res.status(StatusCodes.NOT_FOUND).json({ message: 'Email or password does not match' });
     }
-};
+    const checkPassword = await bcrypt.compare(password, user.password);
+
+    if (checkPassword) {
+      const token = generateJwt(user._id);
+      return res.cookie("jwt", token, {
+        secure: isProduction,
+        httpOnly: true,
+        secure: false,
+      }).status(StatusCodes.OK).json({ user: user, message: 'logged in successfully...!' })
+    } else {
+      return res.status(StatusCodes.UNAUTHORIZED).json({ message: 'Email or password does not match' });
+    }
+
+  } catch (error) {
+    return res
+      .status(StatusCodes.INTERNAL_SERVER_ERROR)
+      .json({ message: "Internal Server Error Happened" });
+  }
+
+}
 
 /**
  * for Changing the user password
@@ -258,10 +254,12 @@ export const changePassword = (req, res) => {
  * @param {*} res
  */
 export const logoutUser = (req, res) => {
-    res
-        .clearCookie("jwt", {
-            httpOnly: true,
-            secure: false,
-        })
-        .send("User logged out");
+    res.clearCookie("jwt", {
+        httpOnly: true,
+        secure: false
+    });
+    res.status(StatusCodes.OK).json({ message: 'User logged out successfully' });
 };
+
+
+
