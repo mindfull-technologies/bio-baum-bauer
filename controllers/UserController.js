@@ -4,7 +4,6 @@ import { StatusCodes } from "http-status-codes";
 import bcrypt from "bcrypt";
 import { generateJwt } from "../helpers/jwt.js";
 
-
 /**
  * the function named createNewUser is for creating new User.
  * @param {*} req ( firstName, lastName, address, email, password, mobilePhone,userType)
@@ -13,8 +12,15 @@ import { generateJwt } from "../helpers/jwt.js";
  */
 
 export const createNewUser = async (req, res) => {
-    const { firstName, lastName, address, email, password, mobilePhone, userType } =
-        req.body;
+    const {
+        firstName,
+        lastName,
+        address,
+        email,
+        password,
+        mobilePhone,
+        userType,
+    } = req.body;
     const hashedPassword = await bcrypt.hash(password, 12);
 
     try {
@@ -25,7 +31,7 @@ export const createNewUser = async (req, res) => {
             email,
             password: hashedPassword,
             mobilePhone,
-            userType
+            userType,
         });
         return res
             .status(StatusCodes.CREATED)
@@ -44,7 +50,6 @@ export const createNewUser = async (req, res) => {
  * @returns
  */
 export const getAllUsers = async (req, res) => {
-
     try {
         const users = await User.find({}).lean(true);
         return res
@@ -91,18 +96,15 @@ export const findUserByEmail = async (req, res) => {
         if (user) {
             return res.status(StatusCodes.OK).json({ user });
         }
-        return res
-            .status(StatusCodes.NOT_FOUND)
-            .json({
-                message: `user with Email Address=(${req.body.email}) not found...!`,
-            });
+        return res.status(StatusCodes.NOT_FOUND).json({
+            message: `user with Email Address=(${req.body.email}) not found...!`,
+        });
     } catch (error) {
         return res
             .status(StatusCodes.NOT_FOUND)
             .json({ message: error.toString() });
     }
 };
-
 
 /**
  * this function is gonna find user by Id and update it
@@ -111,7 +113,17 @@ export const findUserByEmail = async (req, res) => {
  * @returns
  */
 export const updateById = async (req, res) => {
-    const update = { mobilePhone: req.body.mobilePhone };
+    const { mobilePhone, country, city, zipCode, address1, address2, state } =
+        req.body;
+    const address = {
+        country: country ? country : "Germany",
+        state: state ? state : "",
+        city: city,
+        zipCode: zipCode,
+        address1: address1,
+        address2: address2 ? address2 : "",
+    };
+    const update = { mobilePhone, address };
     const isReturnNew = { new: true };
     try {
         const user = await User.findByIdAndUpdate(
@@ -128,7 +140,7 @@ export const updateById = async (req, res) => {
     } catch (error) {
         return res
             .status(StatusCodes.INTERNAL_SERVER_ERROR)
-            .json({ message: error.toString() });
+            .json({ message: "Server error happed" });
     }
 };
 
@@ -158,9 +170,6 @@ export const findByEmailAndUpdate = async (req, res) => {
     }
 };
 
-
-
-
 /**
  * for deleting user by Id
  * @param {uId} req
@@ -184,77 +193,75 @@ export const deleteUserBasedOnId = async (req, res) => {
     }
 };
 
-
 /**
  * for authenticating user..!
- * @param {*} req 
- * @param {*} res 
+ * @param {*} req
+ * @param {*} res
  */
 export const login = async (req, res) => {
-    const isProduction = process.env.NODE_ENV === 'production';
+    const isProduction = process.env.NODE_ENV === "production";
     const { email, password } = req.body;
     try {
-        const user = await User.findOne({ email: email })
+        const user = await User.findOne({ email: email });
         if (!user) {
-            return res.status(StatusCodes.NOT_FOUND).json({ message: 'Email or password does not exist' });
+            return res
+                .status(StatusCodes.NOT_FOUND)
+                .json({ message: "Email or password does not exist" });
         }
         const checkPassword = await bcrypt.compare(password, user.password);
         if (checkPassword) {
             const token = generateJwt(user.id);
-            return res.cookie("jwt", token, {
-                secure: isProduction,
-                httpOnly: true,
-                secure: false,
-            }).status(StatusCodes.OK).json({ message: 'logged in successfully...!' })
+            return res
+                .cookie("jwt", token, {
+                    secure: isProduction,
+                    httpOnly: true,
+                    secure: false,
+                })
+                .status(StatusCodes.OK)
+                .json({ message: "logged in successfully...!" });
         } else {
-            return res.status(StatusCodes.UNAUTHORIZED).json({ message: 'Email or password does not exist' });
+            return res
+                .status(StatusCodes.UNAUTHORIZED)
+                .json({ message: "Email or password does not exist" });
         }
-
     } catch (error) {
         return res
             .status(StatusCodes.INTERNAL_SERVER_ERROR)
             .json({ message: error.toString() });
     }
-}
-
+};
 
 /**
  * for Changing the user password
- * @param {*} req 
- * @param {*} res 
+ * @param {*} req
+ * @param {*} res
  */
 export const changePassword = (req, res) => {
     try {
         /*
-        
-        1. checking if user has authenticated.
-        2. if yes, checking if they know their previous pass
-        3. updating password field
-    
-        */
-
-
+                
+                1. checking if user has authenticated.
+                2. if yes, checking if they know their previous pass
+                3. updating password field
+            
+                */
     } catch (error) {
         return res
             .status(StatusCodes.INTERNAL_SERVER_ERROR)
             .json({ message: error.toString() });
     }
-}
-
-
-
+};
 
 /**
  * for logging out the user
- * @param {*} req 
- * @param {*} res 
+ * @param {*} req
+ * @param {*} res
  */
 export const logoutUser = (req, res) => {
-    res.clearCookie("jwt", {
-        httpOnly: true,
-        secure: false
-    }).send('User logged out');
-}
-
-
-
+    res
+        .clearCookie("jwt", {
+            httpOnly: true,
+            secure: false,
+        })
+        .send("User logged out");
+};
