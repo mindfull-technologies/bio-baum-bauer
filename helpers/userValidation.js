@@ -71,6 +71,19 @@ export const parameterValidator = [
   }),
 ];
 
+
+export const loginUserValidator = [
+    body('email')
+        .trim()
+        .isEmail()
+        .withMessage('provide an email'),
+    body('password')
+        .trim()
+        .isStrongPassword()
+        .withMessage('Password should be strong')
+
+];
+
 /**
  * for validating
  * @param {*} req
