@@ -13,10 +13,12 @@ import {
 } from "../controllers/UserController.js";
 const router = express.Router();
 import {
+    loginUserValidator,
     allUserFieldValidator,
     parameterValidator,
     validateResultUser
-} from "../helpers/userValidation.js"
+} from "../helpers/userValidation.js";
+
 
 // route for user
 router.post('/create-user',
@@ -29,7 +31,7 @@ router.get('/find-by-email', findUserByEmail);
 router.patch('/update-by-id/:uId', parameterValidator, validateResultUser, updateById);
 router.patch('/find-by-email-and-update/', findByEmailAndUpdate);
 router.delete('/find-by-id-and-delete/:uId', parameterValidator, validateResultUser, deleteUserBasedOnId);
-router.post('/login', login);
+router.post('/login', loginUserValidator, validateResultUser, login);
 router.post('/chang-password', changePassword);
 router.get('/logout', logoutUser)
 
