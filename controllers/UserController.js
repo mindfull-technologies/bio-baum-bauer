@@ -18,6 +18,8 @@ export const createNewUser = async (req, res) => {
     city: req.body.city,
     zipCode: req.body.zipCode,
     address1: req.body.address1,
+    address2: req.body.address2,
+    state: req.body.state,
   };
   const hashedPassword = await bcrypt.hash(password, 12);
 
@@ -197,35 +199,39 @@ export const deleteUserBasedOnId = async (req, res) => {
  * @param {*} res
  */
 export const login = async (req, res) => {
-
-  const isProduction = process.env.NODE_ENV === 'production';
+  const isProduction = process.env.NODE_ENV === "production";
   const { email, password } = req.body;
   try {
-    const user = await User.findOne({ email: email, userType: "SPONSOR" })
+    const user = await User.findOne({ email: email, userType: "SPONSOR" });
 
     if (!user) {
-      return res.status(StatusCodes.NOT_FOUND).json({ message: 'Email or password does not match' });
+      return res
+        .status(StatusCodes.NOT_FOUND)
+        .json({ message: "Email or password does not match" });
     }
     const checkPassword = await bcrypt.compare(password, user.password);
 
     if (checkPassword) {
       const token = generateJwt(user._id);
-      return res.cookie("jwt", token, {
-        secure: isProduction,
-        httpOnly: true,
-        secure: false,
-      }).status(StatusCodes.OK).json({ user: user, message: 'logged in successfully...!' })
+      return res
+        .cookie("jwt", token, {
+          secure: isProduction,
+          httpOnly: true,
+          secure: false,
+        })
+        .status(StatusCodes.OK)
+        .json({ user: user, message: "logged in successfully...!" });
     } else {
-      return res.status(StatusCodes.UNAUTHORIZED).json({ message: 'Email or password does not match' });
+      return res
+        .status(StatusCodes.UNAUTHORIZED)
+        .json({ message: "Email or password does not match" });
     }
-
   } catch (error) {
     return res
       .status(StatusCodes.INTERNAL_SERVER_ERROR)
       .json({ message: "Internal Server Error Happened" });
   }
-
-}
+};
 
 /**
  * for Changing the user password
@@ -254,12 +260,9 @@ export const changePassword = (req, res) => {
  * @param {*} res
  */
 export const logoutUser = (req, res) => {
-    res.clearCookie("jwt", {
-        httpOnly: true,
-        secure: false
-    });
-    res.status(StatusCodes.OK).json({ message: 'User logged out successfully' });
+  res.clearCookie("jwt", {
+    httpOnly: true,
+    secure: false,
+  });
+  res.status(StatusCodes.OK).json({ message: "User logged out successfully" });
 };
-
-
-
