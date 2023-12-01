@@ -111,7 +111,7 @@ export const findUserByEmail = async (req, res) => {
  * @returns
  */
 export const updateById = async (req, res) => {
-    const { mobilePhone, country, city, zipCode, address1, address2, state } =
+    const { mobilePhone, country,  address: { city, zipCode, address1, address2, state } } =
         req.body;
     const address = {
         country: country ? country : "Germany",
