@@ -113,25 +113,35 @@ export const findUserByEmail = async (req, res) => {
  * @returns
  */
 export const updateById = async (req, res) => {
-  const update = { mobilePhone: req.body.mobilePhone };
-  const isReturnNew = { new: true };
-  try {
-    const user = await User.findByIdAndUpdate(
-      req.params.uId,
-      update,
-      isReturnNew
-    );
-    if (!user) {
-      return res
-        .status(StatusCodes.NOT_FOUND)
-        .json({ message: `user with id=(${req.params.uId}) not found...!` });
+    const { mobilePhone, country,  address: { city, zipCode, address1, address2, state } } =
+        req.body;
+    const address = {
+        country: country ? country : "Germany",
+        state: state ? state:"",
+        city: city,
+        zipCode: zipCode,
+        address1: address1,
+        address2: address2 ? address2:"" ,
+    };
+    const update = { mobilePhone, address };
+    const isReturnNew = { new: true };
+    try {
+        const user = await User.findByIdAndUpdate(
+            req.params.uId,
+            update,
+            isReturnNew
+        );
+        if (!user) {
+            return res
+                .status(StatusCodes.NOT_FOUND)
+                .json({ message: `user with id=(${req.params.uId}) not found...!` });
+        }
+        return res.status(StatusCodes.OK).json({ user });
+    } catch (error) {
+        return res
+            .status(StatusCodes.INTERNAL_SERVER_ERROR)
+            .json({ message: "Server error happed" });
     }
-    return res.status(StatusCodes.OK).json({ user });
-  } catch (error) {
-    return res
-      .status(StatusCodes.INTERNAL_SERVER_ERROR)
-      .json({ message: error.toString() });
-  }
 };
 
 /**
@@ -229,19 +239,19 @@ export const login = async (req, res) => {
  * @param {*} res
  */
 export const changePassword = (req, res) => {
-  try {
-    /*
-        
-        1. checking if user has authenticated.
-        2. if yes, checking if they know their previous pass
-        3. updating password field
-    
-        */
-  } catch (error) {
-    return res
-      .status(StatusCodes.INTERNAL_SERVER_ERROR)
-      .json({ message: error.toString() });
-  }
+    try {
+        /*
+                
+                1. checking if user has authenticated.
+                2. if yes, checking if they know their previous pass
+                3. updating password field
+            
+                */
+    } catch (error) {
+        return res
+            .status(StatusCodes.INTERNAL_SERVER_ERROR)
+            .json({ message: error.toString() });
+    }
 };
 
 /**
