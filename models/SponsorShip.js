@@ -12,5 +12,5 @@ const sponsorshipSchema = new Schema({
 
 }, { timestamps: true })
 
-const Sponsorship = model('sponsoship', sponsorshipSchema)
+const Sponsorship = model('sponsorship', sponsorshipSchema)
 export default Sponsorship;
