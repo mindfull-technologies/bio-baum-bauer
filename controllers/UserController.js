@@ -115,11 +115,11 @@ export const updateById = async (req, res) => {
         req.body;
     const address = {
         country: country ? country : "Germany",
-        state: state ? state : "",
+        state: state ? state:"",
         city: city,
         zipCode: zipCode,
         address1: address1,
-        address2: address2 ? address2 : "",
+        address2: address2 ? address2:"" ,
     };
     const update = { mobilePhone, address };
     const isReturnNew = { new: true };
