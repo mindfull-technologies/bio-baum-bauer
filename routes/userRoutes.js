@@ -32,7 +32,7 @@ router.patch('/update-by-id/:uId', parameterValidator, validateResultUser, updat
 router.patch('/find-by-email-and-update/', findByEmailAndUpdate);
 router.delete('/find-by-id-and-delete/:uId', parameterValidator, validateResultUser, deleteUserBasedOnId);
 router.post('/login', loginUserValidator, validateResultUser, login);
-router.post('/chang-password', changePassword);
+router.post('/chang-password/:uId', changePassword);
 router.get('/logout', logoutUser)
 
 export default router;
