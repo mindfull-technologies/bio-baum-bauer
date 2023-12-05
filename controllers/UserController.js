@@ -19,6 +19,8 @@ export const createNewUser = async (req, res) => {
     city: req.body.city,
     zipCode: req.body.zipCode,
     address1: req.body.address1,
+    address2: req.body.address2,
+    state: req.body.state,
   };
   const hashedPassword = await bcrypt.hash(password, 12);
 
@@ -112,24 +114,36 @@ export const findUserByEmail = async (req, res) => {
  * @returns
  */
 export const updateById = async (req, res) => {
-  const update = { mobilePhone: req.body.mobilePhone };
+  const { mobilePhone, country, address1, address2, city, zipCode, state } = req.body;
+  const address = {
+      country: country ? country : "Germany",
+      state: state ? state : "",
+      city: city,
+      zipCode: zipCode,
+      address1: address1,
+      address2: address2 ? address2 : "",
+  };
+  const update = { mobilePhone, address };
   const isReturnNew = { new: true };
+
   try {
-    const user = await User.findByIdAndUpdate(
-      req.params.uId,
-      update,
-      isReturnNew
-    );
-    if (!user) {
-      return res
-        .status(StatusCodes.NOT_FOUND)
-        .json({ message: `user with id=(${req.params.uId}) not found...!` });
-    }
-    return res.status(StatusCodes.OK).json({ user });
+      const user = await User.findByIdAndUpdate(
+          req.params.uId,
+          update,
+          isReturnNew
+      );
+
+      if (!user) {
+          return res
+              .status(StatusCodes.NOT_FOUND)
+              .json({ message: `User with id=(${req.params.uId}) not found...!` });
+      }
+
+      return res.status(StatusCodes.OK).json({ user });
   } catch (error) {
-    return res
-      .status(StatusCodes.INTERNAL_SERVER_ERROR)
-      .json({ message: error.toString() });
+      return res
+          .status(StatusCodes.INTERNAL_SERVER_ERROR)
+          .json({ message: "Server error happened" });
   }
 };
 
