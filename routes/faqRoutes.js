@@ -5,7 +5,7 @@ import { faqValidator, validate, validationMiddleWare } from "../helpers/faqVali
 const router = express.Router();
 
 router.get('/all', getAllFaq)
-router.post('/create', faqValidator, validate, validationMiddleWare, createFaq)
+router.post('/create', faqValidator, validate, createFaq)
 router.patch('/update/:id', faqValidator, validate, validationMiddleWare, updatefaq)
 router.delete('/delete/:id', deleteFaq)
 

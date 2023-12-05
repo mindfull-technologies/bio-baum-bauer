@@ -8,6 +8,7 @@ import farmRoute from "./farmRoutes.js";
 import faqRoute from "./faqRoutes.js";
 import galleryRoute from "./galleryRoutes.js";
 import treeRoute from './treeRoutes.js'
+import paymentRoute from "./paymentRoute.js"
 
 
 const router = express.Router();
@@ -22,5 +23,6 @@ router.use("/farm", farmRoute);
 router.use("/faq", faqRoute);
 router.use("/gallery", galleryRoute);
 router.use("/tree", treeRoute);
+router.use('/payment', paymentRoute)
 
 export default router;
