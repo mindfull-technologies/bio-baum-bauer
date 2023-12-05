@@ -116,34 +116,34 @@ export const findUserByEmail = async (req, res) => {
 export const updateById = async (req, res) => {
   const { mobilePhone, country, address1, address2, city, zipCode, state } = req.body;
   const address = {
-      country: country ? country : "Germany",
-      state: state ? state : "",
-      city: city,
-      zipCode: zipCode,
-      address1: address1,
-      address2: address2 ? address2 : "",
+    country: country ? country : "Germany",
+    state: state ? state : "",
+    city: city,
+    zipCode: zipCode,
+    address1: address1,
+    address2: address2 ? address2 : "",
   };
   const update = { mobilePhone, address };
   const isReturnNew = { new: true };
 
   try {
-      const user = await User.findByIdAndUpdate(
-          req.params.uId,
-          update,
-          isReturnNew
-      );
+    const user = await User.findByIdAndUpdate(
+      req.params.uId,
+      update,
+      isReturnNew
+    );
 
-      if (!user) {
-          return res
-              .status(StatusCodes.NOT_FOUND)
-              .json({ message: `User with id=(${req.params.uId}) not found...!` });
-      }
-
-      return res.status(StatusCodes.OK).json({ user });
-  } catch (error) {
+    if (!user) {
       return res
-          .status(StatusCodes.INTERNAL_SERVER_ERROR)
-          .json({ message: "Server error happened" });
+        .status(StatusCodes.NOT_FOUND)
+        .json({ message: `User with id=(${req.params.uId}) not found...!` });
+    }
+
+    return res.status(StatusCodes.OK).json({ user });
+  } catch (error) {
+    return res
+      .status(StatusCodes.INTERNAL_SERVER_ERROR)
+      .json({ message: "Server error happened" });
   }
 };
 
@@ -237,15 +237,18 @@ export const login = async (req, res) => {
 };
 
 /**
- * for Changing the user password
+ * for Changing the user password confirmNewPassword
  * @param {*} req
  * @param {*} res
  */
 export const changePassword = async (req, res) => {
-  const { currentPassword, newPassword, confirmPassword } = req.body;
+  const { currentPassword, newPassword, confirmNewPassword } = req.body;
+  const id = req.params.uId;
+
   try {
     //check if the user authenticated
-    const user = await User.findById(req.params.uId);
+    const user = await User.findById(id);
+   
     if (!user) {
       return res
         .status(StatusCodes.NOT_FOUND)
@@ -256,28 +259,29 @@ export const changePassword = async (req, res) => {
       currentPassword,
       user.password
     );
+
     if (!comparePasswords) {
       return res
         .status(StatusCodes.UNAUTHORIZED)
         .json({ message: "the provided password is incorrect" });
     }
     //check if new password and confirm password fields match
-    if (newPassword !== confirmPassword) {
+    if (newPassword !== confirmNewPassword) {
       return res
         .status(StatusCodes.BAD_REQUEST)
         .json({ message: "New password and confirm password do not match" });
     }
-
+    
     //hash the new password before storing in DB
     const hashedNewPassword = await bcrypt.hash(newPassword, 12);
-
+    
     //update the user's new password
     await User.findByIdAndUpdate(req.params.uId, {
       password: hashedNewPassword,
     });
-    return res.status(StatusCodes.OK).json({message:'Password updated successfully'})
+    return res.status(StatusCodes.OK).json({ message: 'Password updated successfully' })
   } catch (error) {
-    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({message:error.toString()})
+    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: error.toString() })
   }
 };
 
