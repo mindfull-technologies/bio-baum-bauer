@@ -3,6 +3,7 @@ import { validationResult } from "express-validator";
 import { StatusCodes } from "http-status-codes";
 import bcrypt from "bcrypt";
 import { generateJwt } from "../helpers/jwt.js";
+import { trusted } from "mongoose";
 
 /**
  * the function named createNewUser is for creating new User.
@@ -240,20 +241,44 @@ export const login = async (req, res) => {
  * @param {*} req
  * @param {*} res
  */
-export const changePassword = (req, res) => {
-    try {
-        /*
-                
-                1. checking if user has authenticated.
-                2. if yes, checking if they know their previous pass
-                3. updating password field
-            
-                */
-    } catch (error) {
-        return res
-            .status(StatusCodes.INTERNAL_SERVER_ERROR)
-            .json({ message: error.toString() });
+export const changePassword = async (req, res) => {
+  const { currentPassword, newPassword, confirmPassword } = req.body;
+  try {
+    //check if the user authenticated
+    const user = await User.findById(req.params.uId);
+    if (!user) {
+      return res
+        .status(StatusCodes.NOT_FOUND)
+        .json({ message: `user with the ID ${req.params.uId} not found` });
     }
+    // check if the current password matches the password in the database
+    const comparePasswords = await bcrypt.compare(
+      currentPassword,
+      user.password
+    );
+    if (!comparePasswords) {
+      return res
+        .status(StatusCodes.UNAUTHORIZED)
+        .json({ message: "the provided password is incorrect" });
+    }
+    //check if new password and confirm password fields match
+    if (newPassword !== confirmPassword) {
+      return res
+        .status(StatusCodes.BAD_REQUEST)
+        .json({ message: "New password and confirm password do not match" });
+    }
+
+    //hash the new password before storing in DB
+    const hashedNewPassword = await bcrypt.hash(newPassword, 12);
+
+    //update the user's new password
+    await User.findByIdAndUpdate(req.params.uId, {
+      password: hashedNewPassword,
+    });
+    return res.status(StatusCodes.OK).json({message:'Password updated successfully'})
+  } catch (error) {
+    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({message:error.toString()})
+  }
 };
 
 /**
