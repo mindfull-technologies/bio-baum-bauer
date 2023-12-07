@@ -279,7 +279,9 @@ export const changePassword = async (req, res) => {
     await User.findByIdAndUpdate(req.params.uId, {
       password: hashedNewPassword,
     });
-    return res.status(StatusCodes.OK).json({ message: 'Password updated successfully' })
+    //find the updated user in DB
+    const updatedUser = await User.findById(id)
+    return res.status(StatusCodes.OK).json({ message: 'Password updated successfully' ,user:updatedUser, new:true} )
   } catch (error) {
     return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: error.toString() })
   }
