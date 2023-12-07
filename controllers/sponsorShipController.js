@@ -1,20 +1,20 @@
 import { StatusCodes } from "http-status-codes";
 import Sponsorship from "../models/SponsorShip.js";
+import OrderItem from "../models/OrderItem.js";
 
 //create a new sponsorship
-export const createSponsor = async (req, res) => {
+export const createSponsorShip = async (req, res) => {
+  // console.log('reg', req.body)
   try {
-    const { price, certification, location, userId, treeId } = req.body;
-    const newSponsorShip = await Sponsor.create({
-      price,
-      certification,
-      location,
+    const { totalPrice, userId, payId } = req.body;
+    const newSponsorShip = await Sponsorship.create({
+      totalPrice: totalPrice,
       userId,
-      treeId,
+      paymentId: payId,
     });
     return res
-      .status(StatusCodes.OK)
-      .json({ message: "the new sponsorship is added", newSponsorShip });
+      .status(StatusCodes.CREATED)
+      .json({ newSponsorShip });
   } catch (error) {
     return res
       .status(StatusCodes.INTERNAL_SERVER_ERROR)
@@ -27,7 +27,7 @@ export const getAllSponsors = async (req, res) => {
   try {
     const sponsors = await Sponsorship.find()
       .populate("userId")
-      .populate("treeId");
+      .populate("orderId");
 
     return res.status(StatusCodes.OK).json(sponsors);
   } catch (error) {
@@ -62,30 +62,33 @@ export const deleteSponsor = async (req, res) => {
 
 //update sponsor's info
 
-export const updateSponsor = async (req, res) => {
+export const updateSponsorShip = async (req, res) => {
+
   try {
-    const { sponsorId } = req.params;
-    const { price, certification, location, userId, treeId } = req.body;
+    const { sId } = req.params;
+    const { cart } = req.body.trees;
+    const sponsorShip = await Sponsorship.findById(sId);
 
-    const updatedSponsor = await Sponsorship.findOneAndUpdate(
-      sponsorId,
-      {
-        price,
-        certification,
-        location,
-        userId,
-        treeId,
-      },
-      { new: true }
-    );
+    cart.forEach(async (element) => {
+      const newItem = OrderItem.create({
+        treeId: element.treeId,
+        treeName: element.treeName,
+        treeImage: element.treeImage,
+        treePrice: element.treePrice,
+        qty: element.qty
+      });
+      sponsorShip.items.push(newItem._id);
+      sponsorShip.save();
+    });
 
-    if (!updatedSponsor) {
+
+    if (!sponsorShip) {
       return res
         .status(StatusCodes.NOT_FOUND)
-        .json({ message: "Sponsor not found" });
+        .json({ message: "SponsorShip page not found" });
     }
 
-    return res.status(StatusCodes.OK).json(updatedSponsor);
+    return res.status(StatusCodes.OK).json({ sponsorShip, });
   } catch (error) {
     return res
       .status(StatusCodes.INTERNAL_SERVER_ERROR)

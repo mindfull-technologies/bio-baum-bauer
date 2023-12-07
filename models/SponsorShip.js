@@ -1,14 +1,17 @@
-import { Schema, model ,mongoose} from "mongoose";
+import { Schema, model, mongoose } from "mongoose";
 import User from "./User.js";
-import Tree from './Tree.js'
+import OrderItem from "./OrderItem.js";
+import Payment from "./Payment.js";
 
 
 const sponsorshipSchema = new Schema({
-    price: { type: Number, required: true },
-    certification: { type: String, required: true },
-    location: { type: String, required: true },
-    userId: { type: mongoose.Schema.Types.ObjectId, ref: User, required: true },
-    treeId: { type: mongoose.Schema.Types.ObjectId, ref: Tree, required: true },
+    totalPrice: { type: Schema.Types.Decimal128, required: true },
+    certification: { type: String, default: "" },
+    userId: { type: Schema.Types.ObjectId, ref: User, required: true },
+    items: [{
+        type: Schema.Types.ObjectId, ref: OrderItem
+    }],
+    paymentId: { type: Schema.Types.ObjectId, ref: Payment }
 
 }, { timestamps: true })
 
