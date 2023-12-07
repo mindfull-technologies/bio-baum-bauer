@@ -4,9 +4,11 @@ export const getAllNewsArticles = async (req, res) => {
   const limitValue = Number(req.query.limit);
   const skipValue = Number(req.query.skip)
   try {
-    const articles = await NewsArticle.find({}).populate('writer').limit(limitValue).skip(skipValue).lean();
-    const total= await NewsArticle.find({}).count()
-    res.json({articles,total});
+    const articles = await NewsArticle.find({}).sort({
+      dateCreated: -1
+    }).populate('writer').limit(limitValue).skip(skipValue).lean();
+    const total = await NewsArticle.find({}).count()
+    res.json({ articles, total });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

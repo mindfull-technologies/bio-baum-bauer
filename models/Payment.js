@@ -1,24 +1,31 @@
 import { Schema, model } from "mongoose";
+import User from "./User.js";
 
 const paymentSchema = new Schema({
-  user: {
-    type: Schema.Types.ObjectId,
-    ref: "User",
+  sessionId: {
+    type: String
   },
   amount: {
-    type: Number,
+    type: Schema.Types.Decimal128,
     required: true,
   },
   currency: {
     type: String,
-    default: "usd",
+    default: "EUR",
   },
   status: {
     type: String,
     default: "pending",
   },
+  taxRate: {
+    type: Schema.Types.Decimal128
+  },
+  userId: {
+    type: Schema.Types.ObjectId,
+    ref: User,
+  }
 });
 
-const Payment = model("Payment", paymentSchema);
+const Payment = model("payment", paymentSchema);
 
 export default Payment;
