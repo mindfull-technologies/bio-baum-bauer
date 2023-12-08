@@ -1,5 +1,5 @@
 import { StatusCodes } from "http-status-codes";
-import { verifyJwt } from "../helpers/jwt.js";
+import { verifyJWT } from "../helpers/jwt.js";
 
 export const authorize = (req, res, next) => {
     console.log(req.cookies.jwt);
@@ -10,7 +10,7 @@ export const authorize = (req, res, next) => {
     }
     //verify if token is valid
     try {
-        const isValid = verifyJwt(req.cookies.jwt);
+        const isValid = verifyJWT(req.cookies.jwt);
         console.log("isValid token", isValid);
     } catch (error) {
         return res.status(StatusCodes.UNAUTHORIZED).json({ errorCode: 401, message: 'Unauthorized' });

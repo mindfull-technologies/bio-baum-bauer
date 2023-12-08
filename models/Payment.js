@@ -13,10 +13,6 @@ const paymentSchema = new Schema({
     type: String,
     default: "EUR",
   },
-  status: {
-    type: String,
-    default: "pending",
-  },
   taxRate: {
     type: Schema.Types.Decimal128
   },
