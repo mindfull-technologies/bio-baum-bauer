@@ -1,5 +1,5 @@
 import { model, Schema } from "mongoose";
-import Sponsorship from "./SponsorShip.js";
+import SponsorShipPayment from "./SponsorShipPayment.js";
 
 const orderItemSchema = new Schema({
     treeId: { type: Schema.Types.ObjectId, required: true },
@@ -7,7 +7,7 @@ const orderItemSchema = new Schema({
     treeImage: { type: String },
     treePrice: { type: Schema.Types.Decimal128 },
     qty: { type: Number },
-    sponsorshipId: { type: Schema.Types.ObjectId, ref: "Sponsorship", required: true }
+    sponsorshipId: { type: Schema.Types.ObjectId, ref: SponsorShipPayment, required: true }
 });
 
 const OrderItem = model('orderItem', orderItemSchema);

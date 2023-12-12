@@ -1,25 +1,9 @@
 import { StatusCodes } from "http-status-codes";
-import Sponsorship from "../models/SponsorShip.js";
 import OrderItem from "../models/OrderItem.js";
 
 //create a new sponsorship
 export const createSponsorShip = async (req, res) => {
-  // console.log('reg', req.body)
-  try {
-    const { totalPrice, userId, payId } = req.body;
-    const newSponsorShip = await Sponsorship.create({
-      totalPrice: totalPrice,
-      userId,
-      paymentId: payId,
-    });
-    return res
-      .status(StatusCodes.CREATED)
-      .json({ newSponsorShip });
-  } catch (error) {
-    return res
-      .status(StatusCodes.INTERNAL_SERVER_ERROR)
-      .json({ message: error.toString() });
-  }
+  
 };
 
 //get the list of sponsors
@@ -42,7 +26,7 @@ export const deleteSponsor = async (req, res) => {
   try {
     const sponsorId = req.params.id;
 
-    const deletedSponsor = await Sponsorship.findByIdAndDelete(sponsorId);
+    // const deletedSponsor = await Sponsorship.findByIdAndDelete(sponsorId);
 
     if (!deletedSponsor) {
       return res
@@ -67,7 +51,7 @@ export const updateSponsorShip = async (req, res) => {
   try {
     const { sId } = req.params;
     const { cart } = req.body.trees;
-    const sponsorShip = await Sponsorship.findById(sId);
+    // const sponsorShip = await Sponsorship.findById(sId);
 
     cart.forEach(async (element) => {
       const newItem = OrderItem.create({
