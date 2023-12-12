@@ -242,50 +242,49 @@ export const login = async (req, res) => {
  * @param {*} res
  */
 export const changePassword = async (req, res) => {
-  const { currentPassword, newPassword, confirmNewPassword } = req.body;
-  const id = req.params.uId;
-
-  try {
-    //check if the user authenticated
-    const user = await User.findById(id);
-   
-    if (!user) {
-      return res
-        .status(StatusCodes.NOT_FOUND)
-        .json({ message: `user with the ID ${req.params.uId} not found` });
+    const { currentPassword, newPassword, confirmNewPassword } = req.body;
+    const id = req.params.uId;
+  
+    try {
+      //check if the user authenticated
+      const user = await User.findById(id);
+     
+      if (!user) {
+        return res
+          .status(StatusCodes.NOT_FOUND)
+          .json({ message: `user with the ID ${req.params.uId} not found` });
+      }
+      // check if the current password matches the password in the database
+      const comparePasswords = await bcrypt.compare(
+        currentPassword,
+        user.password
+      );
+  
+      if (!comparePasswords) {
+        return res
+          .status(StatusCodes.UNAUTHORIZED)
+          .json({ message: "the current password is incorrect" });
+      }
+      //check if new password and confirm password fields match
+      /* if (newPassword !== confirmNewPassword) {
+        return res
+          .status(StatusCodes.BAD_REQUEST)
+          .json({ message: "The New Password and Confirm Password Fields do not match" });
+      } */
+      
+      //hash the new password before storing in DB
+      const hashedNewPassword = await bcrypt.hash(newPassword, 12);
+      
+      //update the user's new password
+      await User.findByIdAndUpdate(id, {
+        password: hashedNewPassword,
+      },{new:true});
+  
+      return res.status(StatusCodes.OK).json({ message: 'Password updated successfully'})
+    } catch (error) {
+      return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: error.toString() })
     }
-    // check if the current password matches the password in the database
-    const comparePasswords = await bcrypt.compare(
-      currentPassword,
-      user.password
-    );
-
-    if (!comparePasswords) {
-      return res
-        .status(StatusCodes.UNAUTHORIZED)
-        .json({ message: "the provided password is incorrect" });
-    }
-    //check if new password and confirm password fields match
-    if (newPassword !== confirmNewPassword) {
-      return res
-        .status(StatusCodes.BAD_REQUEST)
-        .json({ message: "New password and confirm password do not match" });
-    }
-    
-    //hash the new password before storing in DB
-    const hashedNewPassword = await bcrypt.hash(newPassword, 12);
-    
-    //update the user's new password
-    await User.findByIdAndUpdate(req.params.uId, {
-      password: hashedNewPassword,
-    });
-    //find the updated user in DB
-    const updatedUser = await User.findById(id)
-    return res.status(StatusCodes.OK).json({ message: 'Password updated successfully' ,user:updatedUser, new:true} )
-  } catch (error) {
-    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: error.toString() })
-  }
-};
+  };
 
 /**
  * for logging out the user
