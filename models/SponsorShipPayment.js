@@ -1,10 +1,11 @@
 import { Schema, model } from "mongoose";
 import User from "./User.js";
 
-const paymentSchema = new Schema({
+const SponsorShipPaymentSchema = new Schema({
   sessionId: {
-    type: String
+    type: String,
   },
+  certification: { type: String, default: "" },
   amount: {
     type: Schema.Types.Decimal128,
     required: true,
@@ -22,6 +23,6 @@ const paymentSchema = new Schema({
   }
 });
 
-const Payment = model("payment", paymentSchema);
+const SponsorShipPayment = model("sponsorShipsPayment", SponsorShipPaymentSchema);
 
-export default Payment;
+export default SponsorShipPayment;
