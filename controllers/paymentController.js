@@ -4,6 +4,44 @@ import OrderItem from "../models/OrderItem.js";
 import { StatusCodes } from "http-status-codes";
 import { stripeInstance } from "../utils/stripeInstance.js";
 
+//get the list of sponsors
+export const getAllSponsorships = async (req, res) => {
+    const uId = req.params.uId;
+    try {
+        const allSponsorships = await SponsorShipPayment.find({ userId: uId })
+        return res.status(StatusCodes.OK).json(allSponsorships);
+    } catch (error) {
+        return res
+            .status(StatusCodes.INTERNAL_SERVER_ERROR)
+            .json({ message: error.toString() });
+    }
+};
+
+export const getSponsorShipById = async (req, res) => {
+    const sId = req.params.sId;
+    try {
+        const sponsorship = await SponsorShipPayment.findById(sId);
+        const patron = await Patron.findOne({ sponsorshipId: sId });
+        const items = await OrderItem.find({ sponsorshipId: sId })
+        return res.status(StatusCodes.OK).json({ sponsorship, patron, items });
+    } catch (error) {
+        return res
+            .status(StatusCodes.INTERNAL_SERVER_ERROR)
+            .json({ message: error.toString() });
+    }
+}
+
+export const sponsorShipCounts = async (req, res) => {
+    const uId = req.params.uId;
+    try {
+        const count = await SponsorShipPayment.find({ userId: uId }).count()
+        return res.status(StatusCodes.OK).json(count);
+    } catch (error) {
+        return res
+            .status(StatusCodes.INTERNAL_SERVER_ERROR)
+            .json({ message: error.toString() });
+    }
+}
 
 export const createStripePayment = async (req, res) => {
     const { cart } = req.body;
@@ -44,9 +82,8 @@ export const createStripePayment = async (req, res) => {
 }
 
 export const addPaymentAndSponsorShip = async (req, res) => {
-    console.log("Data: ", req.body);
+    const cNo = `BBB-${Date.now()}`;
     const session = await stripeInstance.checkout.sessions.retrieve(req.body.sessionId);
-    
     const sponsor = await SponsorShipPayment.findOne({ sessionId: req.body.sessionId });
     if (sponsor) {
         return res.status(StatusCodes.OK).json({ message: "id is used" });
@@ -56,6 +93,7 @@ export const addPaymentAndSponsorShip = async (req, res) => {
             const { sessionId, totalGrundPay, userId, taxRate, patron, orders } = req.body;
 
             const newSponsorship = await SponsorShipPayment.create({
+                certificationNo: cNo,
                 sessionId: sessionId,
                 amount: totalGrundPay,
                 taxRate: taxRate,
