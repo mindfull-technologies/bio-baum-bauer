@@ -2,6 +2,9 @@ import { Schema, model } from "mongoose";
 import User from "./User.js";
 
 const SponsorShipPaymentSchema = new Schema({
+  certificationNo: {
+    type: String
+  },
   sessionId: {
     type: String,
   },
@@ -21,7 +24,7 @@ const SponsorShipPaymentSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: User,
   }
-});
+}, { timestamps: true });
 
 const SponsorShipPayment = model("sponsorShipsPayment", SponsorShipPaymentSchema);
 
