@@ -6,7 +6,7 @@ const SponsorShipPaymentSchema = new Schema({
     type: String
   },
   sessionId: {
-    type: String,
+    type: String, unique: true
   },
   certification: { type: String, default: "" },
   amount: {
