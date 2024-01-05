@@ -1,9 +1,11 @@
+import dotenv from "dotenv";
+dotenv.config();
 const allowCors = (app) => {
-    const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:3000';
+    const frontendUrl = process.env.FRONTEND_URL || 'https://bio-baum-bauer.onrender.com/';
     const adminPanelUrl = process.env.ADMIN_PANEL_URL || 'http://localhost:3001';
 
     app.use((req, res, next) => {
-        const allowedOrigins = [ frontendUrl, adminPanelUrl ];
+        const allowedOrigins = [frontendUrl, adminPanelUrl];
         const origin = req.headers.origin;
 
         if (allowedOrigins.includes(origin)) {
