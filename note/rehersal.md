@@ -20,7 +20,7 @@ Milica:
 
 Jamal:
 
-1. payment process with cloudinary account and stripe dashboard, mongodb account
+1. payment process until sponsorship list
 2. test responsiveness, test Gallery and insert a contact info
 
 Simon:

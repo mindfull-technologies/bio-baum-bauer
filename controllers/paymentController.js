@@ -68,10 +68,10 @@ export const createStripePayment = async (req, res) => {
     try {
         const paymentSession = await stripeInstance.checkout.sessions.create({
             line_items: trees,
-            payment_method_types: ["card"],
+            payment_method_types: ["card", "klarna"],
             mode: "payment",
-            success_url: "http://localhost:3000/success",
-            cancel_url: "http://localhost:3000/cancel",
+            success_url: "https://bio-baum-bauer.onrender.com/success",
+            cancel_url: "https://bio-baum-bauer.onrender.com/cancel",
         });
         return res.status(StatusCodes.CREATED).json({ id: paymentSession.id })
     } catch (error) {
