@@ -7,6 +7,7 @@ import allowCors from "./middlewares/cors.js";
 import allRoutes from "./routes/allRoutes.js";
 import db from "./db.js";
 import fs from "fs";
+import path from "path";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 const __filename = fileURLToPath(import.meta.url);
