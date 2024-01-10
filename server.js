@@ -7,11 +7,6 @@ import allowCors from "./middlewares/cors.js";
 import allRoutes from "./routes/allRoutes.js";
 import db from "./db.js";
 import fs from "fs";
-import path from "path";
-import { fileURLToPath } from "url";
-import { dirname } from "path";
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
 
 dotenv.config();
 const app = express();
@@ -36,11 +31,6 @@ app.get("/", (_, res) => {
   res.send("<h1>Backend is running!!!</h1>");
 });
 app.use("/api", allRoutes);
-
-app.use(express.static(path.join(__dirname, "client/dist")));
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "/client/dist/index.html"));
-});
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
