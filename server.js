@@ -3,10 +3,12 @@ import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import morgan from "morgan";
 import helmet from "helmet";
+import path from "path";
 import allowCors from "./middlewares/cors.js";
 import allRoutes from "./routes/allRoutes.js";
 import db from "./db.js";
 import fs from "fs";
+
 
 dotenv.config();
 const app = express();
@@ -14,7 +16,7 @@ const app = express();
 const port = process.env.PORT || 4000;
 app.use(helmet()); //provide basic securites
 allowCors(app);
-app.use(express.static("public"));
+app.use(express.static(path.join(process.env.FRONTEND_URL)));
 app.use(express.json());
 app.use(cookieParser()); // parse cookies
 // applying logging
@@ -31,7 +33,9 @@ app.get("/", (_, res) => {
   res.send("<h1>Backend is running!!!</h1>");
 });
 app.use("/api", allRoutes);
-
+app.get('*', function (req, res) {
+  res.sendFile(path.join(process.env.FRONTEND_URL, 'index.html'));
+});
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
   db.connect();
