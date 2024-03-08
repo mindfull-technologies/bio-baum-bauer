@@ -30,7 +30,8 @@ const treeSchema = new Schema({
         enum: ['Available', 'Sold Out', 'Backorder'],
         default: 'Available'
     },
-    tags: [String]
+    tags: [String],
+    isFeatured: { type: Boolean, default: false }
 }, { timestamps: true });
 
 const Tree = model('Tree', treeSchema);

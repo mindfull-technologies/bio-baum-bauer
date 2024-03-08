@@ -2,20 +2,20 @@ import Tree from "../models/Tree.js";
 import { StatusCodes } from "http-status-codes";
 
 export const getAllTrees = async (req, res) => {
-  try {  const limitValue = Number(req.query.limit);
+  try {
+    const limitValue = Number(req.query.limit);
     const skipValue = Number(req.query.skip)
-    
+
     const trees = await Tree.find({}).limit(limitValue).skip(skipValue).lean();
-    const total= await Tree.find({}).count()
+    const total = await Tree.find({}).count()
 
 
-    res.status(StatusCodes.OK).json({trees,total});
+    res.status(StatusCodes.OK).json({ trees, total });
 
   } catch (err) {
     res.status(500).send(err.message);
   }
 };
-
 export const getTreeById = async (req, res) => {
   try {
     const tree = await Tree.findById(req.params.id);
@@ -29,15 +29,15 @@ export const getTreeById = async (req, res) => {
 };
 export const searchByName = async (req, res) => {
   try {
-      const searchParam=req.params.searchParam
-      const trees = await Tree.find({name:searchParam});
-      console.log("Search Tree Back:",trees)
-      res.status(StatusCodes.OK).json(trees);
+    const searchParam = req.params.searchParam
+    const trees = await Tree.find({ name: searchParam });
+    console.log("Search Tree Back:", trees)
+    res.status(StatusCodes.OK).json(trees);
   } catch (err) {
     res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error: 'Internal Server Error' });
-      
+
   }
-}; 
+};
 export const addTree = async (req, res) => {
   const { category, treeName, treePrice, status, availableQuantity, description } = req.body;
   const treeImage = req.file.path;
@@ -58,7 +58,6 @@ export const addTree = async (req, res) => {
     res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: err.message });
   }
 };
-
 export const updateTree = async (req, res) => {
   try {
     const updatedTree = await Tree.findByIdAndUpdate(req.params._id, req.body, {
@@ -72,7 +71,6 @@ export const updateTree = async (req, res) => {
     res.status(500).send(err.message);
   }
 };
-
 export const deleteTree = async (req, res) => {
   try {
     const deletedTree = await Tree.findByIdAndDelete(req.params.id);
@@ -84,7 +82,6 @@ export const deleteTree = async (req, res) => {
     res.status(500).send(err.message);
   }
 };
-
 export const getTreesInCart = async (req, res) => {
   const { ids } = req.body;
 
@@ -97,3 +94,11 @@ export const getTreesInCart = async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 };
+export const getFeaturedTrees = async (req, res) => {
+  try {
+    const featuredTrees = await Tree.find({ isFeatured: true }).limit(4).lean();
+    res.status(StatusCodes.OK).json({ featuredTrees });
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+}
