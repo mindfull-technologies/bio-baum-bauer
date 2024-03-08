@@ -31,7 +31,7 @@ const treeSchema = new Schema({
         default: 'Available'
     },
     tags: [String],
-    isFeatured: { type: Boolean, default: 0 }
+    isFeatured: { type: Boolean, default: false }
 }, { timestamps: true });
 
 const Tree = model('Tree', treeSchema);
