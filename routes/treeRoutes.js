@@ -30,5 +30,6 @@ router.post("/create",
 router.patch("/update/:_id", treeController.updateTree);
 router.delete("/:id", treeController.deleteTree);
 router.post("/cart", treeController.getTreesInCart);
+router.get("/featured/all", treeController.getFeaturedTrees)
 
 export default router;
