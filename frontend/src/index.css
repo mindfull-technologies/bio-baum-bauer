@@ -1,0 +1,364 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+Global variables for colors
+*/
+:root {
+  --bg-header-footer: #dfdacb;
+  --lighter-primary: #f8f7f4;
+  --darker-primary: #b2aea2;
+  --bg-page-color: #ededec;
+  --white-color: #fcfdfd;
+  --font-family-color: #82817e;
+  --secondary-color: #5a6448;
+  --darker-secondary: #888f7a;
+  --light-secondary: #bbd4a7;
+  --lighter-secondary: #cbd2c3;
+  --darkgreen-color: #5a6448;
+  --red-color: #ff6961;
+  --light-bg: #f8f5f4;
+  --light-gray: #ededed;
+  --dark-gray: #c3c0c0;
+}
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  --z-index-v-1: -1; /* used in Hero.css, .cart-page.bg*/
+  --z-index-v-2: 1; /* used in Hero.css */ /* used in FAQ.css */
+  --z-index-v-3: 2;
+  --z-index-v-4: 3;
+  --z-index-v-5: 4; /* cart */
+  --z-index-v-6: 5; /* used in Arrow Up */
+  --z-index-v-7: 6;
+  --z-index-v-8: 7;
+  --z-index-v-9: 8;
+  --z-index-v-10: 9; /* used in desktop-nav & mobile-nav class */
+  --z-index-v-11: 10; /* used in mobile-menu-bg */
+  --z-index-v-12: 11;
+}
+body,
+html {
+  font-family: url("../src/assets/Fonts/Chicle/Chicle-Regular.ttf");
+  font-family: url("../src/assets/Fonts/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf");
+  min-height: 100vh;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  line-height: 1.5;
+}
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+/* 
+Heading general styles- Start
+*/
+
+/* 
+Heading general styles- End
+*/
+
+.page {
+  min-height: calc(100vh - (12rem + 10rem));
+}
+
+/*  */
+.bm-overlay {
+  display: none;
+}
+
+/*  */
+.scale-origin-left {
+  transform-origin: left center;
+}
+
+.scale-0 {
+  transform: scale(0);
+}
+
+.scale-100 {
+  transform: scale(1);
+}
+
+/* Overwrite the default "flowbite-react" package Styles */
+.custom-button-style {
+  background-color: var(--darker-secondary) !important;
+  color: var(--white-color) !important;
+  border: none !important;
+  border-radius: 10px !important;
+  padding: 4px 16px !important;
+  transition: all 0.4s linear;
+  outline: none;
+  box-shadow: none !important;
+}
+
+.custom-button-style:hover {
+  background-color: var(--lighter-secondary) !important;
+  color: var(--secondary-color) !important;
+  border: none !important;
+}
+
+.custom-button-style:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Target the input fields during autofill */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+#password:-webkit-autofill,
+#password:-webkit-autofill:hover,
+#password:-webkit-autofill:focus,
+#email:-webkit-autofill,
+#email:-webkit-autofill:hover,
+#email:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #f4f5f3 inset !important;
+  box-shadow: 0 0 0 1000px #f4f5f3 inset !important;
+  -webkit-text-fill-color: var(--font-family-color) !important;
+  caret-color: var(--font-family-color) !important;
+}
+
+/* Override the background color during autofill for Edge */
+input:-ms-input-placeholder {
+  background-color: #f4f5f3 !important;
+}
+
+/* Override the background color during autofill for Firefox */
+@-moz-document url-prefix() {
+  #password,
+  #email,
+  input {
+    background-color: #f4f5f3 !important;
+    color: var(--font-family-color) !important;
+  }
+}
+
+/* overwrite flowbite-react styles */
+input:focus,
+input:active {
+  outline: none !important;
+  border: 2px solid var(--secondary-color) !important;
+  box-shadow: none !important;
+}
+
+/* Hide Label values */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/*  */
+@keyframes slideInDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slideInDown {
+  animation: slideInDown 0.5s ease-in-out;
+}
+
+/* AuthNavbar Animation */
+.navIcon .ani {
+  transition: 0.5s ease-in-out;
+}
+
+.navIcon:hover .ani {
+  transform: rotate(360deg);
+}
+
+/* placeholder text color */
+input::placeholder {
+  color: var(--font-family-color);
+}
+.input {
+  background-color: white;
+  border-radius: 10px;
+}
+/* tree page animation 
+@keyframes moveText {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.infinite-animation {
+  animation: moveText 10s linear infinite;
+  white-space: nowrap;
+  overflow: hidden;
+}
+*/
+/* sweet alert custom button */
+.btn-custom-class {
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+  padding: 0.5rem 1rem;
+  border: 3px solid var(--darker-secondary);
+  border-radius: 10px;
+  transition: background-color 0.4s linear, border 0.4s linear,
+    color 0.4s linear;
+}
+
+.btn-custom-class:hover {
+  background-color: var(--lighter-secondary);
+  border: 3px solid var(--darker-secondary);
+  color: var(--secondary-color);
+}
+
+.title-class {
+  font-family: "Chicle", "serif";
+  color: var(--secondary-color);
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  font-size: 2rem;
+}
+
+.btn-deny-class {
+  background-color: var(--darker-primary);
+  border: 3px solid var(--bg-header-footer);
+  color: var(--white-color);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  transition: background-color 0.4s linear, border 0.4s linear,
+    color 0.4s linear;
+  margin-right: 0.6rem;
+  margin-left: 0.6rem;
+}
+
+.btn-deny-class:hover {
+  background-color: var(--lighter-primary);
+  border: 3px solid var(--darker-primary);
+  color: var(--secondary-color);
+}
+
+.btn-cancel-class {
+  background-color: var(--red-color);
+  color: var(--white-color);
+  border: 3px solid #ffbaba;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  transition: background-color 0.4s linear, border 0.4s linear,
+    color 0.4s linear;
+}
+
+.btn-cancel-class:hover {
+  background-color: var(--light-bg);
+  border: 3px solid var(--red-color);
+  color: var(--red-color);
+}
+.custom-swal-container .swal2-actions {
+  gap: 10px; /* Adjust the gap as needed */
+}
+.custom-confirm-button-class {
+  background-color: var(--secondary-color);
+}
+
+/* arrow Up - Footer */
+.arrowUp {
+  width: 60px;
+  height: 60px;
+  background-color: var(--bg-header-footer);
+  border-radius: 100%;
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px var(--secondary-color);
+  z-index: var(--z-index-v-6);
+  overflow: hidden;
+  transition: all 0.5s linear;
+}
+
+.arrowUp:hover {
+  transform: scale(1.1);
+}
+
+.arrowUp:hover .arrow {
+  opacity: 0;
+}
+
+.iconArrowUp {
+  color: var(--fontColorLight);
+}
+
+.arrow {
+  font-size: 3rem;
+  color: var(--darkgreen-color);
+}
+
+.logoImage {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.4s linear;
+  opacity: 0;
+}
+
+.arrowUp:hover .logoImage {
+  opacity: 1;
+}
+
+/* @media (max-width: 1024px) {
+  .arrowUp {
+    width: 60px;
+    height: 60px;
+    right: 0.5rem;
+    bottom: 0.5rem;
+  }
+
+  .arrowUp .logoImage {
+    width: 60px;
+    height: 60px;
+  }
+} */
+
+/* z-index stack */
+.dashboard-nav-index {
+  z-index: var(--z-index-v-2);
+}
+.desktop-nav {
+  z-index: var(--z-index-v-10);
+}
+.mobile-nav {
+  z-index: var(--z-index-v-10);
+}
+.mobile-menu-bg {
+  z-index: var(--z-index-v-11);
+}
+.auth-nav {
+  z-index: var(--z-index-v-12);
+}
+.cart-page-container {
+  z-index: var(--z-index-v-5);
+}
+.cart-page-bg {
+  z-index: var(--z-index-v-1);
+}
