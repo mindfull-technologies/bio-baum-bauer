@@ -1,0 +1,54 @@
+.mImgDiv:hover .missionImage {
+  transform: scale(1.2);
+}
+.mImgDiv:hover .overlay {
+  opacity: 1;
+}
+
+.mission-more:hover:before {
+  width: 44px;
+}
+.mission-more:before {
+  display: inline-block;
+  content: "";
+  width: 10px;
+  height: 1px;
+  background-color: #456148;
+  margin-bottom: 4px;
+  margin-right: 8px;
+  -webkit-transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
+}
+
+/* About CSS */
+
+.aboutSolawiImgDiv:hover .aboutSolawiImg {
+  transform: scale(1.2);
+}
+.aboutSolawiImgDiv:hover .overlay {
+  opacity: 1;
+}
+
+/* Join to other pages */
+.connections {
+  background: url(../images/home-hero-bg-image1.jpg) center no-repeat fixed;
+  background-size: cover;
+}
+.connect-detail {
+  background-color: rgba(72, 72, 72, 0.5);
+}
+
+/* Feathered Trees */
+.linkContent {
+  text-decoration: none !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.linkContent:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+.price {
+  color: #006400;
+  background-color: rgba(99, 186, 59, 0.321);
+}
