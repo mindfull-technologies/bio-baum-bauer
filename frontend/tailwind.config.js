@@ -25,14 +25,15 @@ export default {
         'main-font': ['Chicle', 'serif'],
         'general-font': ['Open Sans', 'sans-serif'],
       },
-      // Extend screens for custom media query
       screens: {
-        xs: { max: '350px' },
+        xs: '350px',
+        sm: '640px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
+        '2xl': '1536px',
       },
     },
   },
-  plugins: [
-    // eslint-disable-next-line no-undef
-    require('flowbite/plugin'),
-  ],
+  plugins: [require('flowbite/plugin')],
 };
