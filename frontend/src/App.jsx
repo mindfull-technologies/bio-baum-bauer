@@ -1,17 +1,11 @@
-import { useEffect } from 'react';
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  useLocation,
-} from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { CartContextProvider } from './store/CartContext';
 import { AuthProvider } from './contexts/AuthContext';
 
 // Importing our pages
 import Home from '@/pages/Home';
 import Trees from './pages/Trees';
-import Index from './pages/Index';
+import Layout from '@/layout';
 import News from './pages/News';
 import About from './pages/About';
 import Gallery from './pages/Gallery';
@@ -49,9 +43,9 @@ function App() {
       <AuthProvider>
         <CartContextProvider>
           <PatronProvider>
-            <Router>
+            <BrowserRouter>
               <Routes>
-                <Route path='/' element={<Index />}>
+                <Route path='/' element={<Layout />}>
                   <Route index element={<Home />} />
                   <Route path='/trees' element={<Trees />} />
                   <Route path='/trees/:id' element={<SingleTreePage />} />
@@ -160,7 +154,7 @@ function App() {
                   <Route path='*' element={<NotFound />} />
                 </Route>
               </Routes>
-            </Router>
+            </BrowserRouter>
           </PatronProvider>
         </CartContextProvider>
       </AuthProvider>

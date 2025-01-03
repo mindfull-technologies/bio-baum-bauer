@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
-import { Outlet } from "react-router-dom";
-import DesktopNavbar from "../components/DesktopNavbar";
-import MobileNavbar from "../components/MobileNavbar";
-import Footer from "../components/Footer";
+import { useState, useEffect } from 'react';
+import { Outlet } from 'react-router-dom';
+import DesktopNavbar from '@/components/DesktopNavbar';
+import MobileNavbar from '@/components/MobileNavbar';
+import Footer from '@/components/Footer';
 
-const Index = () => {
+export default function Layout() {
   const [isMobileScreen, setIsMobileScreen] = useState(window.innerWidth < 768); // 768px is a common breakpoint for mobile screens
   const [isNavbarFixed, setIsNavbarFixed] = useState(false);
 
@@ -14,14 +14,14 @@ const Index = () => {
     };
 
     // Add event listener
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
 
     // Remove event listener on cleanup
-    return () => window.removeEventListener("resize", handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   const mainStyle = {
-    paddingTop: isNavbarFixed ? "70px" : "0",
+    paddingTop: isNavbarFixed ? '70px' : '0',
   };
 
   return (
@@ -36,7 +36,7 @@ const Index = () => {
           />
         )}
       </header>
-      <main className="page" style={mainStyle}>
+      <main className='page' style={mainStyle}>
         <Outlet />
       </main>
       <footer>
@@ -44,6 +44,4 @@ const Index = () => {
       </footer>
     </div>
   );
-};
-
-export default Index;
+}
