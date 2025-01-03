@@ -101,7 +101,7 @@ const Pagination = ({
                   {pageNumbers.map((number, index) => (
                     <li
                       key={index}
-                      className="hover:bg-lighter-primary active:bg-light-green"
+                      className="hover:bg-lighter-primary active:bg-secondary"
                     >
                       {" "}
                       <a

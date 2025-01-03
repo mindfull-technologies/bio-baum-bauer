@@ -111,7 +111,7 @@ const Checkout = () => {
                 {/* User Details */}
                 <div className='flex items-center justify-start gap-2 mb-4'>
                   <RiUserReceived2Fill size='1.9rem' />
-                  <h3 className='text-3xl text-primary font-main-font tracking-wide border-b-2 border-light-green inline-block'>
+                  <h3 className='text-3xl text-primary font-main-font tracking-wide border-b-2 border-secondary inline-block'>
                     Patron Details
                   </h3>
                 </div>
@@ -139,7 +139,7 @@ const Checkout = () => {
                     }
                     style={{
                       backgroundColor: 'var(--bg-white-color)',
-                      borderColor: 'var(--light-green)',
+                      borderColor: 'var(--secondary)',
                       outlineColor: 'var(--primary)',
                       padding: '1.15rem',
                       color: 'var(--font-family-color)',
@@ -168,7 +168,7 @@ const Checkout = () => {
                     }
                     style={{
                       backgroundColor: 'var(--bg-white-color)',
-                      borderColor: 'var(--light-green)',
+                      borderColor: 'var(--secondary)',
                       outlineColor: 'var(--primary)',
                       padding: '1.15rem',
                       color: 'var(--font-family-color)',
@@ -195,7 +195,7 @@ const Checkout = () => {
                     }
                     style={{
                       backgroundColor: 'var(--bg-white-color)',
-                      borderColor: 'var(--light-green)',
+                      borderColor: 'var(--secondary)',
                       outlineColor: 'var(--primary)',
                       padding: '1.15rem',
                       color: 'var(--font-family-color)',
@@ -207,7 +207,7 @@ const Checkout = () => {
                 {/* Delivery Address Info */}
                 <div className='flex items-center mb-4 mt-6 gap-2'>
                   <ImAddressBook size='1.7rem' />
-                  <h3 className='text-3xl text-primary font-main-font tracking-wide border-b-2 border-light-green inline-block'>
+                  <h3 className='text-3xl text-primary font-main-font tracking-wide border-b-2 border-secondary inline-block'>
                     Patron Address
                   </h3>
                 </div>
@@ -235,7 +235,7 @@ const Checkout = () => {
                     }
                     style={{
                       backgroundColor: 'var(--bg-white-color)',
-                      borderColor: 'var(--light-green)',
+                      borderColor: 'var(--secondary)',
                       outlineColor: 'var(--primary)',
                       padding: '1.15rem',
                       color: 'var(--font-family-color)',
@@ -264,7 +264,7 @@ const Checkout = () => {
                     }
                     style={{
                       backgroundColor: 'var(--bg-white-color)',
-                      borderColor: 'var(--light-green)',
+                      borderColor: 'var(--secondary)',
                       outlineColor: 'var(--primary)',
                       padding: '1.15rem',
                       color: 'var(--font-family-color)',
@@ -292,7 +292,7 @@ const Checkout = () => {
                     }
                     style={{
                       backgroundColor: 'var(--bg-white-color)',
-                      borderColor: 'var(--light-green)',
+                      borderColor: 'var(--secondary)',
                       outlineColor: 'var(--primary)',
                       padding: '1.15rem',
                       color: 'var(--font-family-color)',
@@ -317,7 +317,7 @@ const Checkout = () => {
                     }
                     style={{
                       backgroundColor: 'var(--bg-white-color)',
-                      borderColor: 'var(--light-green)',
+                      borderColor: 'var(--secondary)',
                       outlineColor: 'var(--primary)',
                       padding: '1.15rem',
                       color: 'var(--font-family-color)',
@@ -344,7 +344,7 @@ const Checkout = () => {
                     }
                     style={{
                       backgroundColor: 'var(--bg-white-color)',
-                      borderColor: 'var(--light-green)',
+                      borderColor: 'var(--secondary)',
                       outlineColor: 'var(--primary)',
                       padding: '1.15rem',
                       color: 'var(--font-family-color)',
@@ -370,7 +370,7 @@ const Checkout = () => {
                     }
                     style={{
                       backgroundColor: 'var(--bg-white-color)',
-                      borderColor: 'var(--light-green)',
+                      borderColor: 'var(--secondary)',
                       outlineColor: 'var(--primary)',
                       padding: '1.15rem',
                       color: 'var(--font-family-color)',
@@ -391,7 +391,7 @@ const Checkout = () => {
                     placeholder='Country *'
                     style={{
                       backgroundColor: 'var(--bg-white-color)',
-                      borderColor: 'var(--light-green)',
+                      borderColor: 'var(--secondary)',
                       outlineColor: 'var(--primary)',
                       padding: '1.15rem',
                       color: 'var(--font-family-color)',
@@ -416,7 +416,7 @@ const Checkout = () => {
               />
 
               {/* Horizontal Line */}
-              <hr className='w-[70%] mx-auto border-t-2 border-light-green my-1' />
+              <hr className='w-[70%] mx-auto border-t-2 border-secondary my-1' />
 
               {/* Complete Sponsorship */}
               <Link
@@ -431,7 +431,7 @@ const Checkout = () => {
               {/* Back to Cart */}
               <Link
                 to='/cart'
-                className='flex items-center justify-center gap-2 w-full px-4 py-2 bg-light-green border-2 text-font-family-color rounded-md hover:bg-lighter-primary transition duration-4000 ease-linear sm:mt-0'
+                className='flex items-center justify-center gap-2 w-full px-4 py-2 bg-secondary border-2 text-font-family-color rounded-md hover:bg-lighter-primary transition duration-4000 ease-linear sm:mt-0'
                 aria-label='Sponsor Tree page'
               >
                 <RiArrowGoBackLine />

@@ -126,7 +126,7 @@ const Contact = () => {
                 alt='Tree Icon'
                 className='w-[40px] h-[40px] mr-2'
               />{' '}
-              <h3 className='text-3xl text-primary font-main-font tracking-wide border-b-2 border-light-green inline-block'>
+              <h3 className='text-3xl text-primary font-main-font tracking-wide border-b-2 border-secondary inline-block'>
                 GET IN TOUCH
               </h3>
             </div>
@@ -236,7 +236,7 @@ const Contact = () => {
                   shadow
                   className='input'
                   style={{
-                    borderColor: 'var(--light-green)',
+                    borderColor: 'var(--secondary)',
                     outlineColor: 'var(--primary)',
                     padding: '1.15rem',
                     color: 'var(--font-family-color)',
@@ -272,7 +272,7 @@ const Contact = () => {
                   shadow
                   className='input'
                   style={{
-                    borderColor: 'var(--light-green)',
+                    borderColor: 'var(--secondary)',
                     outlineColor: 'var(--primary)',
                     padding: '1.15rem',
                     color: 'var(--font-family-color)',
@@ -300,7 +300,7 @@ const Contact = () => {
                   shadow
                   className='input'
                   style={{
-                    borderColor: 'var(--light-green)',
+                    borderColor: 'var(--secondary)',
                     outlineColor: 'var(--primary)',
                     padding: '1.15rem',
                     color: 'var(--font-family-color)',
@@ -326,7 +326,7 @@ const Contact = () => {
                   ref={messageRef}
                   className='input focus:border-transparent dark:focus:border-transparent focus:ring-transparent dark:focus:ring-transparent !important'
                   style={{
-                    borderColor: 'var(--light-green)',
+                    borderColor: 'var(--secondary)',
                     outlineColor: 'var(--primary)',
                     padding: '1.15rem',
                     color: 'var(--font-family-color)',

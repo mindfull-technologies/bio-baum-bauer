@@ -18,7 +18,7 @@ const Feedback = () => {
             alt='Tree Icon'
             className='w-[40px] h-[40px] mr-2'
           />
-          <h3 className='text-3xl text-primary font-main-font tracking-wide border-b-2 border-light-green inline-block'>
+          <h3 className='text-3xl text-primary font-main-font tracking-wide border-b-2 border-secondary inline-block'>
             Share Your Tree Sponsorship Story!
           </h3>
         </div>
@@ -50,7 +50,7 @@ const Feedback = () => {
             alt='Tree Icon'
             className='w-[40px] h-[40px] mr-2'
           />
-          <h3 className='text-3xl text-primary font-main-font tracking-wide border-b-2 border-light-green inline-block'>
+          <h3 className='text-3xl text-primary font-main-font tracking-wide border-b-2 border-secondary inline-block'>
             Leave a Feedback
           </h3>
         </div>
@@ -68,7 +68,7 @@ const Feedback = () => {
               placeholder='Subject *'
               style={{
                 backgroundColor: 'var(--bg-white-color)',
-                borderColor: 'var(--light-green)',
+                borderColor: 'var(--secondary)',
                 outlineColor: 'var(--primary)',
                 padding: '1.15rem',
                 color: 'var(--font-family-color)',
@@ -90,7 +90,7 @@ const Feedback = () => {
               placeholder='Leave your Feedback...'
               style={{
                 backgroundColor: 'var(--bg-white-color)',
-                borderColor: 'var(--light-green)',
+                borderColor: 'var(--secondary)',
                 outlineColor: 'var(--primary)',
                 padding: '1.15rem',
                 color: 'var(--font-family-color)',

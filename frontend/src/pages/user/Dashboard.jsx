@@ -57,7 +57,7 @@ const DashboardContent = () => {
             <DashboardLinks />
             {/* Sponsorships */}
             <div className='w-full md:w-[25%]'>
-              <h3 className='break-all text-2xl md:text-3xl text-primary font-main-font tracking-wide md:border-b-2 md:border-light-green inline-block'>
+              <h3 className='break-all text-2xl md:text-3xl text-primary font-main-font tracking-wide md:border-b-2 md:border-secondary inline-block'>
                 <span>Hi,</span>
                 <span className=' text-dark1-gray'>
                   <span className=' inline-block md:hidden lg:inline-block'>
@@ -91,7 +91,7 @@ const DashboardContent = () => {
             </div>{' '}
             {/* Delivery Address */}
             <div className='w-full md:w-[45%]'>
-              <h3 className='break-all text-3xl text-primary font-main-font tracking-wide border-b-2 border-light-green inline-block'>
+              <h3 className='break-all text-3xl text-primary font-main-font tracking-wide border-b-2 border-secondary inline-block'>
                 User Details
               </h3>
               <div className=' break-all flex flex-col bg-light-gray justify-center items-start gap-[0.4rem] rounded-md mt-4 p-4'>

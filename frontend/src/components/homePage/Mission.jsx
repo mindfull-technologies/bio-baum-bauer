@@ -41,7 +41,7 @@ const Mission = () => {
         </p>
         <Link
           to='/trees'
-          className='mission-more mr-auto px-8 py-2 bg-light-green text-font-family-color rounded-[10px] hover:bg-lighter-primary transition duration-4000 ease-linear'
+          className='mission-more mr-auto px-8 py-2 bg-secondary text-font-family-color rounded-[10px] hover:bg-lighter-primary transition duration-4000 ease-linear'
           aria-label='Sponsor page'
         >
           sponsor a tree

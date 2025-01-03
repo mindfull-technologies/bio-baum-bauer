@@ -104,7 +104,7 @@ const Cart = () => {
                   </div>
 
                   {/* Horizontal Line */}
-                  <hr className='w-[70%] mx-auto border-t-2 border-light-green my-2' />
+                  <hr className='w-[70%] mx-auto border-t-2 border-secondary my-2' />
 
                   {/* Checkout Link */}
                   <Link
@@ -119,7 +119,7 @@ const Cart = () => {
                   {/* Sponsor Tree Link */}
                   <Link
                     to='/trees'
-                    className='flex items-center justify-center gap-1 text-center w-full my-2 px-4 py-2 bg-light-green text-font-family-color rounded-[10px] border-2 hover:bg-lighter-primary hover:border-2 transition duration-4000 ease-linear'
+                    className='flex items-center justify-center gap-1 text-center w-full my-2 px-4 py-2 bg-secondary text-font-family-color rounded-[10px] border-2 hover:bg-lighter-primary hover:border-2 transition duration-4000 ease-linear'
                     aria-label='Sponsor Tree page'
                   >
                     <MdAddShoppingCart size='1.3rem' />
@@ -167,7 +167,7 @@ const Cart = () => {
                       <div className='hidden sm:flex-1 sm:block flex-row justify-start items-start text-xl font-main-font text-primary tracking-wide pb-2'>
                         Qty
                       </div>
-                      <div className='flex flex-row items-center justify-center border border-light-green rounded-[10px] mx-auto sm:mx-0 p-[4px]'>
+                      <div className='flex flex-row items-center justify-center border border-secondary rounded-[10px] mx-auto sm:mx-0 p-[4px]'>
                         <button
                           className='bg-transparent text-lg text-dark-gray p-2'
                           aria-label='Remove Tree'
@@ -242,13 +242,13 @@ const Cart = () => {
                     alt='Tree Icon'
                     className='w-[30px] h-[30px] mr-2'
                   />
-                  <h3 className='text-3xl text-primary font-main-font tracking-wide border-b-2 border-light-green inline-block'>
+                  <h3 className='text-3xl text-primary font-main-font tracking-wide border-b-2 border-secondary inline-block'>
                     Your cart is empty.
                   </h3>
                 </div>
                 <Link
                   to='/trees'
-                  className='flex items-center gap-1 justify-center border-2 w-full my-2 px-4 py-2 bg-light-green text-font-family-color rounded-[10px] hover:bg-lighter-primary transition duration-4000 ease-linear'
+                  className='flex items-center gap-1 justify-center border-2 w-full my-2 px-4 py-2 bg-secondary text-font-family-color rounded-[10px] hover:bg-lighter-primary transition duration-4000 ease-linear'
                   aria-label='Sponsor Tree page'
                 >
                   {' '}

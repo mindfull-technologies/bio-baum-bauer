@@ -65,7 +65,7 @@ const SponsorShipDetails = () => {
                   alt='Tree Icon'
                   className='w-[30px] h-[30px] mr-2'
                 />
-                <h3 className='text-3xl text-primary font-main-font tracking-wide border-b-2 border-light-green inline-block'>
+                <h3 className='text-3xl text-primary font-main-font tracking-wide border-b-2 border-secondary inline-block'>
                   <span>
                     <span className='hidden md:inline'>Sponsorship's</span>{' '}
                     Details
@@ -74,7 +74,7 @@ const SponsorShipDetails = () => {
               </div>
               <Link
                 to='/user_sponsorships'
-                className='flex items-center justify-center gap-2 w-max px-4 py-2 bg-light-green border-2 text-font-family-color rounded-md hover:bg-lighter-primary transition duration-4000 ease-linear sm:mt-0'
+                className='flex items-center justify-center gap-2 w-max px-4 py-2 bg-secondary border-2 text-font-family-color rounded-md hover:bg-lighter-primary transition duration-4000 ease-linear sm:mt-0'
                 aria-label='Sponsor Tree page'
               >
                 <RiArrowGoBackLine />
@@ -91,7 +91,7 @@ const SponsorShipDetails = () => {
                 <div className='overflow-x-auto'>
                   <table className='w-[100%] min-w-max table-auto text-left  border border-white rounded-tl-lg rounded-br-md shadow-md '>
                     <thead className='pb-10 space-y-4'>
-                      <tr className='bg-light-green'>
+                      <tr className='bg-secondary'>
                         <th className='space-y-2 border-blue-gray-100 bg-blue-gray-50/50 p-4 g-3'>
                           <p className='block text-xs lg:text-md xl:text-xl  antialiased font-sans text-primary font-normal leading-none opacity-70'>
                             Certification No.
@@ -164,10 +164,10 @@ const SponsorShipDetails = () => {
                 <div className='w-full pt-5 px-4 mb-8 mx-auto'>
                   {Object.keys(patron).length > 0 ? (
                     <div className='w-[100%]'>
-                      <h3 className='break-all text-2xl lg:text-3xl text-primary font-main-font tracking-wide border-b-2 border-light-green inline-block'>
+                      <h3 className='break-all text-2xl lg:text-3xl text-primary font-main-font tracking-wide border-b-2 border-secondary inline-block'>
                         Patron Details
                       </h3>
-                      <div className='break-all flex flex-col justify-center items-start gap-[0.4rem] bg-white rounded-[10px] border-light-green mt-4 text-xs sm:text-sm md:text-md lg:text-lg xl:text-xl '>
+                      <div className='break-all flex flex-col justify-center items-start gap-[0.4rem] bg-white rounded-[10px] border-secondary mt-4 text-xs sm:text-sm md:text-md lg:text-lg xl:text-xl '>
                         <p className='text-font-family-color'>
                           <span className='font-semibold'>Full Name:</span>
                           &nbsp;
@@ -216,14 +216,14 @@ const SponsorShipDetails = () => {
                 </div>
                 <hr />
                 <br />
-                <h3 className='break-all text-2xl xl:text-3xl text-primary font-main-font tracking-wide border-b-2 border-light-green inline-block'>
+                <h3 className='break-all text-2xl xl:text-3xl text-primary font-main-font tracking-wide border-b-2 border-secondary inline-block'>
                   Items
                 </h3>
                 <br /> <br />
                 <div className='overflow-x-auto'>
                   <table className='w-[100%] min-w-max table-auto text-left  border border-white rounded-tl-lg rounded-br-md shadow-md'>
                     <thead className='pb-10 space-y-4'>
-                      <tr className='bg-light-green'>
+                      <tr className='bg-secondary'>
                         <th className='space-y-2 border-blue-gray-100 bg-blue-gray-50/50 p-4 g-3'>
                           <p className='block text-xs lg:text-md xl:text-xl  antialiased font-sans text-primary font-normal leading-none opacity-70'>
                             Image

@@ -37,13 +37,13 @@ const MobileDashboardLinks = () => {
       {/* Mobile dropdown menu */}
       {isMobile && (
         <>
-          <div className='w-[50%] absolute top-[40px] xs:left-0 left-0 bg-white rounded-md border border-light-green dashboard-nav-index'>
+          <div className='w-[50%] absolute top-[40px] xs:left-0 left-0 bg-white rounded-md border border-secondary dashboard-nav-index'>
             <div className='flex flex-col w-full'>
               <NavLink
                 aria-label='Dashboard'
                 to='/dashboard'
                 activeClassName='bg-lighter-secondary'
-                className={`text-font-family-color block border-b rounded-t-md border-light-green py-4 text-start pl-4 hover:bg-light-gray ${
+                className={`text-font-family-color block border-b rounded-t-md border-secondary py-4 text-start pl-4 hover:bg-light-gray ${
                   activeLink === '/dashboard'
                     ? 'border-l-4 border-l-darker-secondary bg-lighter-secondary'
                     : ''
@@ -54,8 +54,8 @@ const MobileDashboardLinks = () => {
               <NavLink
                 aria-label='Update Profile'
                 to='/update_profile'
-                activeClassName='bg-light-green'
-                className={`text-font-family-color block border-b  border-light-green py-4 text-start pl-4 hover:bg-light-gray ${
+                activeClassName='bg-secondary'
+                className={`text-font-family-color block border-b  border-secondary py-4 text-start pl-4 hover:bg-light-gray ${
                   activeLink === '/update_profile'
                     ? 'border-l-4 border-l-darker-secondary bg-lighter-secondary'
                     : ''
@@ -66,8 +66,8 @@ const MobileDashboardLinks = () => {
               <NavLink
                 aria-label='Sponsorships'
                 to='/user_sponsorships'
-                activeClassName='bg-light-green'
-                className={`text-font-family-color block border-b  border-light-green py-4 text-start pl-4 hover:bg-light-gray ${
+                activeClassName='bg-secondary'
+                className={`text-font-family-color block border-b  border-secondary py-4 text-start pl-4 hover:bg-light-gray ${
                   activeLink === '/user_sponsorships'
                     ? 'border-l-4 border-l-darker-secondary bg-lighter-secondary'
                     : ''
@@ -78,8 +78,8 @@ const MobileDashboardLinks = () => {
               <NavLink
                 aria-label='Change Password'
                 to='/password_change'
-                activeClassName='bg-light-green'
-                className={`text-font-family-color block border-b border-light-green py-4 text-start pl-4 hover:bg-light-gray ${
+                activeClassName='bg-secondary'
+                className={`text-font-family-color block border-b border-secondary py-4 text-start pl-4 hover:bg-light-gray ${
                   activeLink === '/password_change'
                     ? 'border-l-4 border-l-darker-secondary bg-lighter-secondary'
                     : ''
@@ -90,7 +90,7 @@ const MobileDashboardLinks = () => {
               <NavLink
                 aria-label='Sign Out'
                 to='/signout'
-                activeClassName='bg-light-green'
+                activeClassName='bg-secondary'
                 className={`text-font-family-color py-4 text-start pl-4 rounded-b-md hover:bg-light-gray ${
                   activeLink === '/signout'
                     ? 'border-l-4 border-l-darker-secondary bg-lighter-secondary'

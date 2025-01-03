@@ -109,7 +109,7 @@ const Gallery = () => {
               {filteredGallery.map((image, index) => (
                 <div
                   key={index}
-                  className='aspect-square relative cursor-pointer border border-light-green overflow-hidden'
+                  className='aspect-square relative cursor-pointer border border-secondary overflow-hidden'
                   onClick={() => openImage(image)}
                   style={{
                     backgroundImage: `url(${image.image})`,
@@ -140,7 +140,7 @@ const Gallery = () => {
           {/* Toggle Button for Show All/Fewer Images */}
           <button
             onClick={toggleShowAllImages}
-            className='block lg:hidden mx-auto px-8 py-2 mt-4 bg-light-green text-font-family-color rounded-[10px]   hover:bg-lighter-primary transition duration-4000 ease-linear'
+            className='block lg:hidden mx-auto px-8 py-2 mt-4 bg-secondary text-font-family-color rounded-[10px]   hover:bg-lighter-primary transition duration-4000 ease-linear'
             aria-label='Show All/Fewer Images'
           >
             {showAllImages ? 'Show Fewer Photos' : 'Show All Images'}

@@ -125,7 +125,7 @@ const PasswordChange = () => {
                   alt='Tree Icon'
                   className='w-[30px] h-[30px] mr-2'
                 />{' '}
-                <h3 className='text-3xl text-primary font-main-font tracking-wide border-b-2 border-light-green inline-block'>
+                <h3 className='text-3xl text-primary font-main-font tracking-wide border-b-2 border-secondary inline-block'>
                   Change Password
                 </h3>
               </div>
@@ -154,7 +154,7 @@ const PasswordChange = () => {
                       className='input'
                       style={{
                         backgroundColor: 'var(--bg-white-color)',
-                        borderColor: 'var(--light-green)',
+                        borderColor: 'var(--secondary)',
                         outlineColor: 'var(--primary)',
                         padding: '1.15rem',
                         color: 'var(--font-family-color)',
@@ -197,7 +197,7 @@ const PasswordChange = () => {
                       className='input'
                       style={{
                         backgroundColor: 'var(--bg-white-color)',
-                        borderColor: 'var(--light-green)',
+                        borderColor: 'var(--secondary)',
                         outlineColor: 'var(--primary)',
                         padding: '1.15rem',
                         color: 'var(--font-family-color)',
@@ -243,7 +243,7 @@ const PasswordChange = () => {
                       className='input'
                       style={{
                         backgroundColor: 'var(--bg-white-color)',
-                        borderColor: 'var(--light-green)',
+                        borderColor: 'var(--secondary)',
                         outlineColor: 'var(--primary)',
                         padding: '1.15rem',
                         color: 'var(--font-family-color)',

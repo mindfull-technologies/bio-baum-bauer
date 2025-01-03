@@ -100,7 +100,7 @@ const Order = () => {
                 <div className='flex flex-col text-dark-gray'>
                   <div className='flex items-center gap-2 mb-4'>
                     <BiSolidUserDetail size='2.1rem' />
-                    <h3 className='text-3xl text-primary font-main-font tracking-wide border-b-2 border-light-green inline-block'>
+                    <h3 className='text-3xl text-primary font-main-font tracking-wide border-b-2 border-secondary inline-block'>
                       Patron Details
                     </h3>
                   </div>{' '}
@@ -167,7 +167,7 @@ const Order = () => {
                   </div>
                 </div>
                 {/* Horizontal Line */}
-                <hr className='w-[100%] mx-auto border-t-2 border-light-green my-2' />
+                <hr className='w-[100%] mx-auto border-t-2 border-secondary my-2' />
                 <SponsorList
                   cartProducts={cartProducts}
                   getTreeQuantity={getTreeQuantity}
@@ -227,7 +227,7 @@ const Order = () => {
                   </span>
                 </span>
                 {/* Horizontal Line */}
-                <hr className='w-[40%] mx-auto border-t-2 border-light-green my-4' />
+                <hr className='w-[40%] mx-auto border-t-2 border-secondary my-4' />
 
                 {/* Pay Now */}
                 <button
@@ -241,7 +241,7 @@ const Order = () => {
                 {/* Back to  Checkout */}
                 <Link
                   to='/checkout'
-                  className='flex items-center justify-center gap-2 w-full px-4 py-2 bg-light-green border-2 text-font-family-color rounded-md hover:bg-lighter-primary transition duration-4000 ease-linear mt-4'
+                  className='flex items-center justify-center gap-2 w-full px-4 py-2 bg-secondary border-2 text-font-family-color rounded-md hover:bg-lighter-primary transition duration-4000 ease-linear mt-4'
                   aria-label='Sponsor Tree page'
                 >
                   <RiArrowGoBackLine />

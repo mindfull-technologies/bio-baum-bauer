@@ -23,7 +23,7 @@ const FeatureTreeItem = props => {
               </p>
             </div>
             <div className='py-3 px-1 w-full'>
-              <button className='flex items-center gap-2 border-2 hover:border-2 justify-center text-xl px-8 py-2 bg-light-green text-font-family-color rounded-xl hover:bg-lighter-primary transition duration-4000 ease-linear w-full'>
+              <button className='flex items-center gap-2 border-2 hover:border-2 justify-center text-xl px-8 py-2 bg-secondary text-font-family-color rounded-xl hover:bg-lighter-primary transition duration-4000 ease-linear w-full'>
                 <GoSponsorTiers />
                 <span>sponsor</span>
               </button>

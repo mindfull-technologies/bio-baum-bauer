@@ -173,7 +173,7 @@ const Login = () => {
               alt='Tree Icon'
               className='w-[30px] h-[30px] mr-2'
             />
-            <h3 className='text-3xl text-primary font-main-font tracking-wide border-b-2 border-light-green inline-block'>
+            <h3 className='text-3xl text-primary font-main-font tracking-wide border-b-2 border-secondary inline-block'>
               Login
             </h3>
           </div>
@@ -199,7 +199,7 @@ const Login = () => {
                 placeholder='Email Address *'
                 style={{
                   backgroundColor: 'var(--bg-white-color)',
-                  borderColor: 'var(--light-green)',
+                  borderColor: 'var(--secondary)',
                   outlineColor: 'var(--primary)',
                   padding: '1.15rem',
                   color: 'var(--font-family-color)',
@@ -220,7 +220,7 @@ const Login = () => {
                 placeholder='Your Password *'
                 style={{
                   backgroundColor: 'var(--bg-white-color)',
-                  borderColor: 'var(--light-green)',
+                  borderColor: 'var(--secondary)',
                   outlineColor: 'var(--primary)',
                   padding: '1.15rem',
                   color: 'var(--font-family-color)',

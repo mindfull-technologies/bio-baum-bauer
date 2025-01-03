@@ -76,7 +76,7 @@ const Signout = () => {
               alt='Tree Icon'
               className='w-[40px] h-[40px] mr-2'
             />{' '}
-            <h3 className='text-3xl text-primary font-main-font tracking-wide border-b-2 border-light-green inline-block'>
+            <h3 className='text-3xl text-primary font-main-font tracking-wide border-b-2 border-secondary inline-block'>
               Sign Out
             </h3>
           </div>
@@ -86,7 +86,7 @@ const Signout = () => {
           <Link
             to='/login'
             onClick={handleLogout} // Add onClick to trigger logout
-            className='flex items-center my-2 gap-2 px-8 py-2 bg-light-green text-font-family-color rounded-[10px] hover:bg-lighter-primary transition duration-4000 ease-linear'
+            className='flex items-center my-2 gap-2 px-8 py-2 bg-secondary text-font-family-color rounded-[10px] hover:bg-lighter-primary transition duration-4000 ease-linear'
             aria-label='Sign Out and go to the Login page'
           >
             <LiaSignOutAltSolid size='1.2rem' />

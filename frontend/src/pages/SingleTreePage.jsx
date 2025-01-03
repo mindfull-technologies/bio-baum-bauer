@@ -68,7 +68,7 @@ const SingleTreePage = () => {
         <div className='container py-2 mb-2 rounded-lg flex justify-between items-center bg-white px-5'>
           <Link
             to='/trees'
-            className='flex items-center border-2 justify-center gap-1 px-8 h-max py-1  bg-light-green text-font-family-color rounded-[10px] hover:bg-lighter-primary transition duration-4000 ease-linear'
+            className='flex items-center border-2 justify-center gap-1 px-8 h-max py-1  bg-secondary text-font-family-color rounded-[10px] hover:bg-lighter-primary transition duration-4000 ease-linear'
             aria-label='Tree page'
           >
             <MdKeyboardDoubleArrowLeft size='1rem' />
@@ -76,7 +76,7 @@ const SingleTreePage = () => {
           </Link>
           {loggedIn ? (
             <button
-              className='flex items-center border-2 my-1 gap-1 px-4 py-1 bg-light-green text-font-family-color rounded-[10px] hover:bg-lighter-primary transition duration-4000 ease-linear'
+              className='flex items-center border-2 my-1 gap-1 px-4 py-1 bg-secondary text-font-family-color rounded-[10px] hover:bg-lighter-primary transition duration-4000 ease-linear'
               aria-label='Add to Cart'
               onClick={handleAddToCart}
             >
@@ -137,14 +137,14 @@ const SingleTreePage = () => {
               </div>
 
               {/* Horizontal Line */}
-              <hr className='w-[70%] mx-auto border-t-2 border-light-green my-2' />
+              <hr className='w-[70%] mx-auto border-t-2 border-secondary my-2' />
               <div className='flex items-center mb-4'>
                 <img
                   src={treeIcon1}
                   alt='Tree Icon'
                   className='w-[30px] h-[30px] mr-2'
                 />
-                <h3 className='text-3xl text-primary font-main-font tracking-wide border-b-2 border-light-green inline-block mt-2'>
+                <h3 className='text-3xl text-primary font-main-font tracking-wide border-b-2 border-secondary inline-block mt-2'>
                   Description:
                 </h3>
               </div>
@@ -157,13 +157,13 @@ const SingleTreePage = () => {
               />
 
               {/* Horizontal Line */}
-              <hr className='w-[70%] mx-auto border-t-2 border-light-green my-2' />
+              <hr className='w-[70%] mx-auto border-t-2 border-secondary my-2' />
 
               {/* Add to Cart Button */}
               {loggedIn ? (
                 <button
                   to='/trees'
-                  className='flex items-center justify-center gap-2 text-center border-2 w-full my-2 px-4 py-2 bg-light-green text-font-family-color rounded-[10px]   hover:bg-lighter-primary transition duration-4000 ease-linear'
+                  className='flex items-center justify-center gap-2 text-center border-2 w-full my-2 px-4 py-2 bg-secondary text-font-family-color rounded-[10px]   hover:bg-lighter-primary transition duration-4000 ease-linear'
                   aria-label='Sponsor page'
                   onClick={handleAddToCart}
                 >

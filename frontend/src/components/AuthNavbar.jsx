@@ -43,7 +43,7 @@ const AuthNavbar = () => {
               aria-label='Login page'
             >
               <Tooltip content='click here to login'>
-                <div className='flex items-center text-2xl text-bold py-2 px-4 hover:bg-darker-secondary text-white-color hover:text-light-green rounded-2xl'>
+                <div className='flex items-center text-2xl text-bold py-2 px-4 hover:bg-darker-secondary text-white-color hover:text-secondary rounded-2xl'>
                   <IoMdLogIn className='' />
                   <span>&nbsp;Login</span>
                 </div>
@@ -56,7 +56,7 @@ const AuthNavbar = () => {
                 <div
                   id='dropdown-button'
                   onClick={toggleDropdown}
-                  className='w-full select-none h-auto top-10 right-40  border-light-green rounded-[10px] px-2 py-4 cursor-pointer flex justify-between items-center text-primary text-lg'
+                  className='w-full select-none h-auto top-10 right-40  border-secondary rounded-[10px] px-2 py-4 cursor-pointer flex justify-between items-center text-primary text-lg'
                 >
                   <Link aria-label='user dashboard, link to dashboard'>
                     <span className='text-lg text-white font-general-font'>
@@ -77,9 +77,9 @@ const AuthNavbar = () => {
                   id='dropdown-menu'
                   className={`${
                     isDropdownOpen ? 'block ' : 'hidden'
-                  } absolute top-[71px] h-auto bg-lighter-primary right-20 md:right-24 lg:right-64 w-auto rounded-[6px] border-2 border-light-green shadow-2xl mt-2 transition-all duration-300 text-font-family-color`}
+                  } absolute top-[71px] h-auto bg-lighter-primary right-20 md:right-24 lg:right-64 w-auto rounded-[6px] border-2 border-secondary shadow-2xl mt-2 transition-all duration-300 text-font-family-color`}
                 >
-                  <div className=' cursor-pointer hover:bg-lighter-secondary border-b border-light-green rounded-t-[2px] text-lg'>
+                  <div className=' cursor-pointer hover:bg-lighter-secondary border-b border-secondary rounded-t-[2px] text-lg'>
                     <Link
                       to='/dashboard'
                       className='py-4 px-6 navIcon w-full h-full flex items-center transition-transform duration-75 ease-linear'
@@ -91,7 +91,7 @@ const AuthNavbar = () => {
                       </div>
                     </Link>
                   </div>
-                  <div className=' cursor-pointer hover:bg-lighter-secondary border-b border-light-green text-lg'>
+                  <div className=' cursor-pointer hover:bg-lighter-secondary border-b border-secondary text-lg'>
                     <Link
                       to='/signout'
                       className='py-4 px-6 navIcon w-full h-full flex items-center transition-transform duration-75 ease-linear'

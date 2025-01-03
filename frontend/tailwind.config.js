@@ -9,7 +9,7 @@ export default {
     extend: {
       colors: {
         primary: 'var(--primary)',
-        'light-green': 'var(--light-green)',
+        secondary: 'var(--secondary)',
         'bg-page-color': 'var(--bg-page-color)',
         'white-color': 'var(--white-color)',
         'font-family-color': 'var(--font-family-color)',

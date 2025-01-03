@@ -34,11 +34,11 @@ const DesktopNavbar = ({ isNavbarFixed, setIsNavbarFixed }) => {
     <>
       <AuthNavbar />
       <nav
-        className='desktop-nav flex w-full top-0 justify-center items-center bg-light-green h-[70px] font-general-font text-font-family-color text-[1rem]'
+        className='desktop-nav flex w-full top-0 justify-center items-center bg-secondary h-[70px] font-general-font text-font-family-color text-[1rem]'
         style={desktopNavbarStyle}
       >
         {/* DesktopNavbar Links */}
-        <div className='flex justify-center items-center h-full w-full bg-light-green '>
+        <div className='flex justify-center items-center h-full w-full bg-secondary '>
           <div className='border-r p-2 sm:px-4 lg:px-8 xl:px-14 flex items-center hover:scale-110 transition-transform duration-400 ease-linear hover:text-dark-gray'>
             <NavLink
               className='flex gap-1 justify-center items-center hover:border-b-2'

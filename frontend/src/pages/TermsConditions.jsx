@@ -358,7 +358,7 @@ const Terms = () => {
           <div className='flex justify-center mt-10'>
             <Link
               to='/'
-              className='flex items-center w-max px-4 py-2 justify-center gap-2 text-md bg-light-green border-2 md:text-lg text-primary font-bold rounded-md hover:bg-lighter-primary transition duration-4000 ease-linear'
+              className='flex items-center w-max px-4 py-2 justify-center gap-2 text-md bg-secondary border-2 md:text-lg text-primary font-bold rounded-md hover:bg-lighter-primary transition duration-4000 ease-linear'
             >
               <RiArrowGoBackLine />
               <span>Back to Home Page</span>

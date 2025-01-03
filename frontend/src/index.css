@@ -7,7 +7,7 @@ Global variables for colors
 */
 :root {
   --primary: #5a6448;
-  --light-green: #dfdacb;
+  --secondary: #dfdacb;
   --lighter-primary: #f8f7f4;
   --darker-primary: #b2aea2;
   --bg-page-color: #ededec;
@@ -226,7 +226,7 @@ input::placeholder {
 
 .btn-deny-class {
   background-color: var(--darker-primary);
-  border: 3px solid var(--light-green);
+  border: 3px solid var(--secondary);
   color: var(--white-color);
   padding: 0.5rem 1rem;
   border-radius: 10px;
@@ -272,7 +272,7 @@ input::placeholder {
 .arrowUp {
   width: 60px;
   height: 60px;
-  background-color: var(--light-green);
+  background-color: var(--secondary);
   border-radius: 100%;
   position: fixed;
   right: 1rem;

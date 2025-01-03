@@ -37,7 +37,7 @@ const MobileNavbar = () => {
     <nav id='outer-container'>
       {isNavbarVisible && <AuthNavbar />}
       <div
-        className='mobile-nav w-full top-0 h-[60px] bg-light-green flex justify-start items-center px-2'
+        className='mobile-nav w-full top-0 h-[60px] bg-secondary flex justify-start items-center px-2'
         style={mobileNavbarStyle}
       >
         {/* Open Menu Button */}
@@ -65,7 +65,7 @@ const MobileNavbar = () => {
         customCrossIcon={false}
         width={'60%'}
         pageWrapId={'page-wrap'}
-        className='bg-light-green fixed top-0 left-0 h-screen overflow-y-auto p-4 '
+        className='bg-secondary fixed top-0 left-0 h-screen overflow-y-auto p-4 '
       >
         {/* Close Menu Button */}
         <div className='absolute top-6 right-6'>

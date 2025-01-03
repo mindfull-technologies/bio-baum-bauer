@@ -106,7 +106,7 @@ const News = () => {
       <PageBreadcrumb activeLinks={aLinkValues} deActiveLink={daLinkValues} />
       {/* Overlay with background image and opacity */}
       <div
-        className='absolute left-0 w-full h-[50%] bg-cover bg-no-repeat bg-center bg-light-green'
+        className='absolute left-0 w-full h-[50%] bg-cover bg-no-repeat bg-center bg-secondary'
         style={{
           backgroundImage: `url(${backgroundImage})`,
           opacity: 0.1,

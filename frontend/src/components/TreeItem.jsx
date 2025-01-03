@@ -19,7 +19,7 @@ const TreeItem = props => {
                 alt='Tree Icon'
                 className='w-[30px] h-[30px] mr-2'
               />
-              <h3 className='text-2xl text-primary font-main-font tracking-wide border-b-2 border-light-green inline-block'>
+              <h3 className='text-2xl text-primary font-main-font tracking-wide border-b-2 border-secondary inline-block'>
                 {name}
               </h3>
             </div>
@@ -31,7 +31,7 @@ const TreeItem = props => {
           <div className='mt-2 mb-1 flex justify-start'>
             <Link
               to={`/trees/${id}`}
-              className='flex items-center justify-center text-center border-2 w-full px-4 py-2 bg-light-green text-font-family-color rounded-[10px] hover:bg-lighter-primary hover:border-2 transition duration-4000 ease-linear mt-4 sm:mt-0'
+              className='flex items-center justify-center text-center border-2 w-full px-4 py-2 bg-secondary text-font-family-color rounded-[10px] hover:bg-lighter-primary hover:border-2 transition duration-4000 ease-linear mt-4 sm:mt-0'
             >
               <span>view in detail</span>
               <MdOutlineReadMore size='1.6rem' />

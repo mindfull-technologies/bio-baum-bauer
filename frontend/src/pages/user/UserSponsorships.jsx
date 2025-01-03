@@ -68,7 +68,7 @@ const UserSponsorships = () => {
                   alt='Tree Icon'
                   className='w-[30px] h-[30px] mr-2'
                 />
-                <h3 className='text-3xl text-primary font-main-font tracking-wide border-b-2 border-light-green inline-block'>
+                <h3 className='text-3xl text-primary font-main-font tracking-wide border-b-2 border-secondary inline-block'>
                   Your Sponsorships
                 </h3>
               </div>
@@ -82,7 +82,7 @@ const UserSponsorships = () => {
 
                   <table className='w-[100%] min-w-max table-auto text-left border border-white rounded-tl-lg rounded-br-md shadow-md'>
                     <thead className='pb-10 space-y-4 h-10 lg:h-20'>
-                      <tr className='bg-light-green h-30 flex justify-between w-full'>
+                      <tr className='bg-secondary h-30 flex justify-between w-full'>
                         <th className='space-y-4 border-blue-gray-100 bg-blue-gray-50/50 p-4 g-3 h-30'>
                           <p className='block text-xs lg:text-md xl:text-xl antialiased font-sans text-primary font-normal leading-none opacity-70'>
                             Certification No.

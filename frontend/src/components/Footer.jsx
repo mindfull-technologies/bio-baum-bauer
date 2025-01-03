@@ -19,7 +19,7 @@ import { Fade } from 'react-awesome-reveal';
 function Footer() {
   return (
     <>
-      <div className='bg-light-green text-font-family-color'>
+      <div className='bg-secondary text-font-family-color'>
         <div className='container mx-auto flex flex-col py-10'>
           <section className='w-full flex flex-col lg:flex-row items-center justify-between py-4 mb-4 px-9 gap-[3.2rem]'>
             <div className='flex flex-col gap-5 max-w-md grow-2 w-full'>
