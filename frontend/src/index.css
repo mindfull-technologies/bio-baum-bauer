@@ -22,13 +22,18 @@ Global variables for colors
 
 @font-face {
   font-family: 'Chicle';
-  src: url('../src/assets/Fonts/Chicle/Chicle-Regular.ttf') format('truetype');
+  src: url('/fonts/chicle-regular/chicle-regular.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Open Sans';
-  src: url('../src/assets/Fonts/Open_Sans/OpenSans-VariableFont_wdth,wght.ttf')
-    format('truetype');
+  src: url('/fonts/open-sans/open-sans-variable.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/fonts/open-sans/open-sans-variable-italic.ttf') format('truetype');
+  font-style: italic;
 }
 
 *,
