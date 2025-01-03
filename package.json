@@ -2,10 +2,10 @@
   "name": "bio-baum-bauer",
   "version": "1.0.0",
   "type": "module",
-  "description": "Bio Baum Bauer App",
+  "description": "Bio Baum Bauer Website",
   "scripts": {
-    "start:dev": "docker-compose -f docker-compose.yml up -d --build",
-    "stop:dev": "docker-compose -f docker-compose.yml down",
+    "start": "docker-compose -f docker-compose.yml up -d --build",
+    "stop": "docker-compose -f docker-compose.yml down",
     "test": "echo \"No tests specified\"",
     "prepare": "husky"
   },
@@ -17,9 +17,7 @@
     "prettier": "^3.4.2"
   },
   "lint-staged": {
-    "backend/**/*.js": [
-      "eslint --fix",
-      "prettier --write"
-    ]
+    "backend/**/*.{js,ts}": "eslint --fix",
+    "backend/**/*.{js,ts,md}": "prettier --write"
   }
 }

@@ -1,6 +1,10 @@
 package.json
 docker-compose.yml
+eslint.config.js
+.prettierrc
+.prettierignore
 .gitignore
+.husky
 
 frontend/
     .env
