@@ -1,22 +1,22 @@
-import { useContext } from "react";
-import backgroundImage from "../../assets/images/leaves_background_01.webp";
-import { RiArrowGoBackLine } from "react-icons/ri";
-import { Link } from "react-router-dom";
-import { CartContext } from "../../store/CartContext";
-import { Breadcrumb } from "flowbite-react";
-import { HiHome } from "react-icons/hi";
-import { MdLabelImportant } from "react-icons/md";
-import axios from "../../utils/axiosInstance";
-import { loadStripe } from "@stripe/stripe-js";
-import { AuthContext } from "../../contexts/AuthContext";
-import { usePatronContext } from "../../store/PatronContext";
-import { BiSolidUserDetail } from "react-icons/bi";
-import treeIcon from "../../assets/tree.png";
-import { FaAmazonPay } from "react-icons/fa";
-import SponsorList from "./SponsorList";
+import { useContext } from 'react';
+import backgroundImage from '../../assets/images/leaves_background_01.webp';
+import { RiArrowGoBackLine } from 'react-icons/ri';
+import { Link } from 'react-router-dom';
+import { CartContext } from '../../store/CartContext';
+import { Breadcrumb } from 'flowbite-react';
+import { HiHome } from 'react-icons/hi';
+import { MdLabelImportant } from 'react-icons/md';
+import axios from '../../utils/axiosInstance';
+import { loadStripe } from '@stripe/stripe-js';
+import { AuthContext } from '../../contexts/AuthContext';
+import { usePatronContext } from '../../store/PatronContext';
+import { BiSolidUserDetail } from 'react-icons/bi';
+import treeIcon from '../../assets/tree.png';
+import { FaAmazonPay } from 'react-icons/fa';
+import SponsorList from './SponsorList';
 
 const Order = () => {
-  document.title = "Order";
+  document.title = 'Order';
   const {
     cartProducts,
     getTreeQuantity,
@@ -33,7 +33,7 @@ const Order = () => {
 
   const paymentProcess = async () => {
     const stripe = await loadStripe(
-      "pk_test_51OJNzPEghw7w3GNSeOkjDgkOcM1DtxgH4n9RgFspfvlxDzomukHCfqCenHxoIFFrQ0MtAvBRYMiIjtGQUYUwM7Ax00xIiee67Q"
+      'pk_test_51OJNzPEghw7w3GNSeOkjDgkOcM1DtxgH4n9RgFspfvlxDzomukHCfqCenHxoIFFrQ0MtAvBRYMiIjtGQUYUwM7Ax00xIiee67Q'
     );
     const totalPrice = calculateGrandTotal().toFixed(2);
     const treesInCart = getSelectedDataFromCart();
@@ -41,8 +41,8 @@ const Order = () => {
       cart: treesInCart,
     };
     axios
-      .post("/api/payment/checkout", trees)
-      .then((response) => {
+      .post('/api/payment/checkout', trees)
+      .then(response => {
         const session = response.data;
         const result = stripe.redirectToCheckout({
           sessionId: session.id,
@@ -51,12 +51,12 @@ const Order = () => {
         if (result.error) {
           console.error(result.error);
         }
-        handleStripeSession({ type: "UPDATE_SESSION", sessionId: session.id });
-        handleOrderGrandPrice({ type: "CALC_GRAND_PRICE", total: totalPrice });
-        handleOrder({ type: "ADD_ITEMS", items: trees });
+        handleStripeSession({ type: 'UPDATE_SESSION', sessionId: session.id });
+        handleOrderGrandPrice({ type: 'CALC_GRAND_PRICE', total: totalPrice });
+        handleOrder({ type: 'ADD_ITEMS', items: trees });
       })
-      .catch((error) => {
-        console.log("ERROR: ", error);
+      .catch(error => {
+        console.log('ERROR: ', error);
       });
   };
 
@@ -69,45 +69,45 @@ const Order = () => {
   return (
     <div>
       {cartProducts && (
-        <div className="mt-0 mb-0">
+        <div className='mt-0 mb-0'>
           <Breadcrumb
-            aria-label="This is Breadcrumb showing the location of current page"
-            className="bg-gray-50 px-5 py-3 dark:bg-gray-800"
+            aria-label='This is Breadcrumb showing the location of current page'
+            className='bg-gray-50 px-5 py-3 dark:bg-gray-800'
           >
-            <Breadcrumb.Item href="/" icon={HiHome}>
+            <Breadcrumb.Item href='/' icon={HiHome}>
               Home
             </Breadcrumb.Item>
-            <Breadcrumb.Item href="/cart">Cart</Breadcrumb.Item>
-            <Breadcrumb.Item href="/checkout">Checkout</Breadcrumb.Item>
+            <Breadcrumb.Item href='/cart'>Cart</Breadcrumb.Item>
+            <Breadcrumb.Item href='/checkout'>Checkout</Breadcrumb.Item>
             <Breadcrumb.Item>Complete Sponsorship</Breadcrumb.Item>
           </Breadcrumb>
         </div>
       )}
-      <div className="cart-page-container relative w-full bg-light-gray mx-auto p-4 pb-[25px] md:pb-[40px] lg:pb-[100px] xl:pb-[120px] flex items-center justify-center text-font-family-color">
+      <div className='cart-page-container relative w-full bg-light-gray mx-auto p-4 pb-[25px] md:pb-[40px] lg:pb-[100px] xl:pb-[120px] flex items-center justify-center text-font-family-color'>
         {/* Overlay with background image and opacity */}
         <div
-          className="cart-page-bg hidden lg:block absolute top-0 left-0 w-full h-full bg-contain bg-no-repeat bg-top"
+          className='cart-page-bg hidden lg:block absolute top-0 left-0 w-full h-full bg-contain bg-no-repeat bg-top'
           style={{ backgroundImage: `url(${backgroundImage})`, opacity: 0.2 }}
         ></div>
 
-        <div className="w-full xl:w-[90%] 2xl:w-[80%] bg-white rounded-base p-3 lg:p-8 shadow-lg rounded-md lg:mt-[100px] xl:mt-[120px]">
+        <div className='w-full xl:w-[90%] 2xl:w-[80%] bg-white rounded-base p-3 lg:p-8 shadow-lg rounded-md lg:mt-[100px] xl:mt-[120px]'>
           {/* Sponsor Cart */}
-          <div className="flex flex-col-reverse items-start justify-start lg:flex-row md:gap-[1rem] gap-[2rem]">
+          <div className='flex flex-col-reverse items-start justify-start lg:flex-row md:gap-[1rem] gap-[2rem]'>
             {/* Tree Image with Name, Qty, Price, Remove Tree Button */}
             {cartProducts.length > 0 ? (
-              <div className="w-full lg:w-[60%] flex flex-col items-start justify-start sm:gap-[2rem] bg-white rounded-md p-4 ">
-                {" "}
-                <div className="flex flex-col text-dark-gray">
-                  <div className="flex items-center gap-2 mb-4">
-                    <BiSolidUserDetail size="2.1rem" />
-                    <h3 className="text-3xl text-secondary-color font-main-font tracking-wide border-b-2 border-bg-header-footer inline-block">
+              <div className='w-full lg:w-[60%] flex flex-col items-start justify-start sm:gap-[2rem] bg-white rounded-md p-4 '>
+                {' '}
+                <div className='flex flex-col text-dark-gray'>
+                  <div className='flex items-center gap-2 mb-4'>
+                    <BiSolidUserDetail size='2.1rem' />
+                    <h3 className='text-3xl text-primary font-main-font tracking-wide border-b-2 border-light-green inline-block'>
                       Patron Details
                     </h3>
-                  </div>{" "}
-                  <div className="flex flex-col">
-                    {" "}
-                    <p className="text-dark-gray ">
-                      <span className="font-semibold text-lg text-dark-gray">
+                  </div>{' '}
+                  <div className='flex flex-col'>
+                    {' '}
+                    <p className='text-dark-gray '>
+                      <span className='font-semibold text-lg text-dark-gray'>
                         Full Name:
                       </span>
                       <span>
@@ -115,51 +115,51 @@ const Order = () => {
                         {newPatron.lastName}
                       </span>
                     </p>
-                    <p className="text-dark-gray ">
-                      <span className="font-semibold text-lg text-dark-gray">
+                    <p className='text-dark-gray '>
+                      <span className='font-semibold text-lg text-dark-gray'>
                         Email:
                       </span>
                       <span>&nbsp;&nbsp;{newPatron.email}</span>
                     </p>
-                    <p className="text-dark-gray ">
-                      <span className="font-semibold text-lg text-dark-gray">
+                    <p className='text-dark-gray '>
+                      <span className='font-semibold text-lg text-dark-gray'>
                         Mobile Phone:
                       </span>
                       <span>&nbsp;&nbsp;{newPatron.mobilePhone}</span>
                     </p>
                     {/* Display address details */}
-                    <p className="text-dark-gray ">
-                      <span className="font-semibold text-lg text-dark-gray">
+                    <p className='text-dark-gray '>
+                      <span className='font-semibold text-lg text-dark-gray'>
                         Address Line 1:
                       </span>
                       <span>&nbsp;&nbsp;{newPatron.address.address1}</span>
                     </p>
-                    <p className="text-dark-gray ">
-                      <span className="font-semibold text-lg text-dark-gray">
+                    <p className='text-dark-gray '>
+                      <span className='font-semibold text-lg text-dark-gray'>
                         Additional Address Details:
                       </span>
                       <span>&nbsp;&nbsp;{newPatron.address.address2}</span>
                     </p>
-                    <p className="text-dark-gray ">
-                      <span className="font-semibold text-lg text-dark-gray">
+                    <p className='text-dark-gray '>
+                      <span className='font-semibold text-lg text-dark-gray'>
                         City:
                       </span>
                       <span>&nbsp;&nbsp;{newPatron.address.city}</span>
                     </p>
-                    <p className="text-dark-gray ">
-                      <span className="font-semibold text-lg text-dark-gray">
+                    <p className='text-dark-gray '>
+                      <span className='font-semibold text-lg text-dark-gray'>
                         Postcode:
                       </span>
                       <span>&nbsp;&nbsp;{newPatron.address.zipCode}</span>
                     </p>
-                    <p className="text-dark-gray ">
-                      <span className="font-semibold text-lg text-dark-gray">
+                    <p className='text-dark-gray '>
+                      <span className='font-semibold text-lg text-dark-gray'>
                         State/Country:
                       </span>
                       <span>&nbsp;&nbsp;{newPatron.address.state}</span>
                     </p>
-                    <p className="text-dark-gray ">
-                      <span className="font-semibold text-lg text-dark-gray">
+                    <p className='text-dark-gray '>
+                      <span className='font-semibold text-lg text-dark-gray'>
                         Country:
                       </span>
                       <span>&nbsp;&nbsp;{newPatron.address.country}</span>
@@ -167,7 +167,7 @@ const Order = () => {
                   </div>
                 </div>
                 {/* Horizontal Line */}
-                <hr className="w-[100%] mx-auto border-t-2 border-bg-header-footer my-2" />
+                <hr className='w-[100%] mx-auto border-t-2 border-light-green my-2' />
                 <SponsorList
                   cartProducts={cartProducts}
                   getTreeQuantity={getTreeQuantity}
@@ -179,70 +179,70 @@ const Order = () => {
             )}
 
             {/* Payment Information */}
-            <div className="w-full lg:w-2/5 ">
-              <div className="flex flex-col lg:border-l-4 lg:border-lighter-secondary gap-[0.4rem] bg-light-gray rounded-md py-4 px-3">
+            <div className='w-full lg:w-2/5 '>
+              <div className='flex flex-col lg:border-l-4 lg:border-lighter-secondary gap-[0.4rem] bg-light-gray rounded-md py-4 px-3'>
                 {/* Total Price */}
-                <div className="flex flex-col">
-                  <div className="flex flex-row justify-between">
-                    <div className="felx text-xl font-main-font text-secondary-color tracking-wide">
+                <div className='flex flex-col'>
+                  <div className='flex flex-row justify-between'>
+                    <div className='felx text-xl font-main-font text-primary tracking-wide'>
                       Total Price:
                     </div>
-                    <div className="flex text-md text-dark-gray">
+                    <div className='flex text-md text-dark-gray'>
                       € {calculateTotalPrice().toFixed(2)}
                     </div>
                   </div>
                 </div>
 
                 {/* Tax */}
-                <div className="flex flex-col">
-                  <div className="flex flex-row justify-between">
-                    <div className="felx text-xl font-main-font text-secondary-color tracking-wide">
+                <div className='flex flex-col'>
+                  <div className='flex flex-row justify-between'>
+                    <div className='felx text-xl font-main-font text-primary tracking-wide'>
                       Tax:
                     </div>
-                    <div className="flex text-md text-dark-gray">
+                    <div className='flex text-md text-dark-gray'>
                       € {(calculateTotalPrice() * TAX_RATE).toFixed(2)}
                     </div>
                   </div>
                 </div>
 
                 {/* Grand Total */}
-                <div className="flex flex-col">
-                  <div className="flex flex-row justify-between">
-                    <div className="felx text-xl font-main-font text-secondary-color tracking-wide">
+                <div className='flex flex-col'>
+                  <div className='flex flex-row justify-between'>
+                    <div className='felx text-xl font-main-font text-primary tracking-wide'>
                       Grand Total:
                     </div>
-                    <div className="flex text-md text-dark-gray price px-4 py-1 rounded-3xl font-bold">
+                    <div className='flex text-md text-dark-gray price px-4 py-1 rounded-3xl font-bold'>
                       € {calculateGrandTotal().toFixed(2)}
                     </div>
                   </div>
                 </div>
                 <span
-                  className="flex items-center text-left text-lg w-[100%] mx-auto my-2 px-4 py-2 bg-[#f4f5f3] text-secondary-color rounded-[10px]"
-                  aria-label="Powered by Stripe"
+                  className='flex items-center text-left text-lg w-[100%] mx-auto my-2 px-4 py-2 bg-[#f4f5f3] text-primary rounded-[10px]'
+                  aria-label='Powered by Stripe'
                 >
-                  <MdLabelImportant className="hidden md:block" />
+                  <MdLabelImportant className='hidden md:block' />
                   <span>
-                    &nbsp;Tax will be applied later during payment by&nbsp;{" "}
-                    <span className="font-bold">Stripe</span>
+                    &nbsp;Tax will be applied later during payment by&nbsp;{' '}
+                    <span className='font-bold'>Stripe</span>
                   </span>
                 </span>
                 {/* Horizontal Line */}
-                <hr className="w-[40%] mx-auto border-t-2 border-bg-header-footer my-4" />
+                <hr className='w-[40%] mx-auto border-t-2 border-light-green my-4' />
 
                 {/* Pay Now */}
                 <button
                   onClick={paymentProcess}
-                  className="flex items-center justify-center gap-1 text-2xl w-full px-4 py-5 bg-darker-secondary text-white-color rounded-md hover:bg-lighter-secondary hover:text-secondary-color transition duration-4000 ease-linear"
-                  aria-label="Pay Now"
+                  className='flex items-center justify-center gap-1 text-2xl w-full px-4 py-5 bg-darker-secondary text-white-color rounded-md hover:bg-lighter-secondary hover:text-primary transition duration-4000 ease-linear'
+                  aria-label='Pay Now'
                 >
-                  <FaAmazonPay size="1.9rem" />
+                  <FaAmazonPay size='1.9rem' />
                   <span>Pay Now</span>
                 </button>
                 {/* Back to  Checkout */}
                 <Link
-                  to="/checkout"
-                  className="flex items-center justify-center gap-2 w-full px-4 py-2 bg-bg-header-footer border-2 text-font-family-color rounded-md hover:bg-lighter-primary transition duration-4000 ease-linear mt-4"
-                  aria-label="Sponsor Tree page"
+                  to='/checkout'
+                  className='flex items-center justify-center gap-2 w-full px-4 py-2 bg-light-green border-2 text-font-family-color rounded-md hover:bg-lighter-primary transition duration-4000 ease-linear mt-4'
+                  aria-label='Sponsor Tree page'
                 >
                   <RiArrowGoBackLine />
                   <span>Back to Checkout</span>

@@ -10,7 +10,7 @@
 }
 
 .activeBtn {
-  background-color: var(--secondary-color);
+  background-color: var(--primary);
   border-color: var(--darker-secondary);
   border-width: 4px;
   --tw-text-opacity: 1;
@@ -25,7 +25,9 @@
 
 .activeBtn:hover {
   background-color: var(--lighter-secondary);
-  color: var(--secondary-color);
-  transition: background-color 0.4s linear, border 0.4s linear,
+  color: var(--primary);
+  transition:
+    background-color 0.4s linear,
+    border 0.4s linear,
     color 0.4s linear;
 }

@@ -1,5 +1,5 @@
-import { useState, useEffect, useContext } from "react";
-import { GiArchiveRegister } from "react-icons/gi";
+import { useState, useEffect, useContext } from 'react';
+import { GiArchiveRegister } from 'react-icons/gi';
 import {
   Breadcrumb,
   Label,
@@ -7,40 +7,40 @@ import {
   Checkbox,
   Button,
   Spinner,
-} from "flowbite-react";
-import { AuthContext } from "../../contexts/AuthContext";
-import { HiEye, HiEyeOff, HiHome } from "react-icons/hi";
-import { MdEmail, MdOutlineKey } from "react-icons/md";
-import { IoMdPerson } from "react-icons/io";
-import { FaPhoneAlt } from "react-icons/fa";
-import { FaMapLocation, FaTreeCity, FaHouse } from "react-icons/fa6";
-import { GiPostOffice } from "react-icons/gi";
-import { SiGooglestreetview } from "react-icons/si";
-import { Link, useNavigate } from "react-router-dom";
-import backgroundImage from "../../assets/images/leaves_background_02.webp";
-import axios from "../../utils/axiosInstance";
-import Swal from "sweetalert2";
+} from 'flowbite-react';
+import { AuthContext } from '../../contexts/AuthContext';
+import { HiEye, HiEyeOff, HiHome } from 'react-icons/hi';
+import { MdEmail, MdOutlineKey } from 'react-icons/md';
+import { IoMdPerson } from 'react-icons/io';
+import { FaPhoneAlt } from 'react-icons/fa';
+import { FaMapLocation, FaTreeCity, FaHouse } from 'react-icons/fa6';
+import { GiPostOffice } from 'react-icons/gi';
+import { SiGooglestreetview } from 'react-icons/si';
+import { Link, useNavigate } from 'react-router-dom';
+import backgroundImage from '../../assets/images/leaves_background_02.webp';
+import axios from '../../utils/axiosInstance';
+import Swal from 'sweetalert2';
 
-import treeIcon from "../../assets/tree.png";
-import LoginFooterImage from "../../assets/images/biobaum_about_footer_img.webp";
+import treeIcon from '../../assets/tree.png';
+import LoginFooterImage from '../../assets/images/biobaum_about_footer_img.webp';
 
 const Register = () => {
-  document.title = "Register New User";
+  document.title = 'Register New User';
   const { loggedIn } = useContext(AuthContext);
   const [loggingIn, setLoggingIn] = useState(false);
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    mobilePhone: "",
-    password: "",
-    passwordConfirmation: "",
-    address1: "",
-    address2: "",
-    city: "",
-    zipCode: "",
-    state: "",
-    country: "",
+    firstName: '',
+    lastName: '',
+    email: '',
+    mobilePhone: '',
+    password: '',
+    passwordConfirmation: '',
+    address1: '',
+    address2: '',
+    city: '',
+    zipCode: '',
+    state: '',
+    country: '',
     agree: false,
   });
 
@@ -48,7 +48,7 @@ const Register = () => {
 
   useEffect(() => {
     if (loggedIn) {
-      navigate("/dashboard");
+      navigate('/dashboard');
     }
   }, [loggedIn, navigate]);
 
@@ -65,31 +65,31 @@ const Register = () => {
     setShowConfirmationPassword(!showConfirmationPassword);
   };
 
-  const handleInputChange = (e) => {
+  const handleInputChange = e => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
   };
 
-  const handleCheckboxChange = (e) => {
+  const handleCheckboxChange = e => {
     setFormData({
       ...formData,
       agree: e.target.checked,
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async e => {
     e.preventDefault();
 
     if (!formData.agree) {
       Swal.fire({
-        icon: "warning",
-        title: "Agreement Required",
-        text: "Please agree to the terms and conditions before registering.",
+        icon: 'warning',
+        title: 'Agreement Required',
+        text: 'Please agree to the terms and conditions before registering.',
         customClass: {
-          confirmButton: "btn-custom-class",
-          title: "title-class",
+          confirmButton: 'btn-custom-class',
+          title: 'title-class',
         },
         buttonsStyling: false,
       });
@@ -100,12 +100,12 @@ const Register = () => {
     if (formData.password !== formData.passwordConfirmation) {
       // Display password mismatch
       Swal.fire({
-        icon: "error",
-        title: "Password Mismatch",
-        text: "Passwords do not match!",
+        icon: 'error',
+        title: 'Password Mismatch',
+        text: 'Passwords do not match!',
         customClass: {
-          confirmButton: "btn-custom-class",
-          title: "title-class",
+          confirmButton: 'btn-custom-class',
+          title: 'title-class',
         },
         buttonsStyling: false,
       });
@@ -113,35 +113,35 @@ const Register = () => {
     }
     setLoggingIn(true);
     try {
-      const response = await axios.post("/api/users/create-user", formData);
+      const response = await axios.post('/api/users/create-user', formData);
 
       if (response.status === 201) {
         setErrorMsgs([]);
         setLoggingIn(false);
         // Display success message
         Swal.fire({
-          icon: "success",
-          title: "Registration Successful!",
-          text: "You have successfully registered.",
+          icon: 'success',
+          title: 'Registration Successful!',
+          text: 'You have successfully registered.',
           customClass: {
-            confirmButton: "btn-custom-class",
-            title: "title-class",
+            confirmButton: 'btn-custom-class',
+            title: 'title-class',
           },
           buttonsStyling: false,
         });
-        navigate("/login");
+        navigate('/login');
       } else {
         // Handle other server response statuses
         setLoggingIn(false);
-        console.error("Error creating user:", response.data.message);
+        console.error('Error creating user:', response.data.message);
         Swal.fire({
-          icon: "error",
-          title: "Registration Failed",
+          icon: 'error',
+          title: 'Registration Failed',
           text:
-            response.data.message || "An error occurred during registration!",
+            response.data.message || 'An error occurred during registration!',
           customClass: {
-            confirmButton: "btn-custom-class",
-            title: "title-class",
+            confirmButton: 'btn-custom-class',
+            title: 'title-class',
           },
           buttonsStyling: false,
         });
@@ -153,36 +153,36 @@ const Register = () => {
       if (error.response && error.response.status === 400) {
         setErrorMsgs(error.response.data.errors);
 
-        let errorMessage = "<ul>";
+        let errorMessage = '<ul>';
 
         // Loop through error messages and append to the list
-        error.response.data.errors.forEach((error) => {
+        error.response.data.errors.forEach(error => {
           errorMessage += `<li>${error.msg}</li>`;
         });
 
-        errorMessage += "</ul>";
+        errorMessage += '</ul>';
 
         Swal.fire({
-          icon: "error",
-          title: "Registration Failed",
+          icon: 'error',
+          title: 'Registration Failed',
           html: errorMessage,
           customClass: {
-            confirmButton: "btn-custom-class",
-            title: "title-class",
+            confirmButton: 'btn-custom-class',
+            title: 'title-class',
           },
           buttonsStyling: false,
         });
       } else {
         setLoggingIn(false);
         Swal.fire({
-          icon: "error",
-          title: "Registration Failed",
+          icon: 'error',
+          title: 'Registration Failed',
           text:
             error.response?.data.message ||
-            "An error occurred during registration!",
+            'An error occurred during registration!',
           customClass: {
-            confirmButton: "btn-custom-class",
-            title: "title-class",
+            confirmButton: 'btn-custom-class',
+            title: 'title-class',
           },
           buttonsStyling: false,
         });
@@ -193,279 +193,276 @@ const Register = () => {
   return (
     <main>
       <Breadcrumb
-        aria-label=""
-        className="bg-gray-50 px-5 py-3 dark:bg-gray-800"
+        aria-label=''
+        className='bg-gray-50 px-5 py-3 dark:bg-gray-800'
       >
-        <Breadcrumb.Item href="/" icon={HiHome}>
+        <Breadcrumb.Item href='/' icon={HiHome}>
           Home
         </Breadcrumb.Item>
         <Breadcrumb.Item>Registration Form</Breadcrumb.Item>
       </Breadcrumb>
       {/* registration form */}
-      <div className="cart-page-container relative w-full mx-auto xs:p-0 p-4 pb-[25px] md:pb-[40px] lg:pb-[100px] xl:pb-[120px] flex items-center justify-center text-font-family-color">
+      <div className='cart-page-container relative w-full mx-auto xs:p-0 p-4 pb-[25px] md:pb-[40px] lg:pb-[100px] xl:pb-[120px] flex items-center justify-center text-font-family-color'>
         {/* Overlay with background image and opacity */}
         <div
-          className="cart-page-bg absolute top-0 left-0 w-full h-[50%] bg-cover bg-no-repeat bg-top"
+          className='cart-page-bg absolute top-0 left-0 w-full h-[50%] bg-cover bg-no-repeat bg-top'
           style={{ backgroundImage: `url(${backgroundImage})`, opacity: 0.4 }}
         ></div>
 
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col justify-start items-start gap-[2rem] w-full md:w-[90%] lg:w-[70%] xl:w-[60%] bg-white rounded-[15px] p-4 sm:p-8 shadow-lg mt-[50px] md:mt-[80px] lg:mt-[100px] xl:mt-[120px] xs:py-12 py-10"
+          className='flex flex-col justify-start items-start gap-[2rem] w-full md:w-[90%] lg:w-[70%] xl:w-[60%] bg-white rounded-[15px] p-4 sm:p-8 shadow-lg mt-[50px] md:mt-[80px] lg:mt-[100px] xl:mt-[120px] xs:py-12 py-10'
         >
-          <div className="flex items-center">
+          <div className='flex items-center'>
             <img
               src={treeIcon}
-              alt="Tree Icon"
-              className="w-[30px] h-[30px] mr-2"
+              alt='Tree Icon'
+              className='w-[30px] h-[30px] mr-2'
             />
-            <h3 className="text-3xl text-secondary-color font-main-font tracking-wide border-b-2 border-bg-header-footer inline-block">
+            <h3 className='text-3xl text-primary font-main-font tracking-wide border-b-2 border-light-green inline-block'>
               Register
             </h3>
           </div>
 
-          <p className="text-center">
-            Already have an account? Then please{" "}
-            <Link
-              to="/login"
-              className="text-secondary-color underline font-bold"
-            >
+          <p className='text-center'>
+            Already have an account? Then please{' '}
+            <Link to='/login' className='text-primary underline font-bold'>
               sign in
             </Link>
             .
           </p>
 
-          <div className="flex flex-col w-full">
+          <div className='flex flex-col w-full'>
             {/* User Details */}
-            <p className="text-2xl text-secondary-color font-main-font tracking-wide mb-2 underline">
+            <p className='text-2xl text-primary font-main-font tracking-wide mb-2 underline'>
               Details
             </p>
 
-            <div className="flex flex-col justify-center md:justify-between md:flex-row gap-[0.5rem] w-full">
+            <div className='flex flex-col justify-center md:justify-between md:flex-row gap-[0.5rem] w-full'>
               {/* first name field */}
-              <div className="mb-4 w-full ">
+              <div className='mb-4 w-full '>
                 <Label
-                  htmlFor="firstName"
-                  value="First Name"
-                  className="visually-hidden"
+                  htmlFor='firstName'
+                  value='First Name'
+                  className='visually-hidden'
                 />
                 <TextInput
-                  aria-label="Type your first name here"
-                  id="firstName"
-                  type="text"
-                  name="firstName"
+                  aria-label='Type your first name here'
+                  id='firstName'
+                  type='text'
+                  name='firstName'
                   icon={IoMdPerson}
-                  placeholder="First Name *"
+                  placeholder='First Name *'
                   required={true}
                   shadow
-                  className="input"
+                  className='input'
                   style={{
-                    backgroundColor: "var(--bg-white-color)",
-                    borderColor: "var(--bg-header-footer)",
-                    outlineColor: "var(--secondary-color)",
-                    padding: "1.15rem",
-                    color: "var(--font-family-color)",
-                    fontSize: "1rem",
-                    paddingLeft: "2.5rem",
+                    backgroundColor: 'var(--bg-white-color)',
+                    borderColor: 'var(--light-green)',
+                    outlineColor: 'var(--primary)',
+                    padding: '1.15rem',
+                    color: 'var(--font-family-color)',
+                    fontSize: '1rem',
+                    paddingLeft: '2.5rem',
                   }}
                   onChange={handleInputChange}
                 />
               </div>
 
               {/* last name field */}
-              <div className="mb-4 w-full">
+              <div className='mb-4 w-full'>
                 <Label
-                  htmlFor="lastName"
-                  value="Last Name"
-                  className="visually-hidden"
+                  htmlFor='lastName'
+                  value='Last Name'
+                  className='visually-hidden'
                 />
                 <TextInput
-                  aria-label="Type your last name here"
-                  id="lastName"
-                  type="text"
-                  name="lastName"
+                  aria-label='Type your last name here'
+                  id='lastName'
+                  type='text'
+                  name='lastName'
                   icon={IoMdPerson}
-                  placeholder="Last Name *"
+                  placeholder='Last Name *'
                   required={true}
                   shadow
-                  className="input"
+                  className='input'
                   style={{
-                    backgroundColor: "var(--bg-white-color)",
-                    borderColor: "var(--bg-header-footer)",
-                    outlineColor: "var(--secondary-color)",
-                    padding: "1.15rem",
-                    color: "var(--font-family-color)",
-                    fontSize: "1rem",
-                    paddingLeft: "2.5rem",
+                    backgroundColor: 'var(--bg-white-color)',
+                    borderColor: 'var(--light-green)',
+                    outlineColor: 'var(--primary)',
+                    padding: '1.15rem',
+                    color: 'var(--font-family-color)',
+                    fontSize: '1rem',
+                    paddingLeft: '2.5rem',
                   }}
                   onChange={handleInputChange}
                 />
               </div>
             </div>
 
-            <div className="flex flex-col justify-center md:justify-between md:flex-row gap-[0.5rem] w-full">
+            <div className='flex flex-col justify-center md:justify-between md:flex-row gap-[0.5rem] w-full'>
               {/* phone number field */}
-              <div className="flex flex-col w-full">
-                {" "}
-                <div className="mb-0 w-full">
-                  <Label htmlFor="mobilePhone" className="visually-hidden">
+              <div className='flex flex-col w-full'>
+                {' '}
+                <div className='mb-0 w-full'>
+                  <Label htmlFor='mobilePhone' className='visually-hidden'>
                     Phone Number
                   </Label>
                   <TextInput
                     required={true}
-                    id="mobilePhone"
-                    type="tel"
-                    name="mobilePhone"
+                    id='mobilePhone'
+                    type='tel'
+                    name='mobilePhone'
                     icon={FaPhoneAlt}
-                    placeholder="Phone Number *"
-                    className="input"
+                    placeholder='Phone Number *'
+                    className='input'
                     style={{
-                      backgroundColor: "var(--bg-white-color)",
-                      borderColor: "var(--bg-header-footer)",
-                      outlineColor: "var(--secondary-color)",
-                      padding: "1.15rem",
-                      color: "var(--font-family-color)",
-                      fontSize: "1rem",
-                      paddingLeft: "2.5rem",
+                      backgroundColor: 'var(--bg-white-color)',
+                      borderColor: 'var(--light-green)',
+                      outlineColor: 'var(--primary)',
+                      padding: '1.15rem',
+                      color: 'var(--font-family-color)',
+                      fontSize: '1rem',
+                      paddingLeft: '2.5rem',
                     }}
                     onChange={handleInputChange}
                   />
                 </div>
-                <p className="text-dark-gray">
-                  <span className="font-bold" style={{ lineHeight: "0px" }}>
+                <p className='text-dark-gray'>
+                  <span className='font-bold' style={{ lineHeight: '0px' }}>
                     Phone e.g.
-                  </span>{" "}
+                  </span>{' '}
                   +16044011234
                 </p>
               </div>
 
               {/* email field */}
-              <div className="mb-4 w-full">
+              <div className='mb-4 w-full'>
                 <Label
-                  htmlFor="email"
-                  value="Email Address"
-                  className="visually-hidden"
+                  htmlFor='email'
+                  value='Email Address'
+                  className='visually-hidden'
                 />
                 <TextInput
-                  aria-label="Type your email address here"
-                  id="email"
+                  aria-label='Type your email address here'
+                  id='email'
                   icon={MdEmail}
-                  type="email"
-                  name="email"
-                  placeholder="Email Address *"
+                  type='email'
+                  name='email'
+                  placeholder='Email Address *'
                   required={true}
                   shadow
-                  className="input"
+                  className='input'
                   style={{
-                    backgroundColor: "var(--bg-white-color)",
-                    borderColor: "var(--bg-header-footer)",
-                    outlineColor: "var(--secondary-color)",
-                    padding: "1.15rem",
-                    color: "var(--font-family-color)",
-                    fontSize: "1rem",
-                    paddingLeft: "2.5rem",
+                    backgroundColor: 'var(--bg-white-color)',
+                    borderColor: 'var(--light-green)',
+                    outlineColor: 'var(--primary)',
+                    padding: '1.15rem',
+                    color: 'var(--font-family-color)',
+                    fontSize: '1rem',
+                    paddingLeft: '2.5rem',
                   }}
                   onChange={handleInputChange}
                 />
               </div>
             </div>
 
-            <div className="flex flex-col justify-center md:justify-between md:flex-row gap-[0.5rem] w-full">
+            <div className='flex flex-col justify-center md:justify-between md:flex-row gap-[0.5rem] w-full'>
               {/* password field */}
-              <div className="mb-2 w-full" style={{ position: "relative" }}>
+              <div className='mb-2 w-full' style={{ position: 'relative' }}>
                 <Label
-                  htmlFor="password"
-                  value="Password"
-                  className="visually-hidden"
+                  htmlFor='password'
+                  value='Password'
+                  className='visually-hidden'
                 />
                 <TextInput
-                  aria-label="Enter your password here"
-                  id="password"
+                  aria-label='Enter your password here'
+                  id='password'
                   icon={MdOutlineKey}
-                  type={showPassword ? "text" : "password"}
-                  name="password"
-                  placeholder="Password *"
+                  type={showPassword ? 'text' : 'password'}
+                  name='password'
+                  placeholder='Password *'
                   required={true}
                   shadow
-                  className="input"
+                  className='input'
                   style={{
-                    backgroundColor: "var(--bg-white-color)",
-                    borderColor: "var(--bg-header-footer)",
-                    outlineColor: "var(--secondary-color)",
-                    padding: "1.15rem",
-                    color: "var(--font-family-color)",
-                    fontSize: "1rem",
-                    paddingLeft: "2.5rem",
+                    backgroundColor: 'var(--bg-white-color)',
+                    borderColor: 'var(--light-green)',
+                    outlineColor: 'var(--primary)',
+                    padding: '1.15rem',
+                    color: 'var(--font-family-color)',
+                    fontSize: '1rem',
+                    paddingLeft: '2.5rem',
                   }}
                   onChange={handleInputChange}
-                />{" "}
+                />{' '}
                 <div
                   style={{
-                    position: "absolute",
-                    top: "50%",
-                    right: "10px",
-                    transform: "translateY(-50%)",
-                    cursor: "pointer",
+                    position: 'absolute',
+                    top: '50%',
+                    right: '10px',
+                    transform: 'translateY(-50%)',
+                    cursor: 'pointer',
                   }}
                   onClick={togglePasswordVisibility}
                 >
                   {showPassword ? (
-                    <HiEyeOff className="text-2xl" />
+                    <HiEyeOff className='text-2xl' />
                   ) : (
-                    <HiEye className="text-2xl" />
+                    <HiEye className='text-2xl' />
                   )}
                 </div>
               </div>
 
               {/* confirm password field */}
-              <div className="mb-2 w-full " style={{ position: "relative" }}>
+              <div className='mb-2 w-full ' style={{ position: 'relative' }}>
                 <Label
-                  htmlFor="passwordConfirmation"
-                  value="Confirm Password"
-                  className="visually-hidden"
+                  htmlFor='passwordConfirmation'
+                  value='Confirm Password'
+                  className='visually-hidden'
                 />
                 <TextInput
-                  aria-label="Re-enter your password here"
-                  id="passwordConfirmation"
+                  aria-label='Re-enter your password here'
+                  id='passwordConfirmation'
                   icon={MdOutlineKey}
-                  type={showConfirmationPassword ? "text" : "password"}
-                  name="passwordConfirmation"
-                  placeholder="Confirm Password *"
+                  type={showConfirmationPassword ? 'text' : 'password'}
+                  name='passwordConfirmation'
+                  placeholder='Confirm Password *'
                   required={true}
                   shadow
-                  className="input"
+                  className='input'
                   style={{
-                    backgroundColor: "var(--bg-white-color)",
-                    borderColor: "var(--bg-header-footer)",
-                    outlineColor: "var(--secondary-color)",
-                    padding: "1.15rem",
-                    color: "var(--font-family-color)",
-                    fontSize: "1rem",
-                    paddingLeft: "2.5rem",
+                    backgroundColor: 'var(--bg-white-color)',
+                    borderColor: 'var(--light-green)',
+                    outlineColor: 'var(--primary)',
+                    padding: '1.15rem',
+                    color: 'var(--font-family-color)',
+                    fontSize: '1rem',
+                    paddingLeft: '2.5rem',
                   }}
                   onChange={handleInputChange}
-                />{" "}
+                />{' '}
                 <div
                   style={{
-                    position: "absolute",
-                    top: "50%",
-                    right: "10px",
-                    transform: "translateY(-50%)",
-                    cursor: "pointer",
+                    position: 'absolute',
+                    top: '50%',
+                    right: '10px',
+                    transform: 'translateY(-50%)',
+                    cursor: 'pointer',
                   }}
                   onClick={toggleConfirmationPasswordVisibility}
                 >
                   {showConfirmationPassword ? (
-                    <HiEyeOff className="text-2xl" />
+                    <HiEyeOff className='text-2xl' />
                   ) : (
-                    <HiEye className="text-2xl" />
+                    <HiEye className='text-2xl' />
                   )}
                 </div>
               </div>
             </div>
 
-            <div className="text-dark-gray">
-              <p className="font-bold">Password Requirements:</p>
+            <div className='text-dark-gray'>
+              <p className='font-bold'>Password Requirements:</p>
               <p>Minimum length of 8 characters</p>
               <p>At least one number</p>
               <p>At least one capital letter</p>
@@ -473,191 +470,191 @@ const Register = () => {
             </div>
           </div>
 
-          <div className="flex flex-col w-full">
-            {" "}
+          <div className='flex flex-col w-full'>
+            {' '}
             {/* address fields */}
-            <p className="text-2xl text-secondary-color font-main-font tracking-wide mb-2 underline">
+            <p className='text-2xl text-primary font-main-font tracking-wide mb-2 underline'>
               Address
             </p>
-            <div className="flex flex-col justify-center md:justify-between md:flex-row gap-[0.5rem] w-full">
+            <div className='flex flex-col justify-center md:justify-between md:flex-row gap-[0.5rem] w-full'>
               {/* address line 1 field */}
-              <div className="mb-4 w-full">
+              <div className='mb-4 w-full'>
                 <Label
-                  htmlFor="address1"
-                  className="text-xs visually-hidden"
-                  value="Address Line 1"
+                  htmlFor='address1'
+                  className='text-xs visually-hidden'
+                  value='Address Line 1'
                 />
                 <TextInput
-                  aria-label="Address Line 1"
-                  id="address1"
-                  type="text"
-                  name="address1"
+                  aria-label='Address Line 1'
+                  id='address1'
+                  type='text'
+                  name='address1'
                   icon={FaHouse}
-                  placeholder="Addrss Line 1 *"
+                  placeholder='Addrss Line 1 *'
                   required={true}
                   shadow
-                  className="input"
+                  className='input'
                   style={{
-                    backgroundColor: "var(--bg-white-color)",
-                    borderColor: "var(--bg-header-footer)",
-                    outlineColor: "var(--secondary-color)",
-                    padding: "1.15rem",
-                    color: "var(--font-family-color)",
-                    fontSize: "1rem",
-                    paddingLeft: "2.5rem",
+                    backgroundColor: 'var(--bg-white-color)',
+                    borderColor: 'var(--light-green)',
+                    outlineColor: 'var(--primary)',
+                    padding: '1.15rem',
+                    color: 'var(--font-family-color)',
+                    fontSize: '1rem',
+                    paddingLeft: '2.5rem',
                   }}
                   onChange={handleInputChange}
                 />
               </div>
               {/* address line 2 field */}
-              <div className="mb-4 w-full">
+              <div className='mb-4 w-full'>
                 <Label
-                  htmlFor="address2"
-                  className="text-xs visually-hidden"
-                  value="Address Line 2"
+                  htmlFor='address2'
+                  className='text-xs visually-hidden'
+                  value='Address Line 2'
                 />
                 <TextInput
-                  aria-label="Enter your street name here"
-                  id="address2"
-                  type="text"
-                  name="address2"
+                  aria-label='Enter your street name here'
+                  id='address2'
+                  type='text'
+                  name='address2'
                   icon={SiGooglestreetview}
-                  placeholder="Address Line 2 "
+                  placeholder='Address Line 2 '
                   shadow
-                  className="input"
+                  className='input'
                   style={{
-                    backgroundColor: "var(--bg-white-color)",
-                    borderColor: "var(--bg-header-footer)",
-                    outlineColor: "var(--secondary-color)",
-                    padding: "1.15rem",
-                    color: "var(--font-family-color)",
-                    fontSize: "1rem",
-                    paddingLeft: "2.5rem",
+                    backgroundColor: 'var(--bg-white-color)',
+                    borderColor: 'var(--light-green)',
+                    outlineColor: 'var(--primary)',
+                    padding: '1.15rem',
+                    color: 'var(--font-family-color)',
+                    fontSize: '1rem',
+                    paddingLeft: '2.5rem',
                   }}
                   onChange={handleInputChange}
                 />
               </div>
             </div>
-            <div className="flex flex-col justify-center md:justify-between md:flex-row gap-[0.5rem] w-full">
+            <div className='flex flex-col justify-center md:justify-between md:flex-row gap-[0.5rem] w-full'>
               {/* city field */}
-              <div className="mb-4 w-full">
+              <div className='mb-4 w-full'>
                 <Label
-                  htmlFor="city"
-                  className="text-xs visually-hidden"
-                  value="City"
+                  htmlFor='city'
+                  className='text-xs visually-hidden'
+                  value='City'
                 />
                 <TextInput
-                  aria-label="Enter your city name here"
-                  id="city"
-                  type="text"
-                  name="city"
+                  aria-label='Enter your city name here'
+                  id='city'
+                  type='text'
+                  name='city'
                   icon={FaTreeCity}
-                  placeholder="City *"
+                  placeholder='City *'
                   required={true}
                   shadow
-                  className="input"
+                  className='input'
                   style={{
-                    backgroundColor: "var(--bg-white-color)",
-                    borderColor: "var(--bg-header-footer)",
-                    outlineColor: "var(--secondary-color)",
-                    padding: "1.15rem",
-                    color: "var(--font-family-color)",
-                    fontSize: "1rem",
-                    paddingLeft: "2.5rem",
+                    backgroundColor: 'var(--bg-white-color)',
+                    borderColor: 'var(--light-green)',
+                    outlineColor: 'var(--primary)',
+                    padding: '1.15rem',
+                    color: 'var(--font-family-color)',
+                    fontSize: '1rem',
+                    paddingLeft: '2.5rem',
                   }}
                   onChange={handleInputChange}
                 />
               </div>
 
               {/* Postcode */}
-              <div className="mb-4 w-full">
+              <div className='mb-4 w-full'>
                 <Label
-                  htmlFor="zipCode"
-                  className="text-xs visually-hidden"
-                  value="City"
+                  htmlFor='zipCode'
+                  className='text-xs visually-hidden'
+                  value='City'
                 />
                 <TextInput
-                  aria-label="Enter your city name here"
-                  id="zipCode"
-                  type="text"
-                  name="zipCode"
+                  aria-label='Enter your city name here'
+                  id='zipCode'
+                  type='text'
+                  name='zipCode'
                   icon={GiPostOffice}
-                  placeholder="Postcode *"
+                  placeholder='Postcode *'
                   required={true}
                   shadow
-                  className="input"
+                  className='input'
                   style={{
-                    backgroundColor: "var(--bg-white-color)",
-                    borderColor: "var(--bg-header-footer)",
-                    outlineColor: "var(--secondary-color)",
-                    padding: "1.15rem",
-                    color: "var(--font-family-color)",
-                    fontSize: "1rem",
-                    paddingLeft: "2.5rem",
+                    backgroundColor: 'var(--bg-white-color)',
+                    borderColor: 'var(--light-green)',
+                    outlineColor: 'var(--primary)',
+                    padding: '1.15rem',
+                    color: 'var(--font-family-color)',
+                    fontSize: '1rem',
+                    paddingLeft: '2.5rem',
                   }}
                   onChange={handleInputChange}
                 />
               </div>
             </div>
-            <div className="flex flex-col justify-center md:justify-between md:flex-row gap-[0.5rem] w-full">
+            <div className='flex flex-col justify-center md:justify-between md:flex-row gap-[0.5rem] w-full'>
               {/* state/country field */}
-              <div className="mb-4 w-full">
+              <div className='mb-4 w-full'>
                 <Label
-                  htmlFor="state"
-                  className="text-xs visually-hidden"
-                  value="State"
+                  htmlFor='state'
+                  className='text-xs visually-hidden'
+                  value='State'
                 />
                 <TextInput
-                  aria-label="Enter your country name here"
-                  id="state"
-                  type="text"
-                  name="state"
+                  aria-label='Enter your country name here'
+                  id='state'
+                  type='text'
+                  name='state'
                   icon={FaMapLocation}
-                  placeholder="State/Country"
+                  placeholder='State/Country'
                   shadow
-                  className="input"
+                  className='input'
                   style={{
-                    backgroundColor: "var(--bg-white-color)",
-                    borderColor: "var(--bg-header-footer)",
-                    outlineColor: "var(--secondary-color)",
-                    padding: "1.15rem",
-                    color: "var(--font-family-color)",
-                    fontSize: "1rem",
-                    paddingLeft: "2.5rem",
+                    backgroundColor: 'var(--bg-white-color)',
+                    borderColor: 'var(--light-green)',
+                    outlineColor: 'var(--primary)',
+                    padding: '1.15rem',
+                    color: 'var(--font-family-color)',
+                    fontSize: '1rem',
+                    paddingLeft: '2.5rem',
                   }}
                   onChange={handleInputChange}
                 />
               </div>
 
               {/* country field */}
-              <div className="w-full">
+              <div className='w-full'>
                 <Label
-                  htmlFor="country"
-                  className="text-xs visually-hidden"
-                  value="Country"
+                  htmlFor='country'
+                  className='text-xs visually-hidden'
+                  value='Country'
                 />
                 <TextInput
-                  aria-label="Enter your country name here"
-                  id="country"
-                  name="country"
-                  type="text"
+                  aria-label='Enter your country name here'
+                  id='country'
+                  name='country'
+                  type='text'
                   icon={FaMapLocation}
-                  placeholder="Country *"
+                  placeholder='Country *'
                   required={true}
                   shadow
-                  className="input"
+                  className='input'
                   style={{
-                    backgroundColor: "var(--bg-white-color)",
-                    borderColor: "var(--bg-header-footer)",
-                    outlineColor: "var(--secondary-color)",
-                    padding: "1.15rem",
-                    color: "var(--font-family-color)",
-                    fontSize: "1rem",
-                    paddingLeft: "2.5rem",
+                    backgroundColor: 'var(--bg-white-color)',
+                    borderColor: 'var(--light-green)',
+                    outlineColor: 'var(--primary)',
+                    padding: '1.15rem',
+                    color: 'var(--font-family-color)',
+                    fontSize: '1rem',
+                    paddingLeft: '2.5rem',
                   }}
                   onChange={handleInputChange}
                   disabled={true}
-                  value="Germany"
+                  value='Germany'
                 />
               </div>
             </div>
@@ -665,37 +662,34 @@ const Register = () => {
 
           <div>
             {/* terms and conditions */}
-            <div className="flex items-center gap-[0.6rem]">
+            <div className='flex items-center gap-[0.6rem]'>
               <Checkbox
-                id="agree"
-                className=" border-font-family-color checked:border-none checked:outline-none checked:bg-secondary-color focus:ring-transparent dark:ring-offset-transparent !important cursor-pointer"
+                id='agree'
+                className=' border-font-family-color checked:border-none checked:outline-none checked:bg-primary focus:ring-transparent dark:ring-offset-transparent !important cursor-pointer'
                 checked={formData.agree}
                 onChange={handleCheckboxChange}
               />
-              <Label htmlFor="agree" className="text-font-family-color">
+              <Label htmlFor='agree' className='text-font-family-color'>
                 I agree with the&nbsp;
-                <Link
-                  to="/terms"
-                  className="text-secondary-color font-bold underline"
-                >
+                <Link to='/terms' className='text-primary font-bold underline'>
                   terms and conditions.
                 </Link>
               </Label>
             </div>
 
-            <div className="flex justify-start mt-6">
+            <div className='flex justify-start mt-6'>
               {loggingIn ? (
-                <Button className="custom-button-style">
+                <Button className='custom-button-style'>
                   <Spinner
-                    aria-label="Alternate spinner button example"
-                    size="sm"
+                    aria-label='Alternate spinner button example'
+                    size='sm'
                   />
-                  <span className="pl-3">Registering...</span>
+                  <span className='pl-3'>Registering...</span>
                 </Button>
               ) : (
-                <Button className="custom-button-style" type="submit">
-                  <GiArchiveRegister size="1.7rem" />
-                  <span className=" text-lg">&nbsp;Register</span>
+                <Button className='custom-button-style' type='submit'>
+                  <GiArchiveRegister size='1.7rem' />
+                  <span className=' text-lg'>&nbsp;Register</span>
                 </Button>
               )}
             </div>

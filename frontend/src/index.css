@@ -6,21 +6,31 @@
 Global variables for colors
 */
 :root {
-  --bg-header-footer: #dfdacb;
+  --primary: #5a6448;
+  --light-green: #dfdacb;
   --lighter-primary: #f8f7f4;
   --darker-primary: #b2aea2;
   --bg-page-color: #ededec;
   --white-color: #fcfdfd;
   --font-family-color: #82817e;
-  --secondary-color: #5a6448;
   --darker-secondary: #888f7a;
   --light-secondary: #bbd4a7;
   --lighter-secondary: #cbd2c3;
-  --darkgreen-color: #5a6448;
   --red-color: #ff6961;
   --light-bg: #f8f5f4;
   --light-gray: #ededed;
   --dark-gray: #c3c0c0;
+}
+
+@font-face {
+  font-family: 'Chicle';
+  src: url('../src/assets/Fonts/Chicle/Chicle-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../src/assets/Fonts/Open_Sans/OpenSans-VariableFont_wdth,wght.ttf')
+    format('truetype');
 }
 
 *,
@@ -42,15 +52,13 @@ Global variables for colors
   --z-index-v-11: 10; /* used in mobile-menu-bg */
   --z-index-v-12: 11;
 }
-body,
+
 html {
-  font-family: url("../src/assets/Fonts/Chicle/Chicle-Regular.ttf");
-  font-family: url("../src/assets/Fonts/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf");
-  min-height: 100vh;
-  overflow-x: hidden;
+  font-family: 'Open Sans', sans-serif;
   scroll-behavior: smooth;
   line-height: 1.5;
 }
+
 ul {
   list-style-type: none;
 }
@@ -58,13 +66,6 @@ ul {
 a {
   text-decoration: none;
 }
-/* 
-Heading general styles- Start
-*/
-
-/* 
-Heading general styles- End
-*/
 
 .page {
   min-height: calc(100vh - (12rem + 10rem));
@@ -102,7 +103,7 @@ Heading general styles- End
 
 .custom-button-style:hover {
   background-color: var(--lighter-secondary) !important;
-  color: var(--secondary-color) !important;
+  color: var(--primary) !important;
   border: none !important;
 }
 
@@ -146,7 +147,7 @@ input:-ms-input-placeholder {
 input:focus,
 input:active {
   outline: none !important;
-  border: 2px solid var(--secondary-color) !important;
+  border: 2px solid var(--primary) !important;
   box-shadow: none !important;
 }
 
@@ -195,42 +196,29 @@ input::placeholder {
   background-color: white;
   border-radius: 10px;
 }
-/* tree page animation 
-@keyframes moveText {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
 
-.infinite-animation {
-  animation: moveText 10s linear infinite;
-  white-space: nowrap;
-  overflow: hidden;
-}
-*/
 /* sweet alert custom button */
 .btn-custom-class {
-  background-color: var(--secondary-color);
+  background-color: var(--primary);
   color: var(--white-color);
   padding: 0.5rem 1rem;
   border: 3px solid var(--darker-secondary);
   border-radius: 10px;
-  transition: background-color 0.4s linear, border 0.4s linear,
+  transition:
+    background-color 0.4s linear,
+    border 0.4s linear,
     color 0.4s linear;
 }
 
 .btn-custom-class:hover {
   background-color: var(--lighter-secondary);
   border: 3px solid var(--darker-secondary);
-  color: var(--secondary-color);
+  color: var(--primary);
 }
 
 .title-class {
-  font-family: "Chicle", "serif";
-  color: var(--secondary-color);
+  font-family: 'Chicle', 'serif';
+  color: var(--primary);
   font-weight: 500;
   letter-spacing: 0.1rem;
   font-size: 2rem;
@@ -238,11 +226,13 @@ input::placeholder {
 
 .btn-deny-class {
   background-color: var(--darker-primary);
-  border: 3px solid var(--bg-header-footer);
+  border: 3px solid var(--light-green);
   color: var(--white-color);
   padding: 0.5rem 1rem;
   border-radius: 10px;
-  transition: background-color 0.4s linear, border 0.4s linear,
+  transition:
+    background-color 0.4s linear,
+    border 0.4s linear,
     color 0.4s linear;
   margin-right: 0.6rem;
   margin-left: 0.6rem;
@@ -251,7 +241,7 @@ input::placeholder {
 .btn-deny-class:hover {
   background-color: var(--lighter-primary);
   border: 3px solid var(--darker-primary);
-  color: var(--secondary-color);
+  color: var(--primary);
 }
 
 .btn-cancel-class {
@@ -260,7 +250,9 @@ input::placeholder {
   border: 3px solid #ffbaba;
   padding: 0.5rem 1rem;
   border-radius: 10px;
-  transition: background-color 0.4s linear, border 0.4s linear,
+  transition:
+    background-color 0.4s linear,
+    border 0.4s linear,
     color 0.4s linear;
 }
 
@@ -273,14 +265,14 @@ input::placeholder {
   gap: 10px; /* Adjust the gap as needed */
 }
 .custom-confirm-button-class {
-  background-color: var(--secondary-color);
+  background-color: var(--primary);
 }
 
 /* arrow Up - Footer */
 .arrowUp {
   width: 60px;
   height: 60px;
-  background-color: var(--bg-header-footer);
+  background-color: var(--light-green);
   border-radius: 100%;
   position: fixed;
   right: 1rem;
@@ -288,7 +280,7 @@ input::placeholder {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 6px var(--secondary-color);
+  box-shadow: 0 4px 6px var(--primary);
   z-index: var(--z-index-v-6);
   overflow: hidden;
   transition: all 0.5s linear;
@@ -326,39 +318,31 @@ input::placeholder {
   opacity: 1;
 }
 
-/* @media (max-width: 1024px) {
-  .arrowUp {
-    width: 60px;
-    height: 60px;
-    right: 0.5rem;
-    bottom: 0.5rem;
-  }
-
-  .arrowUp .logoImage {
-    width: 60px;
-    height: 60px;
-  }
-} */
-
 /* z-index stack */
 .dashboard-nav-index {
   z-index: var(--z-index-v-2);
 }
+
 .desktop-nav {
   z-index: var(--z-index-v-10);
 }
+
 .mobile-nav {
   z-index: var(--z-index-v-10);
 }
+
 .mobile-menu-bg {
   z-index: var(--z-index-v-11);
 }
+
 .auth-nav {
   z-index: var(--z-index-v-12);
 }
+
 .cart-page-container {
   z-index: var(--z-index-v-5);
 }
+
 .cart-page-bg {
   z-index: var(--z-index-v-1);
 }

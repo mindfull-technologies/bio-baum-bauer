@@ -1,29 +1,29 @@
-import backgroundImage from "../assets/images/leaves_background_01.webp";
-import { HiHome } from "react-icons/hi";
-import PageBreadcrumb from "../components/PageBreadcrumb";
-import EachPageHeader from "../components/EachPageHeader";
-import ButtmImg from "../assets/images/news_images/leaves_background.png";
-import { Link } from "react-router-dom";
-import { Button } from "flowbite-react";
-import { RiArrowGoBackLine } from "react-icons/ri";
+import backgroundImage from '../assets/images/leaves_background_01.webp';
+import { HiHome } from 'react-icons/hi';
+import PageBreadcrumb from '../components/PageBreadcrumb';
+import EachPageHeader from '../components/EachPageHeader';
+import ButtmImg from '../assets/images/news_images/leaves_background.png';
+import { Link } from 'react-router-dom';
+import { Button } from 'flowbite-react';
+import { RiArrowGoBackLine } from 'react-icons/ri';
 
 const Terms = () => {
-  document.title = "Terms and Conditions";
-  const titles = ["Terms and Conditions"];
-  const aLinkValues = [{ linkTo: "/", linkIcon: HiHome, linkText: "Home" }];
-  const daLinkValues = { linkText: "Terms and Conditions" };
+  document.title = 'Terms and Conditions';
+  const titles = ['Terms and Conditions'];
+  const aLinkValues = [{ linkTo: '/', linkIcon: HiHome, linkText: 'Home' }];
+  const daLinkValues = { linkText: 'Terms and Conditions' };
 
   return (
-    <div className="relative text-font-family-color">
+    <div className='relative text-font-family-color'>
       <PageBreadcrumb activeLinks={aLinkValues} deActiveLink={daLinkValues} />
       {/* Terms and Conditions title, positioned absolutely */}
-      <h2 className="absolute top-0 left-1/2 transform -translate-x-1/2 py-10 text-center">
+      <h2 className='absolute top-0 left-1/2 transform -translate-x-1/2 py-10 text-center'>
         <EachPageHeader title={titles[0]} subtitle={titles[1]} />
       </h2>
-      <section className="relative flex flex-col items-center justify-center pt-[100px] md:pt-[160px] lg:pt-[180px] xl:pt-[220px]">
+      <section className='relative flex flex-col items-center justify-center pt-[100px] md:pt-[160px] lg:pt-[180px] xl:pt-[220px]'>
         {/* Overlay with background image and opacity */}
         <div
-          className="cart-page-bg absolute top-0 left-0 w-full h-[25%] bg-cover bg-no-repeat bg-center"
+          className='cart-page-bg absolute top-0 left-0 w-full h-[25%] bg-cover bg-no-repeat bg-center'
           style={{
             backgroundImage: `url(${backgroundImage})`,
             opacity: 0.2,
@@ -31,14 +31,14 @@ const Terms = () => {
         ></div>
 
         {/* Terms and Conditions Content */}
-        <div className="max-w-6xl mx-auto px-4 py-8 md:p-8 bg-white rounded-xl shadow-lg my-10">
-          <h2 className="text-5xl font-semibold mt-6 mb-16 flex justify-center my-5">
+        <div className='max-w-6xl mx-auto px-4 py-8 md:p-8 bg-white rounded-xl shadow-lg my-10'>
+          <h2 className='text-5xl font-semibold mt-6 mb-16 flex justify-center my-5'>
             Welcome to Bio Baum Bauer!
           </h2>
 
           <p>
             These terms and conditions outline the rules and regulations for the
-            use of <b>Solawi Zabergäu's</b> Website, located at{" "}
+            use of <b>Solawi Zabergäu's</b> Website, located at{' '}
             <b>www.biobaumbauer.com.</b>
           </p>
 
@@ -66,14 +66,14 @@ const Terms = () => {
             same.
           </p>
 
-          <h2 className="text-3xl font-semibold mt-6">
+          <h2 className='text-3xl font-semibold mt-6'>
             <strong>Cookies</strong>
           </h2>
 
           <p>
             We employ the use of cookies. By accessing Bio Baum Bauer, you
             agreed to use cookies in agreement with the Solawi Zabergäu's
-            Privacy Policy.{" "}
+            Privacy Policy.{' '}
           </p>
 
           <p>
@@ -84,7 +84,7 @@ const Terms = () => {
             also use cookies.
           </p>
 
-          <h2 className="text-3xl font-semibold mt-6">
+          <h2 className='text-3xl font-semibold mt-6'>
             <strong>License</strong>
           </h2>
 
@@ -97,7 +97,7 @@ const Terms = () => {
           </p>
 
           <p>You must not:</p>
-          <ul className="list-disc pl-5 space-y-2">
+          <ul className='list-disc pl-5 space-y-2'>
             <li>Republish material from Bio Baum Bauer</li>
             <li>Sell, rent or sub-license material from Bio Baum Bauer</li>
             <li>Reproduce, duplicate or copy material from Bio Baum Bauer</li>
@@ -106,8 +106,8 @@ const Terms = () => {
 
           <p>
             This Agreement shall begin on the date hereof. Our Terms and
-            Conditions were created with the help of the{" "}
-            <a href="https://www.termsandconditionsgenerator.com/">
+            Conditions were created with the help of the{' '}
+            <a href='https://www.termsandconditionsgenerator.com/'>
               Free Terms and Conditions Generator
             </a>
             .
@@ -135,7 +135,7 @@ const Terms = () => {
 
           <p>You warrant and represent that:</p>
 
-          <ul className="list-disc pl-5 space-y-2">
+          <ul className='list-disc pl-5 space-y-2'>
             <li>
               You are entitled to post the Comments on our website and have all
               necessary licenses and consents to do so;
@@ -162,7 +162,7 @@ const Terms = () => {
             of your Comments in any and all forms, formats or media.
           </p>
 
-          <h2 className="text-3xl font-semibold mt-6">
+          <h2 className='text-3xl font-semibold mt-6'>
             <strong>Hyperlinking to our Content</strong>
           </h2>
 
@@ -171,7 +171,7 @@ const Terms = () => {
             written approval:
           </p>
 
-          <ul className="list-disc pl-5 space-y-2">
+          <ul className='list-disc pl-5 space-y-2'>
             <li>Government agencies;</li>
             <li>Search engines;</li>
             <li>News organizations;</li>
@@ -200,7 +200,7 @@ const Terms = () => {
             types of organizations:
           </p>
 
-          <ul className="list-disc pl-5 space-y-2">
+          <ul className='list-disc pl-5 space-y-2'>
             <li>
               commonly-known consumer and/or business information sources;
             </li>
@@ -242,7 +242,7 @@ const Terms = () => {
 
           <p>Approved organizations may hyperlink to our Website as follows:</p>
 
-          <ul className="list-disc pl-5 space-y-2">
+          <ul className='list-disc pl-5 space-y-2'>
             <li>By use of our corporate name; or</li>
             <li>By use of the uniform resource locator being linked to; or</li>
             <li>
@@ -257,7 +257,7 @@ const Terms = () => {
             for linking absent a trademark license agreement.
           </p>
 
-          <h2 className="text-3xl font-semibold mt-6">
+          <h2 className='text-3xl font-semibold mt-6'>
             <strong>iFrames</strong>
           </h2>
 
@@ -267,7 +267,7 @@ const Terms = () => {
             presentation or appearance of our Website.
           </p>
 
-          <h2 className="text-3xl font-semibold mt-6">
+          <h2 className='text-3xl font-semibold mt-6'>
             <strong>Content Liability</strong>
           </h2>
 
@@ -280,7 +280,7 @@ const Terms = () => {
             or other violation of, any third party rights.
           </p>
 
-          <h2 className="text-3xl font-semibold mt-6">
+          <h2 className='text-3xl font-semibold mt-6'>
             <strong>Reservation of Rights</strong>
           </h2>
 
@@ -293,7 +293,7 @@ const Terms = () => {
             follow these linking terms and conditions.
           </p>
 
-          <h2 className="text-3xl font-semibold mt-6">
+          <h2 className='text-3xl font-semibold mt-6'>
             <strong>Removal of links from our website</strong>
           </h2>
 
@@ -311,7 +311,7 @@ const Terms = () => {
             the website is kept up to date.
           </p>
 
-          <h2 className="text-3xl font-semibold mt-6">
+          <h2 className='text-3xl font-semibold mt-6'>
             <strong>Disclaimer</strong>
           </h2>
 
@@ -321,7 +321,7 @@ const Terms = () => {
             and the use of this website. Nothing in this disclaimer will:
           </p>
 
-          <ul className="list-disc pl-5 space-y-2">
+          <ul className='list-disc pl-5 space-y-2'>
             <li>
               limit or exclude our or your liability for death or personal
               injury;
@@ -355,10 +355,10 @@ const Terms = () => {
           </p>
 
           {/* Link going back to Home page */}
-          <div className="flex justify-center mt-10">
+          <div className='flex justify-center mt-10'>
             <Link
-              to="/"
-              className="flex items-center w-max px-4 py-2 justify-center gap-2 text-md bg-bg-header-footer border-2 md:text-lg text-secondary-color font-bold rounded-md hover:bg-lighter-primary transition duration-4000 ease-linear"
+              to='/'
+              className='flex items-center w-max px-4 py-2 justify-center gap-2 text-md bg-light-green border-2 md:text-lg text-primary font-bold rounded-md hover:bg-lighter-primary transition duration-4000 ease-linear'
             >
               <RiArrowGoBackLine />
               <span>Back to Home Page</span>
@@ -368,9 +368,9 @@ const Terms = () => {
       </section>
       {/* Footer Image */}
       <img
-        className="w-full"
+        className='w-full'
         src={ButtmImg}
-        alt="Terms and Conditions Footer Image"
+        alt='Terms and Conditions Footer Image'
       />
     </div>
   );
