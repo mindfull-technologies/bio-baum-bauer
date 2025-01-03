@@ -219,7 +219,7 @@ const Register = () => {
               alt='Tree Icon'
               className='w-[30px] h-[30px] mr-2'
             />
-            <h3 className='text-3xl text-accent font-main-font tracking-wide border-b-2 border-primary inline-block'>
+            <h3 className='text-3xl text-accent font-chicle tracking-wide border-b-2 border-primary inline-block'>
               Register
             </h3>
           </div>
@@ -234,7 +234,7 @@ const Register = () => {
 
           <div className='flex flex-col w-full'>
             {/* User Details */}
-            <p className='text-2xl text-accent font-main-font tracking-wide mb-2 underline'>
+            <p className='text-2xl text-accent font-chicle tracking-wide mb-2 underline'>
               Details
             </p>
 
@@ -473,7 +473,7 @@ const Register = () => {
           <div className='flex flex-col w-full'>
             {' '}
             {/* address fields */}
-            <p className='text-2xl text-accent font-main-font tracking-wide mb-2 underline'>
+            <p className='text-2xl text-accent font-chicle tracking-wide mb-2 underline'>
               Address
             </p>
             <div className='flex flex-col justify-center md:justify-between md:flex-row gap-[0.5rem] w-full'>

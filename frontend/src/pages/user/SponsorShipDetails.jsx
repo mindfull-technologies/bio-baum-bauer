@@ -65,7 +65,7 @@ const SponsorShipDetails = () => {
                   alt='Tree Icon'
                   className='w-[30px] h-[30px] mr-2'
                 />
-                <h3 className='text-3xl text-accent font-main-font tracking-wide border-b-2 border-primary inline-block'>
+                <h3 className='text-3xl text-accent font-chicle tracking-wide border-b-2 border-primary inline-block'>
                   <span>
                     <span className='hidden md:inline'>Sponsorship's</span>{' '}
                     Details
@@ -164,7 +164,7 @@ const SponsorShipDetails = () => {
                 <div className='w-full pt-5 px-4 mb-8 mx-auto'>
                   {Object.keys(patron).length > 0 ? (
                     <div className='w-[100%]'>
-                      <h3 className='break-all text-2xl lg:text-3xl text-accent font-main-font tracking-wide border-b-2 border-primary inline-block'>
+                      <h3 className='break-all text-2xl lg:text-3xl text-accent font-chicle tracking-wide border-b-2 border-primary inline-block'>
                         Patron Details
                       </h3>
                       <div className='break-all flex flex-col justify-center items-start gap-[0.4rem] bg-white rounded-[10px] border-primary mt-4 text-xs sm:text-sm md:text-md lg:text-lg xl:text-xl '>
@@ -216,7 +216,7 @@ const SponsorShipDetails = () => {
                 </div>
                 <hr />
                 <br />
-                <h3 className='break-all text-2xl xl:text-3xl text-accent font-main-font tracking-wide border-b-2 border-primary inline-block'>
+                <h3 className='break-all text-2xl xl:text-3xl text-accent font-chicle tracking-wide border-b-2 border-primary inline-block'>
                   Items
                 </h3>
                 <br /> <br />

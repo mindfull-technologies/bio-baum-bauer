@@ -34,7 +34,7 @@ const DesktopNavbar = ({ isNavbarFixed, setIsNavbarFixed }) => {
     <>
       <AuthNavbar />
       <nav
-        className='desktop-nav flex w-full top-0 justify-center items-center bg-primary h-[70px] font-general-font text-stone text-[1rem]'
+        className='desktop-nav flex w-full top-0 justify-center items-center bg-primary h-[70px] font-open-sans text-stone text-[1rem]'
         style={desktopNavbarStyle}
       >
         {/* DesktopNavbar Links */}

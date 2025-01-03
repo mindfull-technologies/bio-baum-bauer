@@ -21,7 +21,7 @@ export default function Upper() {
                   className='w-20 shadow-lg rounded-full'
                   alt='Bio Baum Bauer Logo'
                 />
-                <span className='text-3xl font-main-font'>Bio Baum Bauer</span>
+                <span className='text-3xl font-chicle'>Bio Baum Bauer</span>
               </p>
               <p className='font-sans text-lg mt-3'>
                 Growing a greener tomorrow.

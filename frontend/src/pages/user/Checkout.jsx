@@ -111,7 +111,7 @@ const Checkout = () => {
                 {/* User Details */}
                 <div className='flex items-center justify-start gap-2 mb-4'>
                   <RiUserReceived2Fill size='1.9rem' />
-                  <h3 className='text-3xl text-accent font-main-font tracking-wide border-b-2 border-primary inline-block'>
+                  <h3 className='text-3xl text-accent font-chicle tracking-wide border-b-2 border-primary inline-block'>
                     Patron Details
                   </h3>
                 </div>
@@ -207,7 +207,7 @@ const Checkout = () => {
                 {/* Delivery Address Info */}
                 <div className='flex items-center mb-4 mt-6 gap-2'>
                   <ImAddressBook size='1.7rem' />
-                  <h3 className='text-3xl text-accent font-main-font tracking-wide border-b-2 border-primary inline-block'>
+                  <h3 className='text-3xl text-accent font-chicle tracking-wide border-b-2 border-primary inline-block'>
                     Patron Address
                   </h3>
                 </div>
@@ -407,7 +407,7 @@ const Checkout = () => {
             <div className='w-full flex flex-col items-center lg:w-[50%] bg-white gap-[2rem] rounded-[10px] self-start h-auto mt-2'>
               <div className='flex flex-row items-center mx-auto gap-2 w-full py-2 text-accent '>
                 <MdOutlineSummarize size='1.9rem' />
-                <h3 className='text-3xl font-main-font'>Sponsorship Summary</h3>
+                <h3 className='text-3xl font-chicle'>Sponsorship Summary</h3>
               </div>
               <SponsorList
                 cartProducts={cartProducts}

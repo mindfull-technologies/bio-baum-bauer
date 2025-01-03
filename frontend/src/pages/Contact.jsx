@@ -126,7 +126,7 @@ const Contact = () => {
                 alt='Tree Icon'
                 className='w-[40px] h-[40px] mr-2'
               />{' '}
-              <h3 className='text-3xl text-accent font-main-font tracking-wide border-b-2 border-primary inline-block'>
+              <h3 className='text-3xl text-accent font-chicle tracking-wide border-b-2 border-primary inline-block'>
                 GET IN TOUCH
               </h3>
             </div>

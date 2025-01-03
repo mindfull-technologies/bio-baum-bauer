@@ -19,7 +19,7 @@ const TreeItem = props => {
                 alt='Tree Icon'
                 className='w-[30px] h-[30px] mr-2'
               />
-              <h3 className='text-2xl text-accent font-main-font tracking-wide border-b-2 border-primary inline-block'>
+              <h3 className='text-2xl text-accent font-chicle tracking-wide border-b-2 border-primary inline-block'>
                 {name}
               </h3>
             </div>

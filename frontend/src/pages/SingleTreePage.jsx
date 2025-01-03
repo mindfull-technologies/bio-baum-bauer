@@ -115,11 +115,11 @@ const SingleTreePage = () => {
                   style={{ width: '35px', height: '35px', borderRadius: '50%' }}
                 />
               </div>
-              <h3 className='text-4xl font-main-font'>{tree.name}</h3>
+              <h3 className='text-4xl font-chicle'>{tree.name}</h3>
             </div>
             <div className='flex flex-col items-center justify-center gap-2 text-center'>
               <div className='flex items-center py-5 gap-4'>
-                <p className='font-main-font text-accent text-2xl tracking-wide bg-mint rounded-2xl px-3 py-1 '>
+                <p className='font-chicle text-accent text-2xl tracking-wide bg-mint rounded-2xl px-3 py-1 '>
                   € {tree.price && tree.price.$numberDecimal}
                 </p>
                 <p>
@@ -144,7 +144,7 @@ const SingleTreePage = () => {
                   alt='Tree Icon'
                   className='w-[30px] h-[30px] mr-2'
                 />
-                <h3 className='text-3xl text-accent font-main-font tracking-wide border-b-2 border-primary inline-block mt-2'>
+                <h3 className='text-3xl text-accent font-chicle tracking-wide border-b-2 border-primary inline-block mt-2'>
                   Description:
                 </h3>
               </div>

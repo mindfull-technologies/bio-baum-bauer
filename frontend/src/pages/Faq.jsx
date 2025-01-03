@@ -84,7 +84,7 @@ const Faq = () => {
       <div className='flex flex-col justify-center items-center gap-8 h-full pb-16 lg:pb-56 bg-white'>
         <EachPageHeader title={titles[0]} subtitle={titles[1]} />
         <div className='container flex items-center justify-center mx-auto text-2xl lg:text-3xl pl-4'>
-          <h2 className=' font-main-font '>
+          <h2 className=' font-chicle '>
             Showing {skip + 1} to {Math.min(skip + limit, total)} of {total} FAQ
           </h2>
         </div>

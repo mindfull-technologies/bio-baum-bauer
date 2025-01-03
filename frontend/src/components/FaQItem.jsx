@@ -12,7 +12,7 @@ const FaQItem = props => {
           <Accordion.Title>
             <div className='flex items-center w-full gap-2'>
               <img className='w-6' src={treeicon}></img>
-              <p className='font-semibold text-lg font-general-font'>
+              <p className='font-semibold text-lg font-open-sans'>
                 {item.Question}
               </p>
             </div>

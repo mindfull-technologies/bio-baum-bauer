@@ -57,7 +57,7 @@ const DashboardContent = () => {
             <DashboardLinks />
             {/* Sponsorships */}
             <div className='w-full md:w-[25%]'>
-              <h3 className='break-all text-2xl md:text-3xl text-accent font-main-font tracking-wide md:border-b-2 md:border-primary inline-block'>
+              <h3 className='break-all text-2xl md:text-3xl text-accent font-chicle tracking-wide md:border-b-2 md:border-primary inline-block'>
                 <span>Hi,</span>
                 <span className=' text-gray-dark'>
                   <span className=' inline-block md:hidden lg:inline-block'>
@@ -67,12 +67,12 @@ const DashboardContent = () => {
                 </span>
               </h3>
               <div className='flex flex-col justify-center items-center gap-[2rem] bg-gray-light rounded-md  mt-4 p-4'>
-                <h3 className='text-3xl text-accent font-main-font tracking-wide'>
+                <h3 className='text-3xl text-accent font-chicle tracking-wide'>
                   Sponsorships
                 </h3>
                 <p className='text-red-500'>{error ? error : ''}</p>
                 <div className='w-24 h-24 md:w-20 md:h-20 bg-accent rounded-full flex items-center justify-center'>
-                  <p className='text-white text-4xl font-main-font'>
+                  <p className='text-white text-4xl font-chicle'>
                     {sponsorshipsCount}
                   </p>
                 </div>
@@ -91,7 +91,7 @@ const DashboardContent = () => {
             </div>{' '}
             {/* Delivery Address */}
             <div className='w-full md:w-[45%]'>
-              <h3 className='break-all text-3xl text-accent font-main-font tracking-wide border-b-2 border-primary inline-block'>
+              <h3 className='break-all text-3xl text-accent font-chicle tracking-wide border-b-2 border-primary inline-block'>
                 User Details
               </h3>
               <div className=' break-all flex flex-col bg-gray-light justify-center items-start gap-[0.4rem] rounded-md mt-4 p-4'>

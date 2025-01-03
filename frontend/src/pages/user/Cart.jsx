@@ -46,7 +46,7 @@ const Cart = () => {
               <div className='rounded-full flex items-center justify-center bg-white w-[40px] h-[40px] mr-[10px]'>
                 <FaCartArrowDown size='2rem' />
               </div>
-              <h3 className='text-3xl font-main-font hidden md:block'>
+              <h3 className='text-3xl font-chicle hidden md:block'>
                 {' '}
                 Sponsorship Cart
               </h3>
@@ -70,7 +70,7 @@ const Cart = () => {
                   {/* Total Price */}
                   <div className='flex flex-col'>
                     <div className='flex flex-row justify-between'>
-                      <div className='felx text-xl font-main-font text-accent tracking-wide'>
+                      <div className='felx text-xl font-chicle text-accent tracking-wide'>
                         Total Price:
                       </div>
                       <div className='flex text-md text-gray-dark'>
@@ -82,7 +82,7 @@ const Cart = () => {
                   {/* Tax */}
                   <div className='flex flex-col'>
                     <div className='flex flex-row justify-between'>
-                      <div className='felx text-xl font-main-font text-accent tracking-wide'>
+                      <div className='felx text-xl font-chicle text-accent tracking-wide'>
                         Tax:
                       </div>
                       <div className='flex text-md text-gray-dark'>
@@ -94,7 +94,7 @@ const Cart = () => {
                   {/* Grand Total */}
                   <div className='flex flex-col'>
                     <div className='flex flex-row justify-between'>
-                      <div className='felx text-xl font-main-font text-accent tracking-wide'>
+                      <div className='felx text-xl font-chicle text-accent tracking-wide'>
                         Grand Total:
                       </div>
                       <div className='flex text-md text-gray-dark price px-4 py-1 rounded-3xl font-bold'>
@@ -138,7 +138,7 @@ const Cart = () => {
                   >
                     {/* Tree Photo and Name */}
                     <div className='w-full sm:w-[25%] flex flex-col items-center sm:items-start'>
-                      <div className='hidden sm:flex flex-row items-center text-xl font-main-font text-accent tracking-wide pb-2'>
+                      <div className='hidden sm:flex flex-row items-center text-xl font-chicle text-accent tracking-wide pb-2'>
                         <img
                           src={treeIcon}
                           alt='Tree Icon'
@@ -154,7 +154,7 @@ const Cart = () => {
                             className='w-full h-[200px] md:w-[80px] md:h-[80px] object-cover mr-0 sm:mr-2 rounded-[10px] mt-2 mb-6 sm:mb-0'
                           />
                           <div
-                            className={`text-2xl sm:text-[1rem] font-main-font sm:font-general-font text-accent sm:text-gray-dark text-center sm:text-start font-bold`}
+                            className={`text-2xl sm:text-[1rem] font-chicle sm:font-open-sans text-accent sm:text-gray-dark text-center sm:text-start font-bold`}
                           >
                             {product.name}
                           </div>
@@ -164,7 +164,7 @@ const Cart = () => {
 
                     {/* Tree Qty */}
                     <div className='w-full sm:w-[25%] flex flex-col justify-start items-start'>
-                      <div className='hidden sm:flex-1 sm:block flex-row justify-start items-start text-xl font-main-font text-accent tracking-wide pb-2'>
+                      <div className='hidden sm:flex-1 sm:block flex-row justify-start items-start text-xl font-chicle text-accent tracking-wide pb-2'>
                         Qty
                       </div>
                       <div className='flex flex-row items-center justify-center border border-primary rounded-[10px] mx-auto sm:mx-0 p-[4px]'>
@@ -190,7 +190,7 @@ const Cart = () => {
 
                     {/* Tree Price */}
                     <div className='w-full sm:w-[25%] flex flex-col items-start pt-0'>
-                      <div className='hidden sm:flex text-xl font-main-font text-accent tracking-wide pb-2'>
+                      <div className='hidden sm:flex text-xl font-chicle text-accent tracking-wide pb-2'>
                         Price
                       </div>
                       <div className='flex flex-col mx-auto sm:mx-0 text-center sm:text-left'>
@@ -242,7 +242,7 @@ const Cart = () => {
                     alt='Tree Icon'
                     className='w-[30px] h-[30px] mr-2'
                   />
-                  <h3 className='text-3xl text-accent font-main-font tracking-wide border-b-2 border-primary inline-block'>
+                  <h3 className='text-3xl text-accent font-chicle tracking-wide border-b-2 border-primary inline-block'>
                     Your cart is empty.
                   </h3>
                 </div>

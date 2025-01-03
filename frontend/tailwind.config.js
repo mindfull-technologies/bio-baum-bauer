@@ -30,8 +30,8 @@ export default {
         white: 'var(--white)',
       },
       fontFamily: {
-        'main-font': ['Chicle', 'serif'],
-        'general-font': ['Open Sans', 'sans-serif'],
+        chicle: ['Chicle', 'serif'],
+        'open-sans': ['Open Sans', 'sans-serif'],
       },
     },
   },

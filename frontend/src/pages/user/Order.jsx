@@ -100,7 +100,7 @@ const Order = () => {
                 <div className='flex flex-col text-gray-dark'>
                   <div className='flex items-center gap-2 mb-4'>
                     <BiSolidUserDetail size='2.1rem' />
-                    <h3 className='text-3xl text-accent font-main-font tracking-wide border-b-2 border-primary inline-block'>
+                    <h3 className='text-3xl text-accent font-chicle tracking-wide border-b-2 border-primary inline-block'>
                       Patron Details
                     </h3>
                   </div>{' '}
@@ -184,7 +184,7 @@ const Order = () => {
                 {/* Total Price */}
                 <div className='flex flex-col'>
                   <div className='flex flex-row justify-between'>
-                    <div className='felx text-xl font-main-font text-accent tracking-wide'>
+                    <div className='felx text-xl font-chicle text-accent tracking-wide'>
                       Total Price:
                     </div>
                     <div className='flex text-md text-gray-dark'>
@@ -196,7 +196,7 @@ const Order = () => {
                 {/* Tax */}
                 <div className='flex flex-col'>
                   <div className='flex flex-row justify-between'>
-                    <div className='felx text-xl font-main-font text-accent tracking-wide'>
+                    <div className='felx text-xl font-chicle text-accent tracking-wide'>
                       Tax:
                     </div>
                     <div className='flex text-md text-gray-dark'>
@@ -208,7 +208,7 @@ const Order = () => {
                 {/* Grand Total */}
                 <div className='flex flex-col'>
                   <div className='flex flex-row justify-between'>
-                    <div className='felx text-xl font-main-font text-accent tracking-wide'>
+                    <div className='felx text-xl font-chicle text-accent tracking-wide'>
                       Grand Total:
                     </div>
                     <div className='flex text-md text-gray-dark price px-4 py-1 rounded-3xl font-bold'>

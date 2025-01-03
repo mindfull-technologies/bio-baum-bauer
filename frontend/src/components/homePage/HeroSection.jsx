@@ -27,7 +27,7 @@ const HeroSection = () => {
       {/* Hero Text and Button */}
       <div className='w-[90%] md:w-[80%] lg:w-[60%] xl:w-[40%] m-auto'>
         <div className='flex flex-col justify-center items-center mt-8'>
-          <h1 className='text-5xl md:text-6xl text-white font-main-font tracking-wide text-center'>
+          <h1 className='text-5xl md:text-6xl text-white font-chicle tracking-wide text-center'>
             Plant Today, Prosper Tomorrow
           </h1>
           <p className='mt-2 text-[1rem] md:text-[1.2rem] text-white text-center '>

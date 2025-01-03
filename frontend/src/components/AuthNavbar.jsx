@@ -22,7 +22,7 @@ const AuthNavbar = () => {
     setDropdownOpen(!isDropdownOpen);
   };
   return (
-    <nav className='auth-nav relative h-20 w-full font-general-font bg-accent opacity-90 text-accent text-[1rem] md:text-[1.2rem]'>
+    <nav className='auth-nav relative h-20 w-full font-open-sans bg-accent opacity-90 text-accent text-[1rem] md:text-[1.2rem]'>
       <div className='container h-full w-full mx-auto flex justify-between items-center ps-4 pr-6'>
         <div className='flex items-center gap-3 rounded-full'>
           <img
@@ -31,7 +31,7 @@ const AuthNavbar = () => {
             alt='Logo'
           />
 
-          <p className=' hidden text-white font-main-font text-2xl md:block'>
+          <p className=' hidden text-white font-chicle text-2xl md:block'>
             Bio Baum Bauer&nbsp;
           </p>
         </div>
@@ -59,10 +59,10 @@ const AuthNavbar = () => {
                   className='w-full select-none h-auto top-10 right-40  border-primary rounded-[10px] px-2 py-4 cursor-pointer flex justify-between items-center text-accent text-lg'
                 >
                   <Link aria-label='user dashboard, link to dashboard'>
-                    <span className='text-lg text-white font-general-font'>
+                    <span className='text-lg text-white font-open-sans'>
                       Hi, &nbsp;
                     </span>
-                    <span className='text-lg text-white font-general-font'>
+                    <span className='text-lg text-white font-open-sans'>
                       {authUser.lastName}&nbsp;
                     </span>
                   </Link>

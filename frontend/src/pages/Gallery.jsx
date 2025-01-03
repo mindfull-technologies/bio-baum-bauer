@@ -90,7 +90,7 @@ const Gallery = () => {
           style={{ backgroundImage: `url(${backgroundImage})`, opacity: 0.1 }}
         ></div>
         <div className='relative z-9'>
-          <h2 className='text-5xl md:text-7xl mt-[38px] md:mt-[68px] lg:mt-[88px] xl:mt-[108px] mb-[15px] text-center font-main-font tracking-wide text-[#5A6448]'>
+          <h2 className='text-5xl md:text-7xl mt-[38px] md:mt-[68px] lg:mt-[88px] xl:mt-[108px] mb-[15px] text-center font-chicle tracking-wide text-[#5A6448]'>
             Gallery
           </h2>
           {/* Gallery Page Description */}

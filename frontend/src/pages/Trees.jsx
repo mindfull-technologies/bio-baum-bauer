@@ -77,7 +77,7 @@ const Tree = () => {
                 alt='Small Photo'
                 className='hidden 2xl:flex w-[40px] h-[40px] mr-2'
               />
-              <div className='lg:text-4xl md:text-3xl text-2xl font-main-font text-accent tracking-wide border-primary'>
+              <div className='lg:text-4xl md:text-3xl text-2xl font-chicle text-accent tracking-wide border-primary'>
                 Stand with us for a greener world - sponsor a tree and grow a
                 legacy of environmental stewardship.
               </div>
