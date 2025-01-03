@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const AboutSolawi = () => {
   return (
     <div className='flex flex-col items-center justify-center w-full py-8 gap-5 md:flex-row px-4'>
-      <article className='w-full text-font-family-color flex flex-col gap-5 justify-center pt-6 sm:pt-3 sm:px-0'>
+      <article className='w-full text-stone flex flex-col gap-5 justify-center pt-6 sm:pt-3 sm:px-0'>
         <h2 className='text-2xl lg:text-3xl text-left'>
           About Us: Solawi Zabergäu
         </h2>
@@ -23,7 +23,7 @@ const AboutSolawi = () => {
         </p>
         <Link
           to='/about'
-          className='mission-more mr-auto px-8 py-2 bg-secondary text-font-family-color rounded-[10px] hover:bg-lighter-primary transition duration-4000 ease-linear'
+          className='mission-more mr-auto px-8 py-2 bg-primary text-stone rounded-[10px] hover:bg-primary-light transition duration-4000 ease-linear'
           aria-label='About Solawi page'
         >
           about us

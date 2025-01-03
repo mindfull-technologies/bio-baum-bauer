@@ -139,7 +139,7 @@ const Login = () => {
         </Breadcrumb.Item>
         <Breadcrumb.Item>Sign In</Breadcrumb.Item>
       </Breadcrumb>
-      <div className='relative w-full mx-auto xs:p-0 p-4 pb-[25px] md:pb-[40px] lg:pb-[100px] xl:pb-[120px] flex flex-col items-center justify-center text-font-family-color'>
+      <div className='relative w-full mx-auto xs:p-0 p-4 pb-[25px] md:pb-[40px] lg:pb-[100px] xl:pb-[120px] flex flex-col items-center justify-center text-stone'>
         {/* Overlay with background image and opacity */}
         <div
           className='absolute top-0 left-0 w-full h-full bg-cover bg-no-repeat bg-top z-[-1]'
@@ -164,7 +164,7 @@ const Login = () => {
         </div> */}
         <div
           className={`flex flex-col justify-start items-start gap-[2rem] w-full md:w-[80%] lg:w-[45%] xl:w-[40%] rounded-[15px] p-4 sm:p-8 z-9 shadow-lg mt-[10px] md:mt-[20px] lg:mt-[100px] xl:mt-[90px] xs:py-12 py-10 ${
-            loggingIn ? 'bg-light-gray text-gray-400 opacity-80' : 'bg-white '
+            loggingIn ? 'bg-gray-light text-gray-400 opacity-80' : 'bg-white '
           }`}
         >
           <div className='flex items-center'>
@@ -173,14 +173,14 @@ const Login = () => {
               alt='Tree Icon'
               className='w-[30px] h-[30px] mr-2'
             />
-            <h3 className='text-3xl text-primary font-main-font tracking-wide border-b-2 border-secondary inline-block'>
+            <h3 className='text-3xl text-accent font-main-font tracking-wide border-b-2 border-primary inline-block'>
               Login
             </h3>
           </div>
           <div className='flex items-center'>
             <span>Don't have an account ?&nbsp;&nbsp;</span>
             <Tooltip content='Click here to navigate to register page'>
-              <Link to='/register' className='text-primary underline font-bold'>
+              <Link to='/register' className='text-accent underline font-bold'>
                 signup
               </Link>
             </Tooltip>
@@ -198,11 +198,11 @@ const Login = () => {
                 name='email'
                 placeholder='Email Address *'
                 style={{
-                  backgroundColor: 'var(--bg-white-color)',
-                  borderColor: 'var(--secondary)',
-                  outlineColor: 'var(--primary)',
+                  backgroundColor: 'var(--bg-white)',
+                  borderColor: 'var(--primary)',
+                  outlineColor: 'var(--accent)',
                   padding: '1.15rem',
-                  color: 'var(--font-family-color)',
+                  color: 'var(--stone)',
                   fontSize: '1rem',
                 }}
               />
@@ -219,11 +219,11 @@ const Login = () => {
                 name='password'
                 placeholder='Your Password *'
                 style={{
-                  backgroundColor: 'var(--bg-white-color)',
-                  borderColor: 'var(--secondary)',
-                  outlineColor: 'var(--primary)',
+                  backgroundColor: 'var(--bg-white)',
+                  borderColor: 'var(--primary)',
+                  outlineColor: 'var(--accent)',
                   padding: '1.15rem',
-                  color: 'var(--font-family-color)',
+                  color: 'var(--stone)',
                   fontSize: '1rem',
                   paddingRight: '2.5rem', // Make room for the icon
                 }}
@@ -248,7 +248,7 @@ const Login = () => {
             <div className='flex items-center gap-2'>
               <span>We will remember you until you logout!</span>
               <Tooltip content='click here to reset your password'>
-                <Link to='' className='ml-10 text-primary underline'>
+                <Link to='' className='ml-10 text-accent underline'>
                   Forgot Password?
                 </Link>
               </Tooltip>

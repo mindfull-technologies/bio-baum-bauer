@@ -19,7 +19,7 @@ import { Fade } from 'react-awesome-reveal';
 function Footer() {
   return (
     <>
-      <div className='bg-secondary text-font-family-color'>
+      <div className='bg-primary text-stone'>
         <div className='container mx-auto flex flex-col py-10'>
           <section className='w-full flex flex-col lg:flex-row items-center justify-between py-4 mb-4 px-9 gap-[3.2rem]'>
             <div className='flex flex-col gap-5 max-w-md grow-2 w-full'>
@@ -29,7 +29,7 @@ function Footer() {
                   className='w-20 shadow-lg rounded-full'
                   alt='BioBaumBauer_Logo'
                 />
-                <span className='text-3xl font-main-font text-darkgreen-color'>
+                <span className='text-3xl font-main-font text-accent'>
                   Bio Baum Bauer
                 </span>
               </p>
@@ -43,7 +43,7 @@ function Footer() {
               <p className=' self-center text-lg font-bold'>Follow Us</p>
               <div className='flex self-center lg:justify-start gap-[0.2rem] md:gap-3 text-md md:text-lg pr-4 mt-2'>
                 <a
-                  className='mr-2 border-2 p-2 rounded-md text-darkgreen-color bg-bg-page-color shadow-sm hover:shadow-md hover:bg-darkgreen-color hover:text-white-color transition duration-5000 ease-linear '
+                  className='mr-2 border-2 p-2 rounded-md text-accent bg-gray-light shadow-sm hover:shadow-md hover:bg-accent hover:text-white transition duration-5000 ease-linear '
                   href='http://'
                   target='_blank'
                   rel='noopener noreferrer'
@@ -51,7 +51,7 @@ function Footer() {
                   <FaLinkedin />
                 </a>
                 <a
-                  className='mr-2 border-2 p-2 rounded-md text-darkgreen-color bg-bg-page-color shadow-sm hover:shadow-md hover:bg-darkgreen-color hover:text-white-color transition duration-5000 ease-linear '
+                  className='mr-2 border-2 p-2 rounded-md text-accent bg-gray-light shadow-sm hover:shadow-md hover:bg-accent hover:text-white transition duration-5000 ease-linear '
                   href='http://'
                   target='_blank'
                   rel='noopener noreferrer'
@@ -59,7 +59,7 @@ function Footer() {
                   <FaYoutube />
                 </a>
                 {/* <a
-                  className="mr-2 border-2 p-2 rounded-md text-darkgreen-color bg-bg-page-color shadow-sm hover:shadow-md hover:bg-darkgreen-color hover:text-white-color transition duration-5000 ease-linear "
+                  className="mr-2 border-2 p-2 rounded-md text-accent bg-gray-light shadow-sm hover:shadow-md hover:bg-accent hover:text-white transition duration-5000 ease-linear "
                   href="http://"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -67,7 +67,7 @@ function Footer() {
                   <IoLogoWhatsapp />
                 </a> */}
                 <a
-                  className='mr-2 border-2 p-2 rounded-md text-darkgreen-color bg-bg-page-color shadow-sm hover:shadow-md hover:bg-darkgreen-color hover:text-white-color transition duration-5000 ease-linear '
+                  className='mr-2 border-2 p-2 rounded-md text-accent bg-gray-light shadow-sm hover:shadow-md hover:bg-accent hover:text-white transition duration-5000 ease-linear '
                   href='http://'
                   target='_blank'
                   rel='noopener noreferrer'
@@ -75,7 +75,7 @@ function Footer() {
                   <BsTwitterX />
                 </a>
                 <a
-                  className='mr-2 border-2 p-2 rounded-md text-darkgreen-color bg-bg-page-color shadow-sm hover:shadow-md hover:bg-darkgreen-color hover:text-white-color transition duration-5000 ease-linear '
+                  className='mr-2 border-2 p-2 rounded-md text-accent bg-gray-light shadow-sm hover:shadow-md hover:bg-accent hover:text-white transition duration-5000 ease-linear '
                   href='http://'
                   target='_blank'
                   rel='noopener noreferrer'
@@ -85,55 +85,55 @@ function Footer() {
               </div>
             </div>
             <div className='flex flex-col justify-center items-center gap-5 max-w-md grow-1 w-full text-sm lg:text-lg '>
-              <h2 className='flex items-center gap-1 text-base md:text-lg font-sans font-bold text-darkgreen-color'>
+              <h2 className='flex items-center gap-1 text-base md:text-lg font-sans font-bold text-accent'>
                 <FaExternalLinkAlt /> <span>Links to Pages</span>
               </h2>
               <div className='flex flex-row lg:flex-col flex-wrap text-base gap-5 max-w-md items-center lg:items-start justify-center'>
                 <Link
                   to='/'
-                  className='flex items-center gap-1  transform hover:translate-x-2 motion-reduce:transition-none motion-reduce:hover:transform-none hover:text-white-color transition duration-5000 ease-linear  '
+                  className='flex items-center gap-1  transform hover:translate-x-2 motion-reduce:transition-none motion-reduce:hover:transform-none hover:text-white transition duration-5000 ease-linear  '
                 >
                   <MdDoubleArrow />
                   <span>Home</span>
                 </Link>
                 <Link
                   to='/trees'
-                  className='flex items-center gap-1  transform hover:translate-x-2 motion-reduce:transition-none motion-reduce:hover:transform-none hover:text-white-color transition duration-5000 ease-linear '
+                  className='flex items-center gap-1  transform hover:translate-x-2 motion-reduce:transition-none motion-reduce:hover:transform-none hover:text-white transition duration-5000 ease-linear '
                 >
                   <MdDoubleArrow />
                   <span>Trees</span>
                 </Link>
                 <Link
                   to='/news'
-                  className='flex items-center gap-1  transform hover:translate-x-2 motion-reduce:transition-none motion-reduce:hover:transform-none hover:text-white-color transition duration-5000 ease-linear '
+                  className='flex items-center gap-1  transform hover:translate-x-2 motion-reduce:transition-none motion-reduce:hover:transform-none hover:text-white transition duration-5000 ease-linear '
                 >
                   <MdDoubleArrow />
                   <span>News</span>
                 </Link>
                 <Link
                   to='/about'
-                  className='flex items-center gap-1  transform hover:translate-x-2 motion-reduce:transition-none motion-reduce:hover:transform-none hover:text-white-color transition duration-5000 ease-linear '
+                  className='flex items-center gap-1  transform hover:translate-x-2 motion-reduce:transition-none motion-reduce:hover:transform-none hover:text-white transition duration-5000 ease-linear '
                 >
                   <MdDoubleArrow />
                   <span>About</span>
                 </Link>
                 <Link
                   to='/gallery'
-                  className='flex items-center gap-1  transform hover:translate-x-2 motion-reduce:transition-none motion-reduce:hover:transform-none hover:text-white-color transition duration-5000 ease-linear '
+                  className='flex items-center gap-1  transform hover:translate-x-2 motion-reduce:transition-none motion-reduce:hover:transform-none hover:text-white transition duration-5000 ease-linear '
                 >
                   <MdDoubleArrow />
                   <span>Gallery</span>
                 </Link>
                 <Link
                   to='/faq'
-                  className='flex items-center gap-1  transform hover:translate-x-2 motion-reduce:transition-none motion-reduce:hover:transform-none hover:text-white-color transition duration-5000 ease-linear '
+                  className='flex items-center gap-1  transform hover:translate-x-2 motion-reduce:transition-none motion-reduce:hover:transform-none hover:text-white transition duration-5000 ease-linear '
                 >
                   <MdDoubleArrow />
                   <span>FAQs</span>
                 </Link>
                 <Link
                   to='/contact'
-                  className='flex items-center gap-1  transform hover:translate-x-2 motion-reduce:transition-none motion-reduce:hover:transform-none hover:text-white-color transition duration-5000 ease-linear '
+                  className='flex items-center gap-1  transform hover:translate-x-2 motion-reduce:transition-none motion-reduce:hover:transform-none hover:text-white transition duration-5000 ease-linear '
                 >
                   <MdDoubleArrow />
 
@@ -141,14 +141,14 @@ function Footer() {
                 </Link>
                 <Link
                   to='/terms'
-                  className='flex items-center gap-1  transform hover:translate-x-2 motion-reduce:transition-none motion-reduce:hover:transform-none hover:text-white-color transition duration-5000 ease-linear '
+                  className='flex items-center gap-1  transform hover:translate-x-2 motion-reduce:transition-none motion-reduce:hover:transform-none hover:text-white transition duration-5000 ease-linear '
                 >
                   <MdDoubleArrow />
                   <span>Terms</span>
                 </Link>
                 <Link
                   to='/privacy'
-                  className='flex items-center gap-1  transform hover:translate-x-2 motion-reduce:transition-none motion-reduce:hover:transform-none hover:text-white-color transition duration-5000 ease-linear '
+                  className='flex items-center gap-1  transform hover:translate-x-2 motion-reduce:transition-none motion-reduce:hover:transform-none hover:text-white transition duration-5000 ease-linear '
                 >
                   <MdDoubleArrow />
                   <span>Privacy</span>
@@ -157,7 +157,7 @@ function Footer() {
             </div>
             <div className='flex justify-center lg:justify-end items-center gap-3 max-w-md grow-1 w-full'>
               <div className='flex flex-col justify-center items-center gap-3 grow-1'>
-                <h3 className='flex items-center gap-1 text-sm md:text-lg font-sans font-bold text-darkgreen-color'>
+                <h3 className='flex items-center gap-1 text-sm md:text-lg font-sans font-bold text-accent'>
                   <FaAddressBook /> <span>Address</span>
                 </h3>
 
@@ -169,7 +169,7 @@ function Footer() {
 
               {/* <hr />
               <div className="flex flex-wrap gap-2 flex-col items-center">
-                <p className="text-lg font-sans font-bold text-darkgreen-color">
+                <p className="text-lg font-sans font-bold text-accent">
                   Contributors
                 </p>
                 <Link to="/contributors">

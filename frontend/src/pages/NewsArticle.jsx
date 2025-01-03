@@ -69,7 +69,7 @@ const NewsArticle = () => {
   //   );
 
   return (
-    <div className='bg-bg-page-color'>
+    <div className='bg-gray-light'>
       {article && (
         <div className='mt-0 mb-0'>
           <Breadcrumb
@@ -93,7 +93,7 @@ const NewsArticle = () => {
         <div className='bg-white mt-2 rounded-lg py-3 px-5'>
           <Link
             to='/news'
-            className='flex items-center w-max border-2 justify-center gap-1 px-8 h-max py-1  bg-secondary text-font-family-color rounded-[10px] hover:bg-lighter-primary transition duration-4000 ease-linear'
+            className='flex items-center w-max border-2 justify-center gap-1 px-8 h-max py-1  bg-primary text-stone rounded-[10px] hover:bg-primary-light transition duration-4000 ease-linear'
             aria-label='Tree page'
           >
             <MdKeyboardDoubleArrowLeft size='1rem' />
@@ -139,7 +139,7 @@ const NewsArticle = () => {
                 />
                 <Link
                   to='/news'
-                  className='flex items-center w-max border-2 justify-center gap-1 px-3 h-max py-1  bg-secondary text-font-family-color rounded-[10px] hover:bg-lighter-primary transition duration-4000 ease-linear'
+                  className='flex items-center w-max border-2 justify-center gap-1 px-3 h-max py-1  bg-primary text-stone rounded-[10px] hover:bg-primary-light transition duration-4000 ease-linear'
                 >
                   <IoMdArrowBack className='text-2xl' />
                   <span>&nbsp;Go Back</span>

@@ -202,7 +202,7 @@ const Register = () => {
         <Breadcrumb.Item>Registration Form</Breadcrumb.Item>
       </Breadcrumb>
       {/* registration form */}
-      <div className='cart-page-container relative w-full mx-auto xs:p-0 p-4 pb-[25px] md:pb-[40px] lg:pb-[100px] xl:pb-[120px] flex items-center justify-center text-font-family-color'>
+      <div className='cart-page-container relative w-full mx-auto xs:p-0 p-4 pb-[25px] md:pb-[40px] lg:pb-[100px] xl:pb-[120px] flex items-center justify-center text-stone'>
         {/* Overlay with background image and opacity */}
         <div
           className='cart-page-bg absolute top-0 left-0 w-full h-[50%] bg-cover bg-no-repeat bg-top'
@@ -219,14 +219,14 @@ const Register = () => {
               alt='Tree Icon'
               className='w-[30px] h-[30px] mr-2'
             />
-            <h3 className='text-3xl text-primary font-main-font tracking-wide border-b-2 border-secondary inline-block'>
+            <h3 className='text-3xl text-accent font-main-font tracking-wide border-b-2 border-primary inline-block'>
               Register
             </h3>
           </div>
 
           <p className='text-center'>
             Already have an account? Then please{' '}
-            <Link to='/login' className='text-primary underline font-bold'>
+            <Link to='/login' className='text-accent underline font-bold'>
               sign in
             </Link>
             .
@@ -234,7 +234,7 @@ const Register = () => {
 
           <div className='flex flex-col w-full'>
             {/* User Details */}
-            <p className='text-2xl text-primary font-main-font tracking-wide mb-2 underline'>
+            <p className='text-2xl text-accent font-main-font tracking-wide mb-2 underline'>
               Details
             </p>
 
@@ -257,11 +257,11 @@ const Register = () => {
                   shadow
                   className='input'
                   style={{
-                    backgroundColor: 'var(--bg-white-color)',
-                    borderColor: 'var(--secondary)',
-                    outlineColor: 'var(--primary)',
+                    backgroundColor: 'var(--bg-white)',
+                    borderColor: 'var(--primary)',
+                    outlineColor: 'var(--accent)',
                     padding: '1.15rem',
-                    color: 'var(--font-family-color)',
+                    color: 'var(--stone)',
                     fontSize: '1rem',
                     paddingLeft: '2.5rem',
                   }}
@@ -287,11 +287,11 @@ const Register = () => {
                   shadow
                   className='input'
                   style={{
-                    backgroundColor: 'var(--bg-white-color)',
-                    borderColor: 'var(--secondary)',
-                    outlineColor: 'var(--primary)',
+                    backgroundColor: 'var(--bg-white)',
+                    borderColor: 'var(--primary)',
+                    outlineColor: 'var(--accent)',
                     padding: '1.15rem',
-                    color: 'var(--font-family-color)',
+                    color: 'var(--stone)',
                     fontSize: '1rem',
                     paddingLeft: '2.5rem',
                   }}
@@ -317,18 +317,18 @@ const Register = () => {
                     placeholder='Phone Number *'
                     className='input'
                     style={{
-                      backgroundColor: 'var(--bg-white-color)',
-                      borderColor: 'var(--secondary)',
-                      outlineColor: 'var(--primary)',
+                      backgroundColor: 'var(--bg-white)',
+                      borderColor: 'var(--primary)',
+                      outlineColor: 'var(--accent)',
                       padding: '1.15rem',
-                      color: 'var(--font-family-color)',
+                      color: 'var(--stone)',
                       fontSize: '1rem',
                       paddingLeft: '2.5rem',
                     }}
                     onChange={handleInputChange}
                   />
                 </div>
-                <p className='text-dark-gray'>
+                <p className='text-gray-dark'>
                   <span className='font-bold' style={{ lineHeight: '0px' }}>
                     Phone e.g.
                   </span>{' '}
@@ -354,11 +354,11 @@ const Register = () => {
                   shadow
                   className='input'
                   style={{
-                    backgroundColor: 'var(--bg-white-color)',
-                    borderColor: 'var(--secondary)',
-                    outlineColor: 'var(--primary)',
+                    backgroundColor: 'var(--bg-white)',
+                    borderColor: 'var(--primary)',
+                    outlineColor: 'var(--accent)',
                     padding: '1.15rem',
-                    color: 'var(--font-family-color)',
+                    color: 'var(--stone)',
                     fontSize: '1rem',
                     paddingLeft: '2.5rem',
                   }}
@@ -386,11 +386,11 @@ const Register = () => {
                   shadow
                   className='input'
                   style={{
-                    backgroundColor: 'var(--bg-white-color)',
-                    borderColor: 'var(--secondary)',
-                    outlineColor: 'var(--primary)',
+                    backgroundColor: 'var(--bg-white)',
+                    borderColor: 'var(--primary)',
+                    outlineColor: 'var(--accent)',
                     padding: '1.15rem',
-                    color: 'var(--font-family-color)',
+                    color: 'var(--stone)',
                     fontSize: '1rem',
                     paddingLeft: '2.5rem',
                   }}
@@ -432,11 +432,11 @@ const Register = () => {
                   shadow
                   className='input'
                   style={{
-                    backgroundColor: 'var(--bg-white-color)',
-                    borderColor: 'var(--secondary)',
-                    outlineColor: 'var(--primary)',
+                    backgroundColor: 'var(--bg-white)',
+                    borderColor: 'var(--primary)',
+                    outlineColor: 'var(--accent)',
                     padding: '1.15rem',
-                    color: 'var(--font-family-color)',
+                    color: 'var(--stone)',
                     fontSize: '1rem',
                     paddingLeft: '2.5rem',
                   }}
@@ -461,7 +461,7 @@ const Register = () => {
               </div>
             </div>
 
-            <div className='text-dark-gray'>
+            <div className='text-gray-dark'>
               <p className='font-bold'>Password Requirements:</p>
               <p>Minimum length of 8 characters</p>
               <p>At least one number</p>
@@ -473,7 +473,7 @@ const Register = () => {
           <div className='flex flex-col w-full'>
             {' '}
             {/* address fields */}
-            <p className='text-2xl text-primary font-main-font tracking-wide mb-2 underline'>
+            <p className='text-2xl text-accent font-main-font tracking-wide mb-2 underline'>
               Address
             </p>
             <div className='flex flex-col justify-center md:justify-between md:flex-row gap-[0.5rem] w-full'>
@@ -495,11 +495,11 @@ const Register = () => {
                   shadow
                   className='input'
                   style={{
-                    backgroundColor: 'var(--bg-white-color)',
-                    borderColor: 'var(--secondary)',
-                    outlineColor: 'var(--primary)',
+                    backgroundColor: 'var(--bg-white)',
+                    borderColor: 'var(--primary)',
+                    outlineColor: 'var(--accent)',
                     padding: '1.15rem',
-                    color: 'var(--font-family-color)',
+                    color: 'var(--stone)',
                     fontSize: '1rem',
                     paddingLeft: '2.5rem',
                   }}
@@ -523,11 +523,11 @@ const Register = () => {
                   shadow
                   className='input'
                   style={{
-                    backgroundColor: 'var(--bg-white-color)',
-                    borderColor: 'var(--secondary)',
-                    outlineColor: 'var(--primary)',
+                    backgroundColor: 'var(--bg-white)',
+                    borderColor: 'var(--primary)',
+                    outlineColor: 'var(--accent)',
                     padding: '1.15rem',
-                    color: 'var(--font-family-color)',
+                    color: 'var(--stone)',
                     fontSize: '1rem',
                     paddingLeft: '2.5rem',
                   }}
@@ -554,11 +554,11 @@ const Register = () => {
                   shadow
                   className='input'
                   style={{
-                    backgroundColor: 'var(--bg-white-color)',
-                    borderColor: 'var(--secondary)',
-                    outlineColor: 'var(--primary)',
+                    backgroundColor: 'var(--bg-white)',
+                    borderColor: 'var(--primary)',
+                    outlineColor: 'var(--accent)',
                     padding: '1.15rem',
-                    color: 'var(--font-family-color)',
+                    color: 'var(--stone)',
                     fontSize: '1rem',
                     paddingLeft: '2.5rem',
                   }}
@@ -584,11 +584,11 @@ const Register = () => {
                   shadow
                   className='input'
                   style={{
-                    backgroundColor: 'var(--bg-white-color)',
-                    borderColor: 'var(--secondary)',
-                    outlineColor: 'var(--primary)',
+                    backgroundColor: 'var(--bg-white)',
+                    borderColor: 'var(--primary)',
+                    outlineColor: 'var(--accent)',
                     padding: '1.15rem',
-                    color: 'var(--font-family-color)',
+                    color: 'var(--stone)',
                     fontSize: '1rem',
                     paddingLeft: '2.5rem',
                   }}
@@ -614,11 +614,11 @@ const Register = () => {
                   shadow
                   className='input'
                   style={{
-                    backgroundColor: 'var(--bg-white-color)',
-                    borderColor: 'var(--secondary)',
-                    outlineColor: 'var(--primary)',
+                    backgroundColor: 'var(--bg-white)',
+                    borderColor: 'var(--primary)',
+                    outlineColor: 'var(--accent)',
                     padding: '1.15rem',
-                    color: 'var(--font-family-color)',
+                    color: 'var(--stone)',
                     fontSize: '1rem',
                     paddingLeft: '2.5rem',
                   }}
@@ -644,11 +644,11 @@ const Register = () => {
                   shadow
                   className='input'
                   style={{
-                    backgroundColor: 'var(--bg-white-color)',
-                    borderColor: 'var(--secondary)',
-                    outlineColor: 'var(--primary)',
+                    backgroundColor: 'var(--bg-white)',
+                    borderColor: 'var(--primary)',
+                    outlineColor: 'var(--accent)',
                     padding: '1.15rem',
-                    color: 'var(--font-family-color)',
+                    color: 'var(--stone)',
                     fontSize: '1rem',
                     paddingLeft: '2.5rem',
                   }}
@@ -665,13 +665,13 @@ const Register = () => {
             <div className='flex items-center gap-[0.6rem]'>
               <Checkbox
                 id='agree'
-                className=' border-font-family-color checked:border-none checked:outline-none checked:bg-primary focus:ring-transparent dark:ring-offset-transparent !important cursor-pointer'
+                className=' border-stone checked:border-none checked:outline-none checked:bg-accent focus:ring-transparent dark:ring-offset-transparent !important cursor-pointer'
                 checked={formData.agree}
                 onChange={handleCheckboxChange}
               />
-              <Label htmlFor='agree' className='text-font-family-color'>
+              <Label htmlFor='agree' className='text-stone'>
                 I agree with the&nbsp;
-                <Link to='/terms' className='text-primary font-bold underline'>
+                <Link to='/terms' className='text-accent font-bold underline'>
                   terms and conditions.
                 </Link>
               </Label>

@@ -93,7 +93,7 @@ const Contact = () => {
   };
 
   return (
-    <div className='text-font-family-color'>
+    <div className='text-stone'>
       <PageBreadcrumb activeLinks={aLinkValues} deActiveLink={daLinkValues} />
       <div className='relative w-full mx-auto p-4  flex justify-center flex-col items-center'>
         {/* Overlay with background image and opacity */}
@@ -117,7 +117,7 @@ const Contact = () => {
           ))}
         </ul>
       </div>
-      <div className='flex flex-col justify-start items-start gap-[2rem] w-[95%] sm:w-[90%] lg:w-[80%] xl:w-[80%] bg-lighter-primary rounded-[15px] p-2 sm:p-8 z-9 shadow-lg  py-4 mx-auto'>
+      <div className='flex flex-col justify-start items-start gap-[2rem] w-[95%] sm:w-[90%] lg:w-[80%] xl:w-[80%] bg-primary-light rounded-[15px] p-2 sm:p-8 z-9 shadow-lg  py-4 mx-auto'>
         <div className=' flex flex-col lg:flex-row my-4 gap-[3rem] justify-center items-center w-[100%] xl:w-[90%] mx-auto'>
           <section className='flex flex-col items-start gap-3 px-3 w-full lg:w-[50%]'>
             <div className='flex items-center mb-4'>
@@ -126,11 +126,11 @@ const Contact = () => {
                 alt='Tree Icon'
                 className='w-[40px] h-[40px] mr-2'
               />{' '}
-              <h3 className='text-3xl text-primary font-main-font tracking-wide border-b-2 border-secondary inline-block'>
+              <h3 className='text-3xl text-accent font-main-font tracking-wide border-b-2 border-primary inline-block'>
                 GET IN TOUCH
               </h3>
             </div>
-            <p className='flex flex-row w-full items-center bg-white-color shadow-md hover:shadow-lg hover:rounded-lg p-3 rounded-md gap-2'>
+            <p className='flex flex-row w-full items-center bg-white shadow-md hover:shadow-lg hover:rounded-lg p-3 rounded-md gap-2'>
               <span className='text-lg'>
                 <FaLocationDot />
               </span>
@@ -139,7 +139,7 @@ const Contact = () => {
                 Germany
               </span>
             </p>
-            <p className='flex flex-row w-full items-center bg-white-color shadow-md hover:shadow-lg hover:rounded-lg p-3 rounded-md gap-1'>
+            <p className='flex flex-row w-full items-center bg-white shadow-md hover:shadow-lg hover:rounded-lg p-3 rounded-md gap-1'>
               <span className='text-lg'>
                 <AiTwotoneMail />
               </span>
@@ -156,7 +156,7 @@ const Contact = () => {
             {0 === 0 ? (
               <span></span>
             ) : (
-              <p className='flex flex-row w-full items-center bg-white-color shadow-md hover:shadow-lg hover:rounded-lg p-3 rounded-md gap-1'>
+              <p className='flex flex-row w-full items-center bg-white shadow-md hover:shadow-lg hover:rounded-lg p-3 rounded-md gap-1'>
                 <span className='text-lg'>
                   <FaPhoneSquareAlt />
                 </span>
@@ -164,10 +164,10 @@ const Contact = () => {
               </p>
             )}
 
-            <p className='flex flex-row w-full justify-center items-center bg-white-color shadow-md rounded-md p-4 hover:shadow-lg hover:rounded-lg gap-2 sm:gap-5'>
+            <p className='flex flex-row w-full justify-center items-center bg-white shadow-md rounded-md p-4 hover:shadow-lg hover:rounded-lg gap-2 sm:gap-5'>
               <a
                 href='http://'
-                className='rounded-full p-2 border-2 border-font-family-color text-font-family-color bg-white-color hover:bg-font-family-color hover:text-white-color transition duration-5000 ease-linear'
+                className='rounded-full p-2 border-2 border-stone text-stone bg-white hover:bg-stone hover:text-white transition duration-5000 ease-linear'
                 target='_blank'
                 rel='noopener noreferrer'
               >
@@ -175,7 +175,7 @@ const Contact = () => {
               </a>
               <a
                 href='http://'
-                className='rounded-full p-2 border-2 border-font-family-color text-font-family-color bg-white-color hover:bg-font-family-color hover:text-white-color transition duration-5000 ease-linear'
+                className='rounded-full p-2 border-2 border-stone text-stone bg-white hover:bg-stone hover:text-white transition duration-5000 ease-linear'
                 target='_blank'
                 rel='noopener noreferrer'
               >
@@ -186,7 +186,7 @@ const Contact = () => {
               ) : (
                 <a
                   href='http://'
-                  className='rounded-full p-2 border-2 border-font-family-color text-font-family-color bg-white-color hover:bg-font-family-color hover:text-white-color transition duration-5000 ease-linear'
+                  className='rounded-full p-2 border-2 border-stone text-stone bg-white hover:bg-stone hover:text-white transition duration-5000 ease-linear'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
@@ -196,7 +196,7 @@ const Contact = () => {
 
               <a
                 href='http://'
-                className='rounded-full p-2 border-2 border-font-family-color text-font-family-color bg-white-color hover:bg-font-family-color hover:text-white-color transition duration-5000 ease-linear'
+                className='rounded-full p-2 border-2 border-stone text-stone bg-white hover:bg-stone hover:text-white transition duration-5000 ease-linear'
                 target='_blank'
                 rel='noopener noreferrer'
               >
@@ -204,7 +204,7 @@ const Contact = () => {
               </a>
               <a
                 href='http://'
-                className='rounded-full p-2 border-2 border-font-family-color bg-white-color text-font-family-color hover:bg-font-family-color hover:text-white-color transition duration-5000 ease-linear'
+                className='rounded-full p-2 border-2 border-stone bg-white text-stone hover:bg-stone hover:text-white transition duration-5000 ease-linear'
                 target='_blank'
                 rel='noopener noreferrer'
               >
@@ -222,7 +222,7 @@ const Contact = () => {
                   <Label
                     htmlFor='firstName'
                     value='First Name *'
-                    className='text-dark-gray text-[1rem]'
+                    className='text-gray-dark text-[1rem]'
                   />
                 </div>
                 <TextInput
@@ -236,10 +236,10 @@ const Contact = () => {
                   shadow
                   className='input'
                   style={{
-                    borderColor: 'var(--secondary)',
-                    outlineColor: 'var(--primary)',
+                    borderColor: 'var(--primary)',
+                    outlineColor: 'var(--accent)',
                     padding: '1.15rem',
-                    color: 'var(--font-family-color)',
+                    color: 'var(--stone)',
                     fontSize: '1rem',
                     paddingLeft: '2.5rem',
                   }}
@@ -250,7 +250,7 @@ const Contact = () => {
                   <Label
                     htmlFor='lastName'
                     value='Last Name *'
-                    className='text-dark-gray text-[1rem]'
+                    className='text-gray-dark text-[1rem]'
                   />
                 </div>
                 <TextInput
@@ -264,7 +264,7 @@ const Contact = () => {
                   helperText={
                     <span>
                       Full Name should look like,&nbsp;
-                      <span className='bg-white-color px-2 py-1 rounded-md'>
+                      <span className='bg-white px-2 py-1 rounded-md'>
                         Mice Polocy
                       </span>
                     </span>
@@ -272,10 +272,10 @@ const Contact = () => {
                   shadow
                   className='input'
                   style={{
-                    borderColor: 'var(--secondary)',
-                    outlineColor: 'var(--primary)',
+                    borderColor: 'var(--primary)',
+                    outlineColor: 'var(--accent)',
                     padding: '1.15rem',
-                    color: 'var(--font-family-color)',
+                    color: 'var(--stone)',
                     fontSize: '1rem',
                     paddingLeft: '2.5rem',
                   }}
@@ -286,7 +286,7 @@ const Contact = () => {
                   <Label
                     htmlFor='emailAddress'
                     value='Email Address *'
-                    className='text-dark-gray text-[1rem]'
+                    className='text-gray-dark text-[1rem]'
                   />
                 </div>
                 <TextInput
@@ -300,10 +300,10 @@ const Contact = () => {
                   shadow
                   className='input'
                   style={{
-                    borderColor: 'var(--secondary)',
-                    outlineColor: 'var(--primary)',
+                    borderColor: 'var(--primary)',
+                    outlineColor: 'var(--accent)',
                     padding: '1.15rem',
-                    color: 'var(--font-family-color)',
+                    color: 'var(--stone)',
                     fontSize: '1rem',
                     paddingLeft: '2.5rem',
                   }}
@@ -314,7 +314,7 @@ const Contact = () => {
                   <Label
                     htmlFor='message'
                     value='Your message*'
-                    className='text-dark-gray text-[1rem]'
+                    className='text-gray-dark text-[1rem]'
                   />
                 </div>
                 <Textarea
@@ -326,10 +326,10 @@ const Contact = () => {
                   ref={messageRef}
                   className='input focus:border-transparent dark:focus:border-transparent focus:ring-transparent dark:focus:ring-transparent !important'
                   style={{
-                    borderColor: 'var(--secondary)',
-                    outlineColor: 'var(--primary)',
+                    borderColor: 'var(--primary)',
+                    outlineColor: 'var(--accent)',
                     padding: '1.15rem',
-                    color: 'var(--font-family-color)',
+                    color: 'var(--stone)',
                     fontSize: '1rem',
                     paddingLeft: '1rem',
                   }}
@@ -341,15 +341,13 @@ const Contact = () => {
                   name='agreeToPolicies'
                   ref={checkboxRef}
                   onChange={handleCheckboxChange}
-                  className=' border-font-family-color checked:border-none checked:outline-none checked:bg-primary focus:ring-transparent dark:ring-offset-transparent !important cursor-pointer'
+                  className=' border-stone checked:border-none checked:outline-none checked:bg-accent focus:ring-transparent dark:ring-offset-transparent !important cursor-pointer'
                 />
                 <Label htmlFor='agree'>
-                  <span className='text-font-family-color'>
-                    I agree with the&nbsp;
-                  </span>
+                  <span className='text-stone'>I agree with the&nbsp;</span>
                   <Link
                     to='/terms'
-                    className='text-primary font-semibold underline'
+                    className='text-accent font-semibold underline'
                   >
                     terms and conditions
                   </Link>

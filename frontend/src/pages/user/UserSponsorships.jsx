@@ -46,7 +46,7 @@ const UserSponsorships = () => {
   return (
     <main>
       <PageBreadcrumb activeLinks={aLinkValues} deActiveLink={daLinkValues} />
-      <div className='cart-page-container relative bg-light-gray w-full mx-auto p-4 pb-[25px] md:pb-[40px] lg:pb-[100px] xl:pb-[120px] flex items-center justify-center'>
+      <div className='cart-page-container relative bg-gray-light w-full mx-auto p-4 pb-[25px] md:pb-[40px] lg:pb-[100px] xl:pb-[120px] flex items-center justify-center'>
         {/* Overlay with background image and opacity */}
         <div
           className='cart-page-bg hidden lg:block absolute top-0 left-0 w-full h-full bg-contain bg-no-repeat bg-top'
@@ -68,7 +68,7 @@ const UserSponsorships = () => {
                   alt='Tree Icon'
                   className='w-[30px] h-[30px] mr-2'
                 />
-                <h3 className='text-3xl text-primary font-main-font tracking-wide border-b-2 border-secondary inline-block'>
+                <h3 className='text-3xl text-accent font-main-font tracking-wide border-b-2 border-primary inline-block'>
                   Your Sponsorships
                 </h3>
               </div>
@@ -82,29 +82,29 @@ const UserSponsorships = () => {
 
                   <table className='w-[100%] min-w-max table-auto text-left border border-white rounded-tl-lg rounded-br-md shadow-md'>
                     <thead className='pb-10 space-y-4 h-10 lg:h-20'>
-                      <tr className='bg-secondary h-30 flex justify-between w-full'>
+                      <tr className='bg-primary h-30 flex justify-between w-full'>
                         <th className='space-y-4 border-blue-gray-100 bg-blue-gray-50/50 p-4 g-3 h-30'>
-                          <p className='block text-xs lg:text-md xl:text-xl antialiased font-sans text-primary font-normal leading-none opacity-70'>
+                          <p className='block text-xs lg:text-md xl:text-xl antialiased font-sans text-accent font-normal leading-none opacity-70'>
                             Certification No.
                           </p>
                         </th>
                         <th className='hidden md:inline border-blue-gray-100 bg-blue-gray-50/50 p-4'>
-                          <p className='block antialiased font-sans text-xs lg:text-md xl:text-xl text-primary font-normal leading-none opacity-70'>
+                          <p className='block antialiased font-sans text-xs lg:text-md xl:text-xl text-accent font-normal leading-none opacity-70'>
                             Amount
                           </p>
                         </th>
                         <th className='hidden lg:inline border-blue-gray-100 bg-blue-gray-50/50 p-4'>
-                          <p className='block antialiased font-sans text-xs lg:text-md xl:text-xl text-primary font-normal leading-none opacity-70'>
+                          <p className='block antialiased font-sans text-xs lg:text-md xl:text-xl text-accent font-normal leading-none opacity-70'>
                             Date
                           </p>
                         </th>
                         <th className='hidden lg:inline border-blue-gray-100 bg-blue-gray-50/50 p-4'>
-                          <p className='block antialiased font-sans text-xs lg:text-md xl:text-xl text-primary font-normal leading-none opacity-70'>
+                          <p className='block antialiased font-sans text-xs lg:text-md xl:text-xl text-accent font-normal leading-none opacity-70'>
                             Certificate
                           </p>
                         </th>
                         <th className=' border-blue-gray-100 bg-blue-gray-100 p-4'>
-                          <p className='block antialiased font-sans text-xs lg:text-md xl:text-xl text-primary font-normal leading-none opacity-70'>
+                          <p className='block antialiased font-sans text-xs lg:text-md xl:text-xl text-accent font-normal leading-none opacity-70'>
                             details
                           </p>
                         </th>
@@ -115,15 +115,15 @@ const UserSponsorships = () => {
                         return (
                           <tr
                             key={key}
-                            className='flex justify-between rounded h-20 lg:h-40 hover:bg-lighter-primary active:bg-bg-lighter-primary focus:bg-bg-lighter-primary'
+                            className='flex justify-between rounded h-20 lg:h-40 hover:bg-primary-light active:bg-bg-primary-light focus:bg-bg-primary-light'
                           >
                             <td className='p-4 border-b border-blue-gray-10'>
-                              <p className='block antialiased font-sans text-xs lg:text-md xl:text-xl text-primary leading-normal  '>
+                              <p className='block antialiased font-sans text-xs lg:text-md xl:text-xl text-accent leading-normal  '>
                                 {e.certificationNo}
                               </p>
                             </td>
                             <td className='hidden md:inline p-4 border-b border-blue-gray-10'>
-                              <p className='flex items-center justify-left antialiased font-sans text-xs lg:text-md xl:text-xl leading-normal text-primary font-normal'>
+                              <p className='flex items-center justify-left antialiased font-sans text-xs lg:text-md xl:text-xl leading-normal text-accent font-normal'>
                                 <span>{e.amount.$numberDecimal}</span>
                                 <MdEuroSymbol />
                               </p>
@@ -131,10 +131,10 @@ const UserSponsorships = () => {
                             <td className='hidden lg:inline p-4 border-b border-blue-gray-10'>
                               <div className='w-max'>
                                 <div
-                                  className='relative grid items-center font-sans text-primary text-xs lg:text-md xl:text-xl uppercase whitespace-nowrap select-none  px-2  rounded-md'
+                                  className='relative grid items-center font-sans text-accent text-xs lg:text-md xl:text-xl uppercase whitespace-nowrap select-none  px-2  rounded-md'
                                   style={{ opacity: 1 }}
                                 >
-                                  <p className='text-primary'>
+                                  <p className='text-accent'>
                                     {new Date(e.createdAt).toDateString()}
                                   </p>
                                 </div>
@@ -142,10 +142,10 @@ const UserSponsorships = () => {
                             </td>
                             <td className='hidden lg:inline p-4 border-b border-blue-gray-50'>
                               <div className='flex items-center gap-3'>
-                                <FaRegFilePdf className='text-2xl text-primary' />
+                                <FaRegFilePdf className='text-2xl text-accent' />
                                 <div className='flex flex-col'>
                                   <p className='block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-normal capitalize'></p>
-                                  <p className='block antialiased font-sans text-xs lg:text-md xl:text-xl text-primary leading-normal text-blue-gray-900 font-normal opacity-70'>
+                                  <p className='block antialiased font-sans text-xs lg:text-md xl:text-xl text-accent leading-normal text-blue-gray-900 font-normal opacity-70'>
                                     Download
                                   </p>
                                 </div>
@@ -158,7 +158,7 @@ const UserSponsorships = () => {
                                 type='button'
                               >
                                 <span className='absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2'>
-                                  <IoIosMore className='text-2xl text-primary' />
+                                  <IoIosMore className='text-2xl text-accent' />
                                 </span>
                               </Link>
                             </td>

@@ -34,12 +34,12 @@ const DesktopNavbar = ({ isNavbarFixed, setIsNavbarFixed }) => {
     <>
       <AuthNavbar />
       <nav
-        className='desktop-nav flex w-full top-0 justify-center items-center bg-secondary h-[70px] font-general-font text-font-family-color text-[1rem]'
+        className='desktop-nav flex w-full top-0 justify-center items-center bg-primary h-[70px] font-general-font text-stone text-[1rem]'
         style={desktopNavbarStyle}
       >
         {/* DesktopNavbar Links */}
-        <div className='flex justify-center items-center h-full w-full bg-secondary '>
-          <div className='border-r p-2 sm:px-4 lg:px-8 xl:px-14 flex items-center hover:scale-110 transition-transform duration-400 ease-linear hover:text-dark-gray'>
+        <div className='flex justify-center items-center h-full w-full bg-primary '>
+          <div className='border-r p-2 sm:px-4 lg:px-8 xl:px-14 flex items-center hover:scale-110 transition-transform duration-400 ease-linear hover:text-gray-dark'>
             <NavLink
               className='flex gap-1 justify-center items-center hover:border-b-2'
               style={({ isActive }) =>
@@ -58,7 +58,7 @@ const DesktopNavbar = ({ isNavbarFixed, setIsNavbarFixed }) => {
               <span>Home</span>
             </NavLink>
           </div>
-          <div className='border-r px-2 sm:px-4 lg:px-8 xl:px-14 flex items-center hover:scale-110 transition-transform duration-400 ease-linear hover:text-dark-gray'>
+          <div className='border-r px-2 sm:px-4 lg:px-8 xl:px-14 flex items-center hover:scale-110 transition-transform duration-400 ease-linear hover:text-gray-dark'>
             <NavLink
               className='flex gap-1 justify-center items-center hover:border-b-2'
               to='/trees'
@@ -77,7 +77,7 @@ const DesktopNavbar = ({ isNavbarFixed, setIsNavbarFixed }) => {
               <span>Trees</span>
             </NavLink>
           </div>
-          <div className='border-r px-2 sm:px-4 lg:px-8 xl:px-14 flex items-center hover:scale-110 transition-transform duration-400 ease-linear hover:text-dark-gray'>
+          <div className='border-r px-2 sm:px-4 lg:px-8 xl:px-14 flex items-center hover:scale-110 transition-transform duration-400 ease-linear hover:text-gray-dark'>
             <NavLink
               className='flex gap-1 justify-center items-center hover:border-b-2'
               to='/news'
@@ -96,7 +96,7 @@ const DesktopNavbar = ({ isNavbarFixed, setIsNavbarFixed }) => {
               <span>News</span>
             </NavLink>
           </div>
-          <div className='border-r px-2 sm:px-4 lg:px-8 xl:px-14 flex items-center hover:scale-110 transition-transform duration-400 ease-linear hover:text-dark-gray'>
+          <div className='border-r px-2 sm:px-4 lg:px-8 xl:px-14 flex items-center hover:scale-110 transition-transform duration-400 ease-linear hover:text-gray-dark'>
             <NavLink
               className='flex gap-1 justify-center items-center hover:border-b-2'
               to='/about'
@@ -115,7 +115,7 @@ const DesktopNavbar = ({ isNavbarFixed, setIsNavbarFixed }) => {
               <span>About</span>
             </NavLink>
           </div>
-          <div className='border-r px-2 sm:px-4 lg:px-8 xl:px-14 flex items-center hover:scale-110 transition-transform duration-400 ease-linear hover:text-dark-gray'>
+          <div className='border-r px-2 sm:px-4 lg:px-8 xl:px-14 flex items-center hover:scale-110 transition-transform duration-400 ease-linear hover:text-gray-dark'>
             <NavLink
               className='flex gap-1 justify-center items-center hover:border-b-2'
               to='/gallery'
@@ -130,11 +130,11 @@ const DesktopNavbar = ({ isNavbarFixed, setIsNavbarFixed }) => {
               }
               aria-label='Gallery page'
             >
-              <FaImages className='text-darkgreen-color' />
+              <FaImages className='text-accent' />
               <span>Gallery</span>
             </NavLink>
           </div>
-          <div className='border-r px-2 sm:px-4 lg:px-8 xl:px-14 flex items-center hover:scale-110 transition-transform duration-400 ease-linear hover:text-dark-gray'>
+          <div className='border-r px-2 sm:px-4 lg:px-8 xl:px-14 flex items-center hover:scale-110 transition-transform duration-400 ease-linear hover:text-gray-dark'>
             <NavLink
               className='flex gap-1 justify-center items-center hover:border-b-2'
               to='/faq'
@@ -153,7 +153,7 @@ const DesktopNavbar = ({ isNavbarFixed, setIsNavbarFixed }) => {
               <span>FAQs</span>
             </NavLink>
           </div>
-          <div className='px-2 sm:px-4 lg:px-8 xl:px-14 flex items-center hover:scale-110 transition-transform duration-400 ease-linear hover:text-dark-gray'>
+          <div className='px-2 sm:px-4 lg:px-8 xl:px-14 flex items-center hover:scale-110 transition-transform duration-400 ease-linear hover:text-gray-dark'>
             <NavLink
               className='flex gap-1 justify-center items-center hover:border-b-2'
               to='/contact'

@@ -37,7 +37,7 @@ const MobileNavbar = () => {
     <nav id='outer-container'>
       {isNavbarVisible && <AuthNavbar />}
       <div
-        className='mobile-nav w-full top-0 h-[60px] bg-secondary flex justify-start items-center px-2'
+        className='mobile-nav w-full top-0 h-[60px] bg-primary flex justify-start items-center px-2'
         style={mobileNavbarStyle}
       >
         {/* Open Menu Button */}
@@ -65,7 +65,7 @@ const MobileNavbar = () => {
         customCrossIcon={false}
         width={'60%'}
         pageWrapId={'page-wrap'}
-        className='bg-secondary fixed top-0 left-0 h-screen overflow-y-auto p-4 '
+        className='bg-primary fixed top-0 left-0 h-screen overflow-y-auto p-4 '
       >
         {/* Close Menu Button */}
         <div className='absolute top-6 right-6'>
@@ -80,7 +80,7 @@ const MobileNavbar = () => {
         {/* Links */}
         <Link
           to='/'
-          className='menu-item border-b border-white text-font-family-color scale-origin-left transition-transform duration-400 ease-linear hover:text-dark-gray pt-[100px]'
+          className='menu-item border-b border-white text-stone scale-origin-left transition-transform duration-400 ease-linear hover:text-gray-dark pt-[100px]'
           onClick={handleLinkClick}
           aria-label='Home page'
         >
@@ -88,7 +88,7 @@ const MobileNavbar = () => {
         </Link>
         <Link
           to='/trees'
-          className='menu-item pt-4 border-b border-white text-font-family-color scale-origin-left transition-transform duration-400 ease-linear hover:text-dark-gray'
+          className='menu-item pt-4 border-b border-white text-stone scale-origin-left transition-transform duration-400 ease-linear hover:text-gray-dark'
           onClick={handleLinkClick}
           aria-label='Sponsor page'
         >
@@ -96,7 +96,7 @@ const MobileNavbar = () => {
         </Link>
         <Link
           to='/news'
-          className='menu-item pt-4 border-b border-white text-font-family-color scale-origin-left transition-transform duration-400 ease-linear hover:text-dark-gray'
+          className='menu-item pt-4 border-b border-white text-stone scale-origin-left transition-transform duration-400 ease-linear hover:text-gray-dark'
           onClick={handleLinkClick}
           aria-label='News page'
         >
@@ -104,7 +104,7 @@ const MobileNavbar = () => {
         </Link>
         <Link
           to='/about'
-          className='menu-item pt-4 border-b border-white text-font-family-color scale-origin-left transition-transform duration-400 ease-linear hover:text-dark-gray'
+          className='menu-item pt-4 border-b border-white text-stone scale-origin-left transition-transform duration-400 ease-linear hover:text-gray-dark'
           onClick={handleLinkClick}
           aria-label='About page'
         >
@@ -112,7 +112,7 @@ const MobileNavbar = () => {
         </Link>
         <Link
           to='/gallery'
-          className='menu-item pt-4 border-b border-white text-font-family-color scale-origin-left transition-transform duration-400 ease-linear hover:text-dark-gray'
+          className='menu-item pt-4 border-b border-white text-stone scale-origin-left transition-transform duration-400 ease-linear hover:text-gray-dark'
           onClick={handleLinkClick}
           aria-label='Gallery page'
         >
@@ -120,7 +120,7 @@ const MobileNavbar = () => {
         </Link>
         <Link
           to='/faq'
-          className='menu-item pt-4 border-b border-white text-font-family-color scale-origin-left transition-transform duration-400 ease-linear hover:text-dark-gray'
+          className='menu-item pt-4 border-b border-white text-stone scale-origin-left transition-transform duration-400 ease-linear hover:text-gray-dark'
           onClick={handleLinkClick}
           aria-label='FAQ page'
         >
@@ -128,7 +128,7 @@ const MobileNavbar = () => {
         </Link>
         <Link
           to='/contact'
-          className='menu-item pt-4 border-b border-white text-font-family-color scale-origin-left transition-transform duration-400 ease-linear hover:text-dark-gray'
+          className='menu-item pt-4 border-b border-white text-stone scale-origin-left transition-transform duration-400 ease-linear hover:text-gray-dark'
           onClick={handleLinkClick}
           aria-label='Contact page'
         >

@@ -14,7 +14,7 @@ const Terms = () => {
   const daLinkValues = { linkText: 'Terms and Conditions' };
 
   return (
-    <div className='relative text-font-family-color'>
+    <div className='relative text-stone'>
       <PageBreadcrumb activeLinks={aLinkValues} deActiveLink={daLinkValues} />
       {/* Terms and Conditions title, positioned absolutely */}
       <h2 className='absolute top-0 left-1/2 transform -translate-x-1/2 py-10 text-center'>
@@ -358,7 +358,7 @@ const Terms = () => {
           <div className='flex justify-center mt-10'>
             <Link
               to='/'
-              className='flex items-center w-max px-4 py-2 justify-center gap-2 text-md bg-secondary border-2 md:text-lg text-primary font-bold rounded-md hover:bg-lighter-primary transition duration-4000 ease-linear'
+              className='flex items-center w-max px-4 py-2 justify-center gap-2 text-md bg-primary border-2 md:text-lg text-accent font-bold rounded-md hover:bg-primary-light transition duration-4000 ease-linear'
             >
               <RiArrowGoBackLine />
               <span>Back to Home Page</span>

@@ -26,7 +26,7 @@ const Mission = () => {
           </div>
         </div>
       </div>
-      <article className='flex flex-col justify-center items-start gap-3 w-full text-font-family-color'>
+      <article className='flex flex-col justify-center items-start gap-3 w-full text-stone'>
         <h2 className='text-2xl lg:text-3xl text-left'>
           Sponsor a Tree: Our Mission
         </h2>
@@ -41,7 +41,7 @@ const Mission = () => {
         </p>
         <Link
           to='/trees'
-          className='mission-more mr-auto px-8 py-2 bg-secondary text-font-family-color rounded-[10px] hover:bg-lighter-primary transition duration-4000 ease-linear'
+          className='mission-more mr-auto px-8 py-2 bg-primary text-stone rounded-[10px] hover:bg-primary-light transition duration-4000 ease-linear'
           aria-label='Sponsor page'
         >
           sponsor a tree

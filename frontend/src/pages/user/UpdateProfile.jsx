@@ -129,7 +129,7 @@ const UpdateProfile = () => {
   return (
     <main>
       <PageBreadcrumb activeLinks={aLinkValues} deActiveLink={daLinkValues} />
-      <div className='cart-page-container bg-light-gray relative w-full mx-auto p-4 pb-[25px] md:pb-[40px] lg:pb-[100px] xl:pb-[120px] flex items-center justify-center'>
+      <div className='cart-page-container bg-gray-light relative w-full mx-auto p-4 pb-[25px] md:pb-[40px] lg:pb-[100px] xl:pb-[120px] flex items-center justify-center'>
         {/* Overlay with background image and opacity */}
         <div
           className='cart-page-bg hidden lg:block absolute top-0 left-0 w-full h-full bg-contain bg-no-repeat bg-top'
@@ -151,7 +151,7 @@ const UpdateProfile = () => {
                     alt='Tree Icon'
                     className='w-[30px] h-[30px] mr-2'
                   />{' '}
-                  <h3 className='text-3xl text-primary font-main-font tracking-wide border-b-2 border-secondary inline-block'>
+                  <h3 className='text-3xl text-accent font-main-font tracking-wide border-b-2 border-primary inline-block'>
                     Edit Your Profile
                   </h3>
                 </div>
@@ -170,11 +170,11 @@ const UpdateProfile = () => {
                       readOnly
                       className='input'
                       style={{
-                        backgroundColor: 'var(--bg-white-color)',
-                        borderColor: 'var(--secondary)',
-                        outlineColor: 'var(--primary)',
+                        backgroundColor: 'var(--bg-white)',
+                        borderColor: 'var(--primary)',
+                        outlineColor: 'var(--accent)',
                         padding: '1.15rem',
-                        color: 'var(--font-family-color)',
+                        color: 'var(--stone)',
                         fontSize: '1rem',
                       }}
                     />
@@ -197,11 +197,11 @@ const UpdateProfile = () => {
                       }
                       className='input'
                       style={{
-                        backgroundColor: 'var(--bg-white-color)',
-                        borderColor: 'var(--secondary)',
-                        outlineColor: 'var(--primary)',
+                        backgroundColor: 'var(--bg-white)',
+                        borderColor: 'var(--primary)',
+                        outlineColor: 'var(--accent)',
                         padding: '1.15rem',
-                        color: 'var(--font-family-color)',
+                        color: 'var(--stone)',
                         fontSize: '1rem',
                       }}
                     />
@@ -227,11 +227,11 @@ const UpdateProfile = () => {
                       }
                       className='input'
                       style={{
-                        backgroundColor: 'var(--bg-white-color)',
-                        borderColor: 'var(--secondary)',
-                        outlineColor: 'var(--primary)',
+                        backgroundColor: 'var(--bg-white)',
+                        borderColor: 'var(--primary)',
+                        outlineColor: 'var(--accent)',
                         padding: '1.15rem',
-                        color: 'var(--font-family-color)',
+                        color: 'var(--stone)',
                         fontSize: '1rem',
                       }}
                     />
@@ -256,11 +256,11 @@ const UpdateProfile = () => {
                       }
                       className='input'
                       style={{
-                        backgroundColor: 'var(--bg-white-color)',
-                        borderColor: 'var(--secondary)',
-                        outlineColor: 'var(--primary)',
+                        backgroundColor: 'var(--bg-white)',
+                        borderColor: 'var(--primary)',
+                        outlineColor: 'var(--accent)',
                         padding: '1.15rem',
-                        color: 'var(--font-family-color)',
+                        color: 'var(--stone)',
                         fontSize: '1rem',
                       }}
                     />
@@ -286,11 +286,11 @@ const UpdateProfile = () => {
                       }
                       className='input'
                       style={{
-                        backgroundColor: 'var(--bg-white-color)',
-                        borderColor: 'var(--secondary)',
-                        outlineColor: 'var(--primary)',
+                        backgroundColor: 'var(--bg-white)',
+                        borderColor: 'var(--primary)',
+                        outlineColor: 'var(--accent)',
                         padding: '1.15rem',
-                        color: 'var(--font-family-color)',
+                        color: 'var(--stone)',
                         fontSize: '1rem',
                       }}
                     />
@@ -313,11 +313,11 @@ const UpdateProfile = () => {
                       }
                       className='input'
                       style={{
-                        backgroundColor: 'var(--bg-white-color)',
-                        borderColor: 'var(--secondary)',
-                        outlineColor: 'var(--primary)',
+                        backgroundColor: 'var(--bg-white)',
+                        borderColor: 'var(--primary)',
+                        outlineColor: 'var(--accent)',
                         padding: '1.15rem',
-                        color: 'var(--font-family-color)',
+                        color: 'var(--stone)',
                         fontSize: '1rem',
                       }}
                     />
@@ -338,11 +338,11 @@ const UpdateProfile = () => {
                       }
                       className='input'
                       style={{
-                        backgroundColor: 'var(--bg-white-color)',
-                        borderColor: 'var(--secondary)',
-                        outlineColor: 'var(--primary)',
+                        backgroundColor: 'var(--bg-white)',
+                        borderColor: 'var(--primary)',
+                        outlineColor: 'var(--accent)',
                         padding: '1.15rem',
-                        color: 'var(--font-family-color)',
+                        color: 'var(--stone)',
                         fontSize: '1rem',
                       }}
                     />
@@ -366,11 +366,11 @@ const UpdateProfile = () => {
                       }
                       className='input'
                       style={{
-                        backgroundColor: 'var(--bg-white-color)',
-                        borderColor: 'var(--secondary)',
-                        outlineColor: 'var(--primary)',
+                        backgroundColor: 'var(--bg-white)',
+                        borderColor: 'var(--primary)',
+                        outlineColor: 'var(--accent)',
                         padding: '1.15rem',
-                        color: 'var(--font-family-color)',
+                        color: 'var(--stone)',
                         fontSize: '1rem',
                       }}
                     />
@@ -390,11 +390,11 @@ const UpdateProfile = () => {
                       }
                       className='input'
                       style={{
-                        backgroundColor: 'var(--bg-white-color)',
-                        borderColor: 'var(--secondary)',
-                        outlineColor: 'var(--primary)',
+                        backgroundColor: 'var(--bg-white)',
+                        borderColor: 'var(--primary)',
+                        outlineColor: 'var(--accent)',
                         padding: '1.15rem',
-                        color: 'var(--font-family-color)',
+                        color: 'var(--stone)',
                         fontSize: '1rem',
                       }}
                     />
@@ -419,11 +419,11 @@ const UpdateProfile = () => {
                       }
                       className='input'
                       style={{
-                        backgroundColor: 'var(--bg-white-color)',
-                        borderColor: 'var(--secondary)',
-                        outlineColor: 'var(--primary)',
+                        backgroundColor: 'var(--bg-white)',
+                        borderColor: 'var(--primary)',
+                        outlineColor: 'var(--accent)',
                         padding: '1.15rem',
-                        color: 'var(--font-family-color)',
+                        color: 'var(--stone)',
                         fontSize: '1rem',
                       }}
                     />

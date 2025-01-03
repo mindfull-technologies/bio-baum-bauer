@@ -16,16 +16,16 @@ const DashboardLinks = () => {
 
   return (
     <>
-      <div className='hidden md:flex md:w-[30%] lg:w-[20%]  h-full bg-white rounded-md border border-secondary'>
+      <div className='hidden md:flex md:w-[30%] lg:w-[20%]  h-full bg-white rounded-md border border-primary'>
         {/* Dashboard Menu */}
         <div className='flex flex-col w-full rounded-md'>
           <NavLink
             aria-label='Dashboard'
             to='/dashboard'
-            activeClassName='bg-secondary'
-            className={`flex items-center text-font-family-color gap-1 border-b rounded-t-md border-secondary py-4 text-start pl-4 hover:bg-light-gray ${
+            activeClassName='bg-primary'
+            className={`flex items-center text-stone gap-1 border-b rounded-t-md border-primary py-4 text-start pl-4 hover:bg-gray-light ${
               activeLink === '/dashboard'
-                ? 'border-l-4 border-l-darker-secondary bg-lighter-secondary'
+                ? 'border-l-4 border-l-sage bg-aloe'
                 : ''
             }`}
           >
@@ -35,10 +35,10 @@ const DashboardLinks = () => {
           <NavLink
             aria-label='Update Profile'
             to='/update_profile'
-            activeClassName='bg-secondary'
-            className={`flex items-center gap-1 text-font-family-color border-b  border-secondary py-4 text-start pl-4 hover:bg-light-gray ${
+            activeClassName='bg-primary'
+            className={`flex items-center gap-1 text-stone border-b  border-primary py-4 text-start pl-4 hover:bg-gray-light ${
               activeLink === '/update_profile'
-                ? 'border-l-4 border-l-darker-secondary bg-lighter-secondary'
+                ? 'border-l-4 border-l-sage bg-aloe'
                 : ''
             }`}
           >
@@ -48,10 +48,10 @@ const DashboardLinks = () => {
           <NavLink
             aria-label='Sponsorships'
             to='/user_sponsorships'
-            activeClassName='bg-secondary'
-            className={`flex items-center gap-1 text-font-family-color border-b  border-secondary py-4 text-start pl-4 hover:bg-light-gray ${
+            activeClassName='bg-primary'
+            className={`flex items-center gap-1 text-stone border-b  border-primary py-4 text-start pl-4 hover:bg-gray-light ${
               activeLink === '/user_sponsorships'
-                ? 'border-l-4 border-l-darker-secondary bg-lighter-secondary'
+                ? 'border-l-4 border-l-sage bg-aloe'
                 : ''
             }`}
           >
@@ -61,10 +61,10 @@ const DashboardLinks = () => {
           <NavLink
             aria-label='Change Password'
             to='/password_change'
-            activeClassName='bg-secondary'
-            className={`flex items-center gap-1 text-font-family-color border-b  border-secondary py-4 text-start pl-4 hover:bg-light-gray ${
+            activeClassName='bg-primary'
+            className={`flex items-center gap-1 text-stone border-b  border-primary py-4 text-start pl-4 hover:bg-gray-light ${
               activeLink === '/password_change'
-                ? 'border-l-4 border-l-darker-secondary bg-lighter-secondary'
+                ? 'border-l-4 border-l-sage bg-aloe'
                 : ''
             }`}
           >
@@ -74,10 +74,10 @@ const DashboardLinks = () => {
           <NavLink
             aria-label='Sign Out'
             to='/signout'
-            activeClassName='bg-secondary'
-            className={`flex items-center gap-1 text-font-family-color py-4 text-start pl-4 rounded-b-[10px] hover:bg-light-gray ${
+            activeClassName='bg-primary'
+            className={`flex items-center gap-1 text-stone py-4 text-start pl-4 rounded-b-[10px] hover:bg-gray-light ${
               activeLink === '/signout'
-                ? 'border-l-4 border-l-darker-secondary bg-lighter-secondary'
+                ? 'border-l-4 border-l-sage bg-aloe'
                 : ''
             }`}
           >

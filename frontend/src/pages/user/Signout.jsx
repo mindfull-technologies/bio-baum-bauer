@@ -62,7 +62,7 @@ const Signout = () => {
         </Breadcrumb.Item>
         <Breadcrumb.Item>Sign Out</Breadcrumb.Item>
       </Breadcrumb>
-      <div className='relative w-full mx-auto p-4 pb-[25px] md:pb-[40px] lg:pb-[100px] xl:pb-[120px] flex items-center justify-center text-font-family-color'>
+      <div className='relative w-full mx-auto p-4 pb-[25px] md:pb-[40px] lg:pb-[100px] xl:pb-[120px] flex items-center justify-center text-stone'>
         {/* Overlay with background image and opacity */}
         <div
           className='absolute top-0 left-0 w-full h-full bg-cover bg-no-repeat bg-top z-[-1]'
@@ -76,17 +76,17 @@ const Signout = () => {
               alt='Tree Icon'
               className='w-[40px] h-[40px] mr-2'
             />{' '}
-            <h3 className='text-3xl text-primary font-main-font tracking-wide border-b-2 border-secondary inline-block'>
+            <h3 className='text-3xl text-accent font-main-font tracking-wide border-b-2 border-primary inline-block'>
               Sign Out
             </h3>
           </div>
-          <p className='text-3xl text-primary font-main-font tracking-wide mt-6 text-center'>
+          <p className='text-3xl text-accent font-main-font tracking-wide mt-6 text-center'>
             Are you sure you want to sign out?
           </p>
           <Link
             to='/login'
             onClick={handleLogout} // Add onClick to trigger logout
-            className='flex items-center my-2 gap-2 px-8 py-2 bg-secondary text-font-family-color rounded-[10px] hover:bg-lighter-primary transition duration-4000 ease-linear'
+            className='flex items-center my-2 gap-2 px-8 py-2 bg-primary text-stone rounded-[10px] hover:bg-primary-light transition duration-4000 ease-linear'
             aria-label='Sign Out and go to the Login page'
           >
             <LiaSignOutAltSolid size='1.2rem' />

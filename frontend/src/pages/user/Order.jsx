@@ -83,7 +83,7 @@ const Order = () => {
           </Breadcrumb>
         </div>
       )}
-      <div className='cart-page-container relative w-full bg-light-gray mx-auto p-4 pb-[25px] md:pb-[40px] lg:pb-[100px] xl:pb-[120px] flex items-center justify-center text-font-family-color'>
+      <div className='cart-page-container relative w-full bg-gray-light mx-auto p-4 pb-[25px] md:pb-[40px] lg:pb-[100px] xl:pb-[120px] flex items-center justify-center text-stone'>
         {/* Overlay with background image and opacity */}
         <div
           className='cart-page-bg hidden lg:block absolute top-0 left-0 w-full h-full bg-contain bg-no-repeat bg-top'
@@ -97,17 +97,17 @@ const Order = () => {
             {cartProducts.length > 0 ? (
               <div className='w-full lg:w-[60%] flex flex-col items-start justify-start sm:gap-[2rem] bg-white rounded-md p-4 '>
                 {' '}
-                <div className='flex flex-col text-dark-gray'>
+                <div className='flex flex-col text-gray-dark'>
                   <div className='flex items-center gap-2 mb-4'>
                     <BiSolidUserDetail size='2.1rem' />
-                    <h3 className='text-3xl text-primary font-main-font tracking-wide border-b-2 border-secondary inline-block'>
+                    <h3 className='text-3xl text-accent font-main-font tracking-wide border-b-2 border-primary inline-block'>
                       Patron Details
                     </h3>
                   </div>{' '}
                   <div className='flex flex-col'>
                     {' '}
-                    <p className='text-dark-gray '>
-                      <span className='font-semibold text-lg text-dark-gray'>
+                    <p className='text-gray-dark '>
+                      <span className='font-semibold text-lg text-gray-dark'>
                         Full Name:
                       </span>
                       <span>
@@ -115,51 +115,51 @@ const Order = () => {
                         {newPatron.lastName}
                       </span>
                     </p>
-                    <p className='text-dark-gray '>
-                      <span className='font-semibold text-lg text-dark-gray'>
+                    <p className='text-gray-dark '>
+                      <span className='font-semibold text-lg text-gray-dark'>
                         Email:
                       </span>
                       <span>&nbsp;&nbsp;{newPatron.email}</span>
                     </p>
-                    <p className='text-dark-gray '>
-                      <span className='font-semibold text-lg text-dark-gray'>
+                    <p className='text-gray-dark '>
+                      <span className='font-semibold text-lg text-gray-dark'>
                         Mobile Phone:
                       </span>
                       <span>&nbsp;&nbsp;{newPatron.mobilePhone}</span>
                     </p>
                     {/* Display address details */}
-                    <p className='text-dark-gray '>
-                      <span className='font-semibold text-lg text-dark-gray'>
+                    <p className='text-gray-dark '>
+                      <span className='font-semibold text-lg text-gray-dark'>
                         Address Line 1:
                       </span>
                       <span>&nbsp;&nbsp;{newPatron.address.address1}</span>
                     </p>
-                    <p className='text-dark-gray '>
-                      <span className='font-semibold text-lg text-dark-gray'>
+                    <p className='text-gray-dark '>
+                      <span className='font-semibold text-lg text-gray-dark'>
                         Additional Address Details:
                       </span>
                       <span>&nbsp;&nbsp;{newPatron.address.address2}</span>
                     </p>
-                    <p className='text-dark-gray '>
-                      <span className='font-semibold text-lg text-dark-gray'>
+                    <p className='text-gray-dark '>
+                      <span className='font-semibold text-lg text-gray-dark'>
                         City:
                       </span>
                       <span>&nbsp;&nbsp;{newPatron.address.city}</span>
                     </p>
-                    <p className='text-dark-gray '>
-                      <span className='font-semibold text-lg text-dark-gray'>
+                    <p className='text-gray-dark '>
+                      <span className='font-semibold text-lg text-gray-dark'>
                         Postcode:
                       </span>
                       <span>&nbsp;&nbsp;{newPatron.address.zipCode}</span>
                     </p>
-                    <p className='text-dark-gray '>
-                      <span className='font-semibold text-lg text-dark-gray'>
+                    <p className='text-gray-dark '>
+                      <span className='font-semibold text-lg text-gray-dark'>
                         State/Country:
                       </span>
                       <span>&nbsp;&nbsp;{newPatron.address.state}</span>
                     </p>
-                    <p className='text-dark-gray '>
-                      <span className='font-semibold text-lg text-dark-gray'>
+                    <p className='text-gray-dark '>
+                      <span className='font-semibold text-lg text-gray-dark'>
                         Country:
                       </span>
                       <span>&nbsp;&nbsp;{newPatron.address.country}</span>
@@ -167,7 +167,7 @@ const Order = () => {
                   </div>
                 </div>
                 {/* Horizontal Line */}
-                <hr className='w-[100%] mx-auto border-t-2 border-secondary my-2' />
+                <hr className='w-[100%] mx-auto border-t-2 border-primary my-2' />
                 <SponsorList
                   cartProducts={cartProducts}
                   getTreeQuantity={getTreeQuantity}
@@ -180,14 +180,14 @@ const Order = () => {
 
             {/* Payment Information */}
             <div className='w-full lg:w-2/5 '>
-              <div className='flex flex-col lg:border-l-4 lg:border-lighter-secondary gap-[0.4rem] bg-light-gray rounded-md py-4 px-3'>
+              <div className='flex flex-col lg:border-l-4 lg:border-aloe gap-[0.4rem] bg-gray-light rounded-md py-4 px-3'>
                 {/* Total Price */}
                 <div className='flex flex-col'>
                   <div className='flex flex-row justify-between'>
-                    <div className='felx text-xl font-main-font text-primary tracking-wide'>
+                    <div className='felx text-xl font-main-font text-accent tracking-wide'>
                       Total Price:
                     </div>
-                    <div className='flex text-md text-dark-gray'>
+                    <div className='flex text-md text-gray-dark'>
                       € {calculateTotalPrice().toFixed(2)}
                     </div>
                   </div>
@@ -196,10 +196,10 @@ const Order = () => {
                 {/* Tax */}
                 <div className='flex flex-col'>
                   <div className='flex flex-row justify-between'>
-                    <div className='felx text-xl font-main-font text-primary tracking-wide'>
+                    <div className='felx text-xl font-main-font text-accent tracking-wide'>
                       Tax:
                     </div>
-                    <div className='flex text-md text-dark-gray'>
+                    <div className='flex text-md text-gray-dark'>
                       € {(calculateTotalPrice() * TAX_RATE).toFixed(2)}
                     </div>
                   </div>
@@ -208,16 +208,16 @@ const Order = () => {
                 {/* Grand Total */}
                 <div className='flex flex-col'>
                   <div className='flex flex-row justify-between'>
-                    <div className='felx text-xl font-main-font text-primary tracking-wide'>
+                    <div className='felx text-xl font-main-font text-accent tracking-wide'>
                       Grand Total:
                     </div>
-                    <div className='flex text-md text-dark-gray price px-4 py-1 rounded-3xl font-bold'>
+                    <div className='flex text-md text-gray-dark price px-4 py-1 rounded-3xl font-bold'>
                       € {calculateGrandTotal().toFixed(2)}
                     </div>
                   </div>
                 </div>
                 <span
-                  className='flex items-center text-left text-lg w-[100%] mx-auto my-2 px-4 py-2 bg-[#f4f5f3] text-primary rounded-[10px]'
+                  className='flex items-center text-left text-lg w-[100%] mx-auto my-2 px-4 py-2 bg-[#f4f5f3] text-accent rounded-[10px]'
                   aria-label='Powered by Stripe'
                 >
                   <MdLabelImportant className='hidden md:block' />
@@ -227,12 +227,12 @@ const Order = () => {
                   </span>
                 </span>
                 {/* Horizontal Line */}
-                <hr className='w-[40%] mx-auto border-t-2 border-secondary my-4' />
+                <hr className='w-[40%] mx-auto border-t-2 border-primary my-4' />
 
                 {/* Pay Now */}
                 <button
                   onClick={paymentProcess}
-                  className='flex items-center justify-center gap-1 text-2xl w-full px-4 py-5 bg-darker-secondary text-white-color rounded-md hover:bg-lighter-secondary hover:text-primary transition duration-4000 ease-linear'
+                  className='flex items-center justify-center gap-1 text-2xl w-full px-4 py-5 bg-sage text-white rounded-md hover:bg-aloe hover:text-accent transition duration-4000 ease-linear'
                   aria-label='Pay Now'
                 >
                   <FaAmazonPay size='1.9rem' />
@@ -241,7 +241,7 @@ const Order = () => {
                 {/* Back to  Checkout */}
                 <Link
                   to='/checkout'
-                  className='flex items-center justify-center gap-2 w-full px-4 py-2 bg-secondary border-2 text-font-family-color rounded-md hover:bg-lighter-primary transition duration-4000 ease-linear mt-4'
+                  className='flex items-center justify-center gap-2 w-full px-4 py-2 bg-primary border-2 text-stone rounded-md hover:bg-primary-light transition duration-4000 ease-linear mt-4'
                   aria-label='Sponsor Tree page'
                 >
                   <RiArrowGoBackLine />

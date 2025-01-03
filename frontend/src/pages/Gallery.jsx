@@ -81,7 +81,7 @@ const Gallery = () => {
   }
 
   return (
-    <div className='bg-bg-page-color text-font-family-color'>
+    <div className='bg-gray-light text-stone'>
       <PageBreadcrumb activeLinks={aLinkValues} deActiveLink={daLinkValues} />
       <div className='relative w-full mx-auto p-4 pb-[25px] md:pb-[40px] lg:pb-[100px] xl:pb-[120px] flex'>
         {/* Overlay with background image and opacity */}
@@ -94,7 +94,7 @@ const Gallery = () => {
             Gallery
           </h2>
           {/* Gallery Page Description */}
-          <p className='text-center w-[90%] sm:w-[90%] md:w-[80%] lg:w-[70%] xl:w-[60%] mx-auto text-font-family-color text-md lg:text-xl xl:text-2xl mb-[25px] md:mb-[40px] lg:mb-[50px] xl:mb-[60px]'>
+          <p className='text-center w-[90%] sm:w-[90%] md:w-[80%] lg:w-[70%] xl:w-[60%] mx-auto text-stone text-md lg:text-xl xl:text-2xl mb-[25px] md:mb-[40px] lg:mb-[50px] xl:mb-[60px]'>
             Welcome to our gallery, where each tree tells a story of growth,
             resilience, and the enduring bond between nature and us. This
             collection of images captures the heart of our tree sponsorship
@@ -109,7 +109,7 @@ const Gallery = () => {
               {filteredGallery.map((image, index) => (
                 <div
                   key={index}
-                  className='aspect-square relative cursor-pointer border border-secondary overflow-hidden'
+                  className='aspect-square relative cursor-pointer border border-primary overflow-hidden'
                   onClick={() => openImage(image)}
                   style={{
                     backgroundImage: `url(${image.image})`,
@@ -140,7 +140,7 @@ const Gallery = () => {
           {/* Toggle Button for Show All/Fewer Images */}
           <button
             onClick={toggleShowAllImages}
-            className='block lg:hidden mx-auto px-8 py-2 mt-4 bg-secondary text-font-family-color rounded-[10px]   hover:bg-lighter-primary transition duration-4000 ease-linear'
+            className='block lg:hidden mx-auto px-8 py-2 mt-4 bg-primary text-stone rounded-[10px]   hover:bg-primary-light transition duration-4000 ease-linear'
             aria-label='Show All/Fewer Images'
           >
             {showAllImages ? 'Show Fewer Photos' : 'Show All Images'}
@@ -175,7 +175,7 @@ const Gallery = () => {
                 />
                 {/* Image Title */}
                 <div className='text-center p-2 absolute bottom-0 left-0 right-0'>
-                  <p className='bg-white bg-opacity-80 p-4 text-dark-gray text-xl'>
+                  <p className='bg-white bg-opacity-80 p-4 text-gray-dark text-xl'>
                     {selectedImg.title}
                   </p>
                 </div>

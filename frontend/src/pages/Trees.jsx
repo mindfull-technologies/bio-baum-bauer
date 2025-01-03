@@ -77,7 +77,7 @@ const Tree = () => {
                 alt='Small Photo'
                 className='hidden 2xl:flex w-[40px] h-[40px] mr-2'
               />
-              <div className='lg:text-4xl md:text-3xl text-2xl font-main-font text-primary tracking-wide border-secondary'>
+              <div className='lg:text-4xl md:text-3xl text-2xl font-main-font text-accent tracking-wide border-primary'>
                 Stand with us for a greener world - sponsor a tree and grow a
                 legacy of environmental stewardship.
               </div>
@@ -85,7 +85,7 @@ const Tree = () => {
           </div>
         </Fade>
 
-        <div className='relative w-full mx-auto p-4 md:p-8 lg:p-12 xl:p-16 border-secondary flex flex-col justify-center flex-wrap gap-10 pt-20 pb-10'>
+        <div className='relative w-full mx-auto p-4 md:p-8 lg:p-12 xl:p-16 border-primary flex flex-col justify-center flex-wrap gap-10 pt-20 pb-10'>
           {/* Overlay with background image and opacity */}
           <div
             className='absolute top-0 left-0 w-full h-full bg-cover bg-no-repeat bg-top z-[-1]'
@@ -110,7 +110,7 @@ const Tree = () => {
                   ))}
                 </div>
               </Fade>
-              <div className='text-2xl flex justify-center m-4 text-font-family-color gap-10'>
+              <div className='text-2xl flex justify-center m-4 text-stone gap-10'>
                 <button
                   onClick={handlePrev}
                   disabled={skip === 0}

@@ -29,7 +29,7 @@ const About = () => {
   const aLinkValues = [{ linkTo: '/', linkIcon: HiHome, linkText: 'Home' }];
   const daLinkValues = { linkText: 'About Us' };
   return (
-    <div className='text-font-family-color pb-20'>
+    <div className='text-stone pb-20'>
       <PageBreadcrumb activeLinks={aLinkValues} deActiveLink={daLinkValues} />
       {/* About Us title, positioned absolutely */}
       <div className='relative'>
@@ -55,9 +55,7 @@ const About = () => {
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
                   className={`relative px-2 rounded-t-lg md:px-6 py-2 text-sm font-medium focus:outline-none ${
-                    activeTab === tab.id
-                      ? 'text-primary bg-lighter-secondary'
-                      : ' text-darker-secondary'
+                    activeTab === tab.id ? 'text-accent bg-aloe' : ' text-sage'
                   }`}
                 >
                   <div className='flex items-center justify-between gap-2 pb-1'>
@@ -66,7 +64,7 @@ const About = () => {
                       className={
                         activeTab === tab.id
                           ? 'text-xl md:hidden'
-                          : 'text-xl md:hidden text-darker-secondary'
+                          : 'text-xl md:hidden text-sage'
                       }
                     >
                       {tab.label1}
@@ -75,7 +73,7 @@ const About = () => {
                       className={
                         activeTab === tab.id
                           ? 'hidden md:text-2xl md:block'
-                          : 'hidden md:text-2xl md:block text-darker-secondary'
+                          : 'hidden md:text-2xl md:block text-sage'
                       }
                     >
                       {tab.label2}
@@ -83,7 +81,7 @@ const About = () => {
                   </div>
 
                   {activeTab === tab.id && (
-                    <span className='absolute bottom-0 left-0 w-full h-1 bg-primary rounded-t-lg'></span>
+                    <span className='absolute bottom-0 left-0 w-full h-1 bg-accent rounded-t-lg'></span>
                   )}
                 </button>
               ))}

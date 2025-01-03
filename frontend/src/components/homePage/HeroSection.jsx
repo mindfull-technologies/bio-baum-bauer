@@ -40,7 +40,7 @@ const HeroSection = () => {
           </p>
           <Link
             to='/trees'
-            className='mx-auto flex items-center gap-2 px-8 py-2 mt-4 bg-secondary text-font-family-color rounded-[10px] hover:bg-lighter-primary transition duration-4000 ease-linear'
+            className='mx-auto flex items-center gap-2 px-8 py-2 mt-4 bg-primary text-stone rounded-[10px] hover:bg-primary-light transition duration-4000 ease-linear'
             aria-label='Sponsor page'
           >
             <MdReadMore size='1.4rem' /> <span>read more...</span>

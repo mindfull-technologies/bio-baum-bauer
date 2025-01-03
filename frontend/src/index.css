@@ -6,20 +6,18 @@
 Global variables for colors
 */
 :root {
-  --primary: #5a6448;
-  --secondary: #dfdacb;
-  --lighter-primary: #f8f7f4;
-  --darker-primary: #b2aea2;
-  --bg-page-color: #ededec;
-  --white-color: #fcfdfd;
-  --font-family-color: #82817e;
-  --darker-secondary: #888f7a;
-  --light-secondary: #bbd4a7;
-  --lighter-secondary: #cbd2c3;
-  --red-color: #ff6961;
-  --light-bg: #f8f5f4;
-  --light-gray: #ededed;
-  --dark-gray: #c3c0c0;
+  --accent: #5a6448;
+  --primary: #dfdacb;
+  --primary-light: #f8f7f4;
+  --primary-dark: #b2aea2;
+  --gray-light: #ededec;
+  --gray-dark: #c3c0c0;
+  --red: #ff6961;
+  --sage: #888f7a;
+  --stone: #82817e;
+  --mint: #bbd4a7;
+  --aloe: #cbd2c3;
+  --white: #fcfcfc;
 }
 
 @font-face {
@@ -91,8 +89,8 @@ a {
 
 /* Overwrite the default "flowbite-react" package Styles */
 .custom-button-style {
-  background-color: var(--darker-secondary) !important;
-  color: var(--white-color) !important;
+  background-color: var(--sage) !important;
+  color: var(--white) !important;
   border: none !important;
   border-radius: 10px !important;
   padding: 4px 16px !important;
@@ -102,8 +100,8 @@ a {
 }
 
 .custom-button-style:hover {
-  background-color: var(--lighter-secondary) !important;
-  color: var(--primary) !important;
+  background-color: var(--aloe) !important;
+  color: var(--accent) !important;
   border: none !important;
 }
 
@@ -124,8 +122,8 @@ input:-webkit-autofill:focus,
 #email:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0 1000px #f4f5f3 inset !important;
   box-shadow: 0 0 0 1000px #f4f5f3 inset !important;
-  -webkit-text-fill-color: var(--font-family-color) !important;
-  caret-color: var(--font-family-color) !important;
+  -webkit-text-fill-color: var(--stone) !important;
+  caret-color: var(--stone) !important;
 }
 
 /* Override the background color during autofill for Edge */
@@ -139,7 +137,7 @@ input:-ms-input-placeholder {
   #email,
   input {
     background-color: #f4f5f3 !important;
-    color: var(--font-family-color) !important;
+    color: var(--stone) !important;
   }
 }
 
@@ -147,7 +145,7 @@ input:-ms-input-placeholder {
 input:focus,
 input:active {
   outline: none !important;
-  border: 2px solid var(--primary) !important;
+  border: 2px solid var(--accent) !important;
   box-shadow: none !important;
 }
 
@@ -190,7 +188,7 @@ input:active {
 
 /* placeholder text color */
 input::placeholder {
-  color: var(--font-family-color);
+  color: var(--stone);
 }
 .input {
   background-color: white;
@@ -199,10 +197,10 @@ input::placeholder {
 
 /* sweet alert custom button */
 .btn-custom-class {
-  background-color: var(--primary);
-  color: var(--white-color);
+  background-color: var(--accent);
+  color: var(--white);
   padding: 0.5rem 1rem;
-  border: 3px solid var(--darker-secondary);
+  border: 3px solid var(--sage);
   border-radius: 10px;
   transition:
     background-color 0.4s linear,
@@ -211,23 +209,23 @@ input::placeholder {
 }
 
 .btn-custom-class:hover {
-  background-color: var(--lighter-secondary);
-  border: 3px solid var(--darker-secondary);
-  color: var(--primary);
+  background-color: var(--aloe);
+  border: 3px solid var(--sage);
+  color: var(--accent);
 }
 
 .title-class {
   font-family: 'Chicle', 'serif';
-  color: var(--primary);
+  color: var(--accent);
   font-weight: 500;
   letter-spacing: 0.1rem;
   font-size: 2rem;
 }
 
 .btn-deny-class {
-  background-color: var(--darker-primary);
-  border: 3px solid var(--secondary);
-  color: var(--white-color);
+  background-color: var(--primary-dark);
+  border: 3px solid var(--primary);
+  color: var(--white);
   padding: 0.5rem 1rem;
   border-radius: 10px;
   transition:
@@ -239,14 +237,14 @@ input::placeholder {
 }
 
 .btn-deny-class:hover {
-  background-color: var(--lighter-primary);
-  border: 3px solid var(--darker-primary);
-  color: var(--primary);
+  background-color: var(--primary-light);
+  border: 3px solid var(--primary-dark);
+  color: var(--accent);
 }
 
 .btn-cancel-class {
-  background-color: var(--red-color);
-  color: var(--white-color);
+  background-color: var(--red);
+  color: var(--white);
   border: 3px solid #ffbaba;
   padding: 0.5rem 1rem;
   border-radius: 10px;
@@ -257,22 +255,22 @@ input::placeholder {
 }
 
 .btn-cancel-class:hover {
-  background-color: var(--light-bg);
-  border: 3px solid var(--red-color);
-  color: var(--red-color);
+  background-color: var(--white);
+  border: 3px solid var(--red);
+  color: var(--red);
 }
 .custom-swal-container .swal2-actions {
   gap: 10px; /* Adjust the gap as needed */
 }
 .custom-confirm-button-class {
-  background-color: var(--primary);
+  background-color: var(--accent);
 }
 
 /* arrow Up - Footer */
 .arrowUp {
   width: 60px;
   height: 60px;
-  background-color: var(--secondary);
+  background-color: var(--primary);
   border-radius: 100%;
   position: fixed;
   right: 1rem;
@@ -280,7 +278,7 @@ input::placeholder {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 6px var(--primary);
+  box-shadow: 0 4px 6px var(--accent);
   z-index: var(--z-index-v-6);
   overflow: hidden;
   transition: all 0.5s linear;
@@ -300,7 +298,7 @@ input::placeholder {
 
 .arrow {
   font-size: 3rem;
-  color: var(--darkgreen-color);
+  color: var(--accent);
 }
 
 .logoImage {

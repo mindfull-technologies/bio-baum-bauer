@@ -105,7 +105,7 @@ const PasswordChange = () => {
   return (
     <div>
       <PageBreadcrumb activeLinks={aLinkValues} deActiveLink={daLinkValues} />
-      <div className='cart-page-container relative w-full bg-light-gray mx-auto p-4 pb-[25px] md:pb-[40px] lg:pb-[100px] xl:pb-[120px] flex items-center justify-center'>
+      <div className='cart-page-container relative w-full bg-gray-light mx-auto p-4 pb-[25px] md:pb-[40px] lg:pb-[100px] xl:pb-[120px] flex items-center justify-center'>
         {/* Overlay with background image and opacity */}
         <div
           className='cart-page-bg hidden lg:block absolute top-0 left-0 w-full h-full bg-contain bg-no-repeat bg-top'
@@ -125,7 +125,7 @@ const PasswordChange = () => {
                   alt='Tree Icon'
                   className='w-[30px] h-[30px] mr-2'
                 />{' '}
-                <h3 className='text-3xl text-primary font-main-font tracking-wide border-b-2 border-secondary inline-block'>
+                <h3 className='text-3xl text-accent font-main-font tracking-wide border-b-2 border-primary inline-block'>
                   Change Password
                 </h3>
               </div>
@@ -153,11 +153,11 @@ const PasswordChange = () => {
                       }
                       className='input'
                       style={{
-                        backgroundColor: 'var(--bg-white-color)',
-                        borderColor: 'var(--secondary)',
-                        outlineColor: 'var(--primary)',
+                        backgroundColor: 'var(--bg-white)',
+                        borderColor: 'var(--primary)',
+                        outlineColor: 'var(--accent)',
                         padding: '1.15rem',
-                        color: 'var(--font-family-color)',
+                        color: 'var(--stone)',
                         fontSize: '1rem',
                       }}
                     />
@@ -172,9 +172,9 @@ const PasswordChange = () => {
                       onClick={toggleCurrentPasswordVisibility}
                     >
                       {showCurrentPassword ? (
-                        <HiEyeOff className='text-2xl text-font-family-color' />
+                        <HiEyeOff className='text-2xl text-stone' />
                       ) : (
-                        <HiEye className='text-2xl text-font-family-color' />
+                        <HiEye className='text-2xl text-stone' />
                       )}
                     </div>
                   </div>
@@ -196,11 +196,11 @@ const PasswordChange = () => {
                       }
                       className='input'
                       style={{
-                        backgroundColor: 'var(--bg-white-color)',
-                        borderColor: 'var(--secondary)',
-                        outlineColor: 'var(--primary)',
+                        backgroundColor: 'var(--bg-white)',
+                        borderColor: 'var(--primary)',
+                        outlineColor: 'var(--accent)',
                         padding: '1.15rem',
-                        color: 'var(--font-family-color)',
+                        color: 'var(--stone)',
                         fontSize: '1rem',
                       }}
                     />
@@ -215,9 +215,9 @@ const PasswordChange = () => {
                       onClick={toggleNewPasswordVisibility}
                     >
                       {showNewPassword ? (
-                        <HiEyeOff className='text-2xl text-font-family-color' />
+                        <HiEyeOff className='text-2xl text-stone' />
                       ) : (
-                        <HiEye className='text-2xl text-font-family-color' />
+                        <HiEye className='text-2xl text-stone' />
                       )}
                     </div>
                   </div>
@@ -242,11 +242,11 @@ const PasswordChange = () => {
                       }
                       className='input'
                       style={{
-                        backgroundColor: 'var(--bg-white-color)',
-                        borderColor: 'var(--secondary)',
-                        outlineColor: 'var(--primary)',
+                        backgroundColor: 'var(--bg-white)',
+                        borderColor: 'var(--primary)',
+                        outlineColor: 'var(--accent)',
                         padding: '1.15rem',
-                        color: 'var(--font-family-color)',
+                        color: 'var(--stone)',
                         fontSize: '1rem',
                       }}
                     />
@@ -261,14 +261,14 @@ const PasswordChange = () => {
                       onClick={toggleConfirmNewPasswordVisibility}
                     >
                       {showConfirmNewPassword ? (
-                        <HiEyeOff className='text-2xl text-font-family-color' />
+                        <HiEyeOff className='text-2xl text-stone' />
                       ) : (
-                        <HiEye className='text-2xl text-font-family-color' />
+                        <HiEye className='text-2xl text-stone' />
                       )}
                     </div>
                   </div>
                 </div>
-                <div className='text-dark-gray'>
+                <div className='text-gray-dark'>
                   <p className='font-bold'>Password Requirements:</p>
                   <p>Minimum length of 8 characters</p>
                   <p>At least one number</p>

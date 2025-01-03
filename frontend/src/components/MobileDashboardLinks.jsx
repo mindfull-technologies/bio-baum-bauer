@@ -27,9 +27,7 @@ const MobileDashboardLinks = () => {
       >
         <FaGear
           className={
-            isMobile
-              ? `text-[3rem] text-primary`
-              : `text-[1.8rem] text-darker-secondary `
+            isMobile ? `text-[3rem] text-accent` : `text-[1.8rem] text-sage `
           }
         />
       </button>
@@ -37,15 +35,15 @@ const MobileDashboardLinks = () => {
       {/* Mobile dropdown menu */}
       {isMobile && (
         <>
-          <div className='w-[50%] absolute top-[40px] xs:left-0 left-0 bg-white rounded-md border border-secondary dashboard-nav-index'>
+          <div className='w-[50%] absolute top-[40px] xs:left-0 left-0 bg-white rounded-md border border-primary dashboard-nav-index'>
             <div className='flex flex-col w-full'>
               <NavLink
                 aria-label='Dashboard'
                 to='/dashboard'
-                activeClassName='bg-lighter-secondary'
-                className={`text-font-family-color block border-b rounded-t-md border-secondary py-4 text-start pl-4 hover:bg-light-gray ${
+                activeClassName='bg-aloe'
+                className={`text-stone block border-b rounded-t-md border-primary py-4 text-start pl-4 hover:bg-gray-light ${
                   activeLink === '/dashboard'
-                    ? 'border-l-4 border-l-darker-secondary bg-lighter-secondary'
+                    ? 'border-l-4 border-l-sage bg-aloe'
                     : ''
                 }`}
               >
@@ -54,10 +52,10 @@ const MobileDashboardLinks = () => {
               <NavLink
                 aria-label='Update Profile'
                 to='/update_profile'
-                activeClassName='bg-secondary'
-                className={`text-font-family-color block border-b  border-secondary py-4 text-start pl-4 hover:bg-light-gray ${
+                activeClassName='bg-primary'
+                className={`text-stone block border-b  border-primary py-4 text-start pl-4 hover:bg-gray-light ${
                   activeLink === '/update_profile'
-                    ? 'border-l-4 border-l-darker-secondary bg-lighter-secondary'
+                    ? 'border-l-4 border-l-sage bg-aloe'
                     : ''
                 }`}
               >
@@ -66,10 +64,10 @@ const MobileDashboardLinks = () => {
               <NavLink
                 aria-label='Sponsorships'
                 to='/user_sponsorships'
-                activeClassName='bg-secondary'
-                className={`text-font-family-color block border-b  border-secondary py-4 text-start pl-4 hover:bg-light-gray ${
+                activeClassName='bg-primary'
+                className={`text-stone block border-b  border-primary py-4 text-start pl-4 hover:bg-gray-light ${
                   activeLink === '/user_sponsorships'
-                    ? 'border-l-4 border-l-darker-secondary bg-lighter-secondary'
+                    ? 'border-l-4 border-l-sage bg-aloe'
                     : ''
                 }`}
               >
@@ -78,10 +76,10 @@ const MobileDashboardLinks = () => {
               <NavLink
                 aria-label='Change Password'
                 to='/password_change'
-                activeClassName='bg-secondary'
-                className={`text-font-family-color block border-b border-secondary py-4 text-start pl-4 hover:bg-light-gray ${
+                activeClassName='bg-primary'
+                className={`text-stone block border-b border-primary py-4 text-start pl-4 hover:bg-gray-light ${
                   activeLink === '/password_change'
-                    ? 'border-l-4 border-l-darker-secondary bg-lighter-secondary'
+                    ? 'border-l-4 border-l-sage bg-aloe'
                     : ''
                 }`}
               >
@@ -90,10 +88,10 @@ const MobileDashboardLinks = () => {
               <NavLink
                 aria-label='Sign Out'
                 to='/signout'
-                activeClassName='bg-secondary'
-                className={`text-font-family-color py-4 text-start pl-4 rounded-b-md hover:bg-light-gray ${
+                activeClassName='bg-primary'
+                className={`text-stone py-4 text-start pl-4 rounded-b-md hover:bg-gray-light ${
                   activeLink === '/signout'
-                    ? 'border-l-4 border-l-darker-secondary bg-lighter-secondary'
+                    ? 'border-l-4 border-l-sage bg-aloe'
                     : ''
                 }`}
               >

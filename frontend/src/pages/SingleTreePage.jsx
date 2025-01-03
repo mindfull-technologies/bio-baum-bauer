@@ -64,11 +64,11 @@ const SingleTreePage = () => {
           </Breadcrumb>
         </div>
       )}
-      <div className='flex flex-col relative w-full mx-auto bg-light-gray xs:p-0 p-4 pb-[25px] md:pb-[40px] lg:pb-[100px] xl:pb-[120px]  items-center justify-center text-font-family-color'>
+      <div className='flex flex-col relative w-full mx-auto bg-gray-light xs:p-0 p-4 pb-[25px] md:pb-[40px] lg:pb-[100px] xl:pb-[120px]  items-center justify-center text-stone'>
         <div className='container py-2 mb-2 rounded-lg flex justify-between items-center bg-white px-5'>
           <Link
             to='/trees'
-            className='flex items-center border-2 justify-center gap-1 px-8 h-max py-1  bg-secondary text-font-family-color rounded-[10px] hover:bg-lighter-primary transition duration-4000 ease-linear'
+            className='flex items-center border-2 justify-center gap-1 px-8 h-max py-1  bg-primary text-stone rounded-[10px] hover:bg-primary-light transition duration-4000 ease-linear'
             aria-label='Tree page'
           >
             <MdKeyboardDoubleArrowLeft size='1rem' />
@@ -76,7 +76,7 @@ const SingleTreePage = () => {
           </Link>
           {loggedIn ? (
             <button
-              className='flex items-center border-2 my-1 gap-1 px-4 py-1 bg-secondary text-font-family-color rounded-[10px] hover:bg-lighter-primary transition duration-4000 ease-linear'
+              className='flex items-center border-2 my-1 gap-1 px-4 py-1 bg-primary text-stone rounded-[10px] hover:bg-primary-light transition duration-4000 ease-linear'
               aria-label='Add to Cart'
               onClick={handleAddToCart}
             >
@@ -86,7 +86,7 @@ const SingleTreePage = () => {
           ) : (
             <Tooltip content='Login/Sign Up First' trigger='hover'>
               <button
-                className='flex text-center border-2 gap-1 w-full my-2 px-4 py-1 bg-gray-300 text-font-family-color rounded-[10px]'
+                className='flex text-center border-2 gap-1 w-full my-2 px-4 py-1 bg-gray-300 text-stone rounded-[10px]'
                 aria-label='Add to Cart'
               >
                 <FaCartPlus size='1.1rem' />
@@ -107,7 +107,7 @@ const SingleTreePage = () => {
 
           {/* Tree Details */}
           <div className='w-full lg:w-[40%] flex flex-col'>
-            <div className='flex w-full justify-center items-center rounded-md border-l-8 bg-darker-secondary border-primary p-4 mx-auto text-white'>
+            <div className='flex w-full justify-center items-center rounded-md border-l-8 bg-sage border-accent p-4 mx-auto text-white'>
               <div className='rounded-full bg-white w-[40px] h-[40px] mb-[10px] flex items-center justify-center mr-[10px]'>
                 <img
                   src={treeIcon}
@@ -119,17 +119,17 @@ const SingleTreePage = () => {
             </div>
             <div className='flex flex-col items-center justify-center gap-2 text-center'>
               <div className='flex items-center py-5 gap-4'>
-                <p className='font-main-font text-primary text-2xl tracking-wide bg-light-secondary rounded-2xl px-3 py-1 '>
+                <p className='font-main-font text-accent text-2xl tracking-wide bg-mint rounded-2xl px-3 py-1 '>
                   € {tree.price && tree.price.$numberDecimal}
                 </p>
                 <p>
-                  <span className='text-dark-gray font-bold'>
+                  <span className='text-gray-dark font-bold'>
                     Category:&nbsp;&nbsp;
                   </span>
                   <span className='font-bold'>{tree.category}</span>
                 </p>
                 <p>
-                  <span className='text-dark-gray font-bold'>
+                  <span className='text-gray-dark font-bold'>
                     Stock:&nbsp;&nbsp;
                   </span>
                   <span className='font-bold'>{tree.availableQuantity}</span>
@@ -137,14 +137,14 @@ const SingleTreePage = () => {
               </div>
 
               {/* Horizontal Line */}
-              <hr className='w-[70%] mx-auto border-t-2 border-secondary my-2' />
+              <hr className='w-[70%] mx-auto border-t-2 border-primary my-2' />
               <div className='flex items-center mb-4'>
                 <img
                   src={treeIcon1}
                   alt='Tree Icon'
                   className='w-[30px] h-[30px] mr-2'
                 />
-                <h3 className='text-3xl text-primary font-main-font tracking-wide border-b-2 border-secondary inline-block mt-2'>
+                <h3 className='text-3xl text-accent font-main-font tracking-wide border-b-2 border-primary inline-block mt-2'>
                   Description:
                 </h3>
               </div>
@@ -157,13 +157,13 @@ const SingleTreePage = () => {
               />
 
               {/* Horizontal Line */}
-              <hr className='w-[70%] mx-auto border-t-2 border-secondary my-2' />
+              <hr className='w-[70%] mx-auto border-t-2 border-primary my-2' />
 
               {/* Add to Cart Button */}
               {loggedIn ? (
                 <button
                   to='/trees'
-                  className='flex items-center justify-center gap-2 text-center border-2 w-full my-2 px-4 py-2 bg-secondary text-font-family-color rounded-[10px]   hover:bg-lighter-primary transition duration-4000 ease-linear'
+                  className='flex items-center justify-center gap-2 text-center border-2 w-full my-2 px-4 py-2 bg-primary text-stone rounded-[10px]   hover:bg-primary-light transition duration-4000 ease-linear'
                   aria-label='Sponsor page'
                   onClick={handleAddToCart}
                 >
@@ -173,7 +173,7 @@ const SingleTreePage = () => {
               ) : (
                 <Tooltip content='Login/Sign Up First' trigger='hover'>
                   <button
-                    className='flex items-center gap-2 justify-center text-center border-2 w-full my-2 px-4 py-2 bg-gray-300 text-font-family-color rounded-[10px]'
+                    className='flex items-center gap-2 justify-center text-center border-2 w-full my-2 px-4 py-2 bg-gray-300 text-stone rounded-[10px]'
                     aria-label='Sponsor page'
                   >
                     <FaCartPlus size='1.1rem' />

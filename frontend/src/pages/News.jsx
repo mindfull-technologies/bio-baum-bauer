@@ -102,11 +102,11 @@ const News = () => {
   }
 
   return (
-    <div className='bg-bg-page-color'>
+    <div className='bg-gray-light'>
       <PageBreadcrumb activeLinks={aLinkValues} deActiveLink={daLinkValues} />
       {/* Overlay with background image and opacity */}
       <div
-        className='absolute left-0 w-full h-[50%] bg-cover bg-no-repeat bg-center bg-secondary'
+        className='absolute left-0 w-full h-[50%] bg-cover bg-no-repeat bg-center bg-primary'
         style={{
           backgroundImage: `url(${backgroundImage})`,
           opacity: 0.1,
@@ -153,7 +153,7 @@ const News = () => {
                   </div>
                   <Link
                     to={`/news/${item._id}`}
-                    className='inline-flex items-center py-1 text-s font-medium text-center text-primary hover:underline mt-4'
+                    className='inline-flex items-center py-1 text-s font-medium text-center text-accent hover:underline mt-4'
                   >
                     Continue Reading <IoIosArrowForward />
                   </Link>
@@ -164,7 +164,7 @@ const News = () => {
         </Fade>
       </div>
       {/* pagination buttons */}
-      <div className='text-2xl md:text-2xl flex justify-center m-4 text-font-family-color gap-10'>
+      <div className='text-2xl md:text-2xl flex justify-center m-4 text-stone gap-10'>
         <button
           onClick={handlePrev}
           disabled={skip === 0}
@@ -182,7 +182,7 @@ const News = () => {
       </div>
       {/* Footer Image */}
       <img
-        className='bg-bg-page-color w-full '
+        className='bg-gray-light w-full '
         src={newSFooterImg}
         alt='News Footer Image'
       />

@@ -96,7 +96,7 @@ const Checkout = () => {
           </Breadcrumb>
         </div>
       )}
-      <div className='cart-page-container relative w-full mx-auto flex items-center justify-center p-4 bg-light-gray pb-[25px] md:pb-[40px] lg:pb-[100px] xl:pb-[120px]  text-font-family-color'>
+      <div className='cart-page-container relative w-full mx-auto flex items-center justify-center p-4 bg-gray-light pb-[25px] md:pb-[40px] lg:pb-[100px] xl:pb-[120px]  text-stone'>
         {/* Overlay with background image and opacity */}
         <div
           className='cart-page-bg hidden lg:block absolute top-0 left-0 w-full h-full bg-contain bg-no-repeat bg-top'
@@ -111,7 +111,7 @@ const Checkout = () => {
                 {/* User Details */}
                 <div className='flex items-center justify-start gap-2 mb-4'>
                   <RiUserReceived2Fill size='1.9rem' />
-                  <h3 className='text-3xl text-primary font-main-font tracking-wide border-b-2 border-secondary inline-block'>
+                  <h3 className='text-3xl text-accent font-main-font tracking-wide border-b-2 border-primary inline-block'>
                     Patron Details
                   </h3>
                 </div>
@@ -138,11 +138,11 @@ const Checkout = () => {
                       })
                     }
                     style={{
-                      backgroundColor: 'var(--bg-white-color)',
-                      borderColor: 'var(--secondary)',
-                      outlineColor: 'var(--primary)',
+                      backgroundColor: 'var(--bg-white)',
+                      borderColor: 'var(--primary)',
+                      outlineColor: 'var(--accent)',
                       padding: '1.15rem',
-                      color: 'var(--font-family-color)',
+                      color: 'var(--stone)',
                       fontSize: '1rem',
                     }}
                   />
@@ -167,11 +167,11 @@ const Checkout = () => {
                       setFormValues({ ...formValues, lastName: e.target.value })
                     }
                     style={{
-                      backgroundColor: 'var(--bg-white-color)',
-                      borderColor: 'var(--secondary)',
-                      outlineColor: 'var(--primary)',
+                      backgroundColor: 'var(--bg-white)',
+                      borderColor: 'var(--primary)',
+                      outlineColor: 'var(--accent)',
                       padding: '1.15rem',
-                      color: 'var(--font-family-color)',
+                      color: 'var(--stone)',
                       fontSize: '1rem',
                     }}
                   />
@@ -194,11 +194,11 @@ const Checkout = () => {
                       setFormValues({ ...formValues, email: e.target.value })
                     }
                     style={{
-                      backgroundColor: 'var(--bg-white-color)',
-                      borderColor: 'var(--secondary)',
-                      outlineColor: 'var(--primary)',
+                      backgroundColor: 'var(--bg-white)',
+                      borderColor: 'var(--primary)',
+                      outlineColor: 'var(--accent)',
                       padding: '1.15rem',
-                      color: 'var(--font-family-color)',
+                      color: 'var(--stone)',
                       fontSize: '1rem',
                     }}
                   />
@@ -207,7 +207,7 @@ const Checkout = () => {
                 {/* Delivery Address Info */}
                 <div className='flex items-center mb-4 mt-6 gap-2'>
                   <ImAddressBook size='1.7rem' />
-                  <h3 className='text-3xl text-primary font-main-font tracking-wide border-b-2 border-secondary inline-block'>
+                  <h3 className='text-3xl text-accent font-main-font tracking-wide border-b-2 border-primary inline-block'>
                     Patron Address
                   </h3>
                 </div>
@@ -234,11 +234,11 @@ const Checkout = () => {
                       })
                     }
                     style={{
-                      backgroundColor: 'var(--bg-white-color)',
-                      borderColor: 'var(--secondary)',
-                      outlineColor: 'var(--primary)',
+                      backgroundColor: 'var(--bg-white)',
+                      borderColor: 'var(--primary)',
+                      outlineColor: 'var(--accent)',
                       padding: '1.15rem',
-                      color: 'var(--font-family-color)',
+                      color: 'var(--stone)',
                       fontSize: '1rem',
                     }}
                   />
@@ -263,11 +263,11 @@ const Checkout = () => {
                       setFormValues({ ...formValues, address1: e.target.value })
                     }
                     style={{
-                      backgroundColor: 'var(--bg-white-color)',
-                      borderColor: 'var(--secondary)',
-                      outlineColor: 'var(--primary)',
+                      backgroundColor: 'var(--bg-white)',
+                      borderColor: 'var(--primary)',
+                      outlineColor: 'var(--accent)',
                       padding: '1.15rem',
-                      color: 'var(--font-family-color)',
+                      color: 'var(--stone)',
                       fontSize: '1rem',
                     }}
                   />
@@ -291,11 +291,11 @@ const Checkout = () => {
                       setFormValues({ ...formValues, address2: e.target.value })
                     }
                     style={{
-                      backgroundColor: 'var(--bg-white-color)',
-                      borderColor: 'var(--secondary)',
-                      outlineColor: 'var(--primary)',
+                      backgroundColor: 'var(--bg-white)',
+                      borderColor: 'var(--primary)',
+                      outlineColor: 'var(--accent)',
                       padding: '1.15rem',
-                      color: 'var(--font-family-color)',
+                      color: 'var(--stone)',
                       fontSize: '1rem',
                     }}
                   />
@@ -316,11 +316,11 @@ const Checkout = () => {
                       setFormValues({ ...formValues, city: e.target.value })
                     }
                     style={{
-                      backgroundColor: 'var(--bg-white-color)',
-                      borderColor: 'var(--secondary)',
-                      outlineColor: 'var(--primary)',
+                      backgroundColor: 'var(--bg-white)',
+                      borderColor: 'var(--primary)',
+                      outlineColor: 'var(--accent)',
                       padding: '1.15rem',
-                      color: 'var(--font-family-color)',
+                      color: 'var(--stone)',
                       fontSize: '1rem',
                     }}
                   />
@@ -343,11 +343,11 @@ const Checkout = () => {
                       setFormValues({ ...formValues, zipCode: e.target.value })
                     }
                     style={{
-                      backgroundColor: 'var(--bg-white-color)',
-                      borderColor: 'var(--secondary)',
-                      outlineColor: 'var(--primary)',
+                      backgroundColor: 'var(--bg-white)',
+                      borderColor: 'var(--primary)',
+                      outlineColor: 'var(--accent)',
                       padding: '1.15rem',
-                      color: 'var(--font-family-color)',
+                      color: 'var(--stone)',
                       fontSize: '1rem',
                     }}
                   />
@@ -369,11 +369,11 @@ const Checkout = () => {
                       setFormValues({ ...formValues, state: e.target.value })
                     }
                     style={{
-                      backgroundColor: 'var(--bg-white-color)',
-                      borderColor: 'var(--secondary)',
-                      outlineColor: 'var(--primary)',
+                      backgroundColor: 'var(--bg-white)',
+                      borderColor: 'var(--primary)',
+                      outlineColor: 'var(--accent)',
                       padding: '1.15rem',
-                      color: 'var(--font-family-color)',
+                      color: 'var(--stone)',
                       fontSize: '1rem',
                     }}
                   />
@@ -390,11 +390,11 @@ const Checkout = () => {
                     name='country'
                     placeholder='Country *'
                     style={{
-                      backgroundColor: 'var(--bg-white-color)',
-                      borderColor: 'var(--secondary)',
-                      outlineColor: 'var(--primary)',
+                      backgroundColor: 'var(--bg-white)',
+                      borderColor: 'var(--primary)',
+                      outlineColor: 'var(--accent)',
                       padding: '1.15rem',
-                      color: 'var(--font-family-color)',
+                      color: 'var(--stone)',
                       fontSize: '1rem',
                     }}
                     disabled={true}
@@ -405,7 +405,7 @@ const Checkout = () => {
             </div>
             {/* Sponsorship Summary */}
             <div className='w-full flex flex-col items-center lg:w-[50%] bg-white gap-[2rem] rounded-[10px] self-start h-auto mt-2'>
-              <div className='flex flex-row items-center mx-auto gap-2 w-full py-2 text-primary '>
+              <div className='flex flex-row items-center mx-auto gap-2 w-full py-2 text-accent '>
                 <MdOutlineSummarize size='1.9rem' />
                 <h3 className='text-3xl font-main-font'>Sponsorship Summary</h3>
               </div>
@@ -416,12 +416,12 @@ const Checkout = () => {
               />
 
               {/* Horizontal Line */}
-              <hr className='w-[70%] mx-auto border-t-2 border-secondary my-1' />
+              <hr className='w-[70%] mx-auto border-t-2 border-primary my-1' />
 
               {/* Complete Sponsorship */}
               <Link
                 to='/order/place_order'
-                className='flex items-center gap-1 text-2xl justify-center w-full px-4 py-5 bg-darker-secondary text-white-color rounded-md hover:bg-lighter-secondary hover:text-primary transition duration-4000 ease-linear'
+                className='flex items-center gap-1 text-2xl justify-center w-full px-4 py-5 bg-sage text-white rounded-md hover:bg-aloe hover:text-accent transition duration-4000 ease-linear'
                 aria-label='Complete Sponsorship page/Payment'
               >
                 <MdFileDownloadDone size='1.6rem' />
@@ -431,7 +431,7 @@ const Checkout = () => {
               {/* Back to Cart */}
               <Link
                 to='/cart'
-                className='flex items-center justify-center gap-2 w-full px-4 py-2 bg-secondary border-2 text-font-family-color rounded-md hover:bg-lighter-primary transition duration-4000 ease-linear sm:mt-0'
+                className='flex items-center justify-center gap-2 w-full px-4 py-2 bg-primary border-2 text-stone rounded-md hover:bg-primary-light transition duration-4000 ease-linear sm:mt-0'
                 aria-label='Sponsor Tree page'
               >
                 <RiArrowGoBackLine />

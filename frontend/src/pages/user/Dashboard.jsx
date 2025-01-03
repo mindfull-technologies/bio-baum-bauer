@@ -42,7 +42,7 @@ const DashboardContent = () => {
   return (
     <div>
       <PageBreadcrumb activeLinks={aLinkValues} deActiveLink={daLinkValues} />
-      <div className='cart-page-container bg-light-gray relative w-full mx-auto p-4 pb-[25px] md:pb-[40px] lg:pb-[100px] xl:pb-[120px] flex items-center justify-center text-font-family-color'>
+      <div className='cart-page-container bg-gray-light relative w-full mx-auto p-4 pb-[25px] md:pb-[40px] lg:pb-[100px] xl:pb-[120px] flex items-center justify-center text-stone'>
         {/* Overlay with background image and opacity */}
         <div
           className='cart-page-bg hidden lg:block absolute top-0 left-0 w-full h-full bg-contain bg-no-repeat bg-top'
@@ -57,28 +57,28 @@ const DashboardContent = () => {
             <DashboardLinks />
             {/* Sponsorships */}
             <div className='w-full md:w-[25%]'>
-              <h3 className='break-all text-2xl md:text-3xl text-primary font-main-font tracking-wide md:border-b-2 md:border-secondary inline-block'>
+              <h3 className='break-all text-2xl md:text-3xl text-accent font-main-font tracking-wide md:border-b-2 md:border-primary inline-block'>
                 <span>Hi,</span>
-                <span className=' text-dark1-gray'>
+                <span className=' text-gray-dark'>
                   <span className=' inline-block md:hidden lg:inline-block'>
                     &nbsp;{authUser.firstName}
                   </span>
                   &nbsp;{authUser.lastName}
                 </span>
               </h3>
-              <div className='flex flex-col justify-center items-center gap-[2rem] bg-light-gray rounded-md  mt-4 p-4'>
-                <h3 className='text-3xl text-primary font-main-font tracking-wide'>
+              <div className='flex flex-col justify-center items-center gap-[2rem] bg-gray-light rounded-md  mt-4 p-4'>
+                <h3 className='text-3xl text-accent font-main-font tracking-wide'>
                   Sponsorships
                 </h3>
                 <p className='text-red-500'>{error ? error : ''}</p>
-                <div className='w-24 h-24 md:w-20 md:h-20 bg-primary rounded-full flex items-center justify-center'>
+                <div className='w-24 h-24 md:w-20 md:h-20 bg-accent rounded-full flex items-center justify-center'>
                   <p className='text-white text-4xl font-main-font'>
                     {sponsorshipsCount}
                   </p>
                 </div>
                 <Link
                   to='/user_sponsorships'
-                  className='underline hover:scale-110 transition-transform duration-400 ease-linear hover:text-dark-gray'
+                  className='underline hover:scale-110 transition-transform duration-400 ease-linear hover:text-gray-dark'
                 >
                   <img
                     src={treePng}
@@ -91,43 +91,43 @@ const DashboardContent = () => {
             </div>{' '}
             {/* Delivery Address */}
             <div className='w-full md:w-[45%]'>
-              <h3 className='break-all text-3xl text-primary font-main-font tracking-wide border-b-2 border-secondary inline-block'>
+              <h3 className='break-all text-3xl text-accent font-main-font tracking-wide border-b-2 border-primary inline-block'>
                 User Details
               </h3>
-              <div className=' break-all flex flex-col bg-light-gray justify-center items-start gap-[0.4rem] rounded-md mt-4 p-4'>
-                <p className='text-font-family-color'>
+              <div className=' break-all flex flex-col bg-gray-light justify-center items-start gap-[0.4rem] rounded-md mt-4 p-4'>
+                <p className='text-stone'>
                   <span className='font-semibold'>Full Name:</span>&nbsp;
                   {authUser.firstName}&nbsp;{authUser.lastName}
                 </p>{' '}
-                <p className='text-font-family-color'>
+                <p className='text-stone'>
                   <span className='font-semibold'>Email:</span>
                   &nbsp;{authUser.email}
                 </p>{' '}
-                <p className='text-font-family-color'>
+                <p className='text-stone'>
                   <span className='font-semibold'>Phone Number:</span>&nbsp;
                   {authUser.mobilePhone}
                 </p>{' '}
-                <p className='text-font-family-color'>
+                <p className='text-stone'>
                   <span className='font-semibold'>Address Line 1:</span>&nbsp;
                   {authUser.address.address1}
                 </p>{' '}
-                <p className='text-font-family-color'>
+                <p className='text-stone'>
                   <span className='font-semibold'>Address Line 2:</span>&nbsp;
                   {authUser.address.address2}
                 </p>{' '}
-                <p className='text-font-family-color'>
+                <p className='text-stone'>
                   <span className='font-semibold'>City:</span>&nbsp;
                   {authUser.address.city}
                 </p>{' '}
-                <p className='text-font-family-color'>
+                <p className='text-stone'>
                   <span className='font-semibold'>Postcode:</span>&nbsp;
                   {authUser.address.zipCode}
                 </p>{' '}
-                <p className='text-font-family-color'>
+                <p className='text-stone'>
                   <span className='font-semibold'>State:</span>&nbsp;
                   {authUser.address.state}
                 </p>{' '}
-                <p className='text-font-family-color'>
+                <p className='text-stone'>
                   <span className='font-semibold'>Country:</span>&nbsp;
                   {authUser.address.country}
                 </p>

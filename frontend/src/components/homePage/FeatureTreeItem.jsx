@@ -15,15 +15,13 @@ const FeatureTreeItem = props => {
           />
           <div className='p-3 flex flex-col gap-4'>
             <div className='flex justify-between pt-3'>
-              <p className='text-xl px-1 py-0 font-bold text-darkgreen-color'>
-                {name}
-              </p>
+              <p className='text-xl px-1 py-0 font-bold text-accent'>{name}</p>
               <p className='text-lg px-4 py-1 price rounded-3xl font-bold flex items-center'>
                 {price}&nbsp;€
               </p>
             </div>
             <div className='py-3 px-1 w-full'>
-              <button className='flex items-center gap-2 border-2 hover:border-2 justify-center text-xl px-8 py-2 bg-secondary text-font-family-color rounded-xl hover:bg-lighter-primary transition duration-4000 ease-linear w-full'>
+              <button className='flex items-center gap-2 border-2 hover:border-2 justify-center text-xl px-8 py-2 bg-primary text-stone rounded-xl hover:bg-primary-light transition duration-4000 ease-linear w-full'>
                 <GoSponsorTiers />
                 <span>sponsor</span>
               </button>

@@ -1,5 +1,5 @@
 .disabledBtn {
-  border-color: var(--lighter-secondary);
+  border-color: var(--aloe);
   border-width: 4px;
   padding: 0.75rem /* 12px */;
   border-radius: 9999px;
@@ -10,8 +10,8 @@
 }
 
 .activeBtn {
-  background-color: var(--primary);
-  border-color: var(--darker-secondary);
+  background-color: var(--accent);
+  border-color: var(--sage);
   border-width: 4px;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -24,8 +24,8 @@
 }
 
 .activeBtn:hover {
-  background-color: var(--lighter-secondary);
-  color: var(--primary);
+  background-color: var(--aloe);
+  color: var(--accent);
   transition:
     background-color 0.4s linear,
     border 0.4s linear,
