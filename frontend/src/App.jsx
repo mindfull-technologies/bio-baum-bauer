@@ -43,16 +43,6 @@ import ProtectedRoute from './pages/user/ProtectedRoute';
 import { PatronProvider } from './store/PatronContext';
 import SponsorShipDetails from './pages/user/SponsorShipDetails';
 
-function ScrollToTop() {
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
-  return null;
-}
-
 function App() {
   return (
     <div>
@@ -60,7 +50,6 @@ function App() {
         <CartContextProvider>
           <PatronProvider>
             <Router>
-              <ScrollToTop />
               <Routes>
                 <Route path='/' element={<Index />}>
                   <Route index element={<Home />} />
