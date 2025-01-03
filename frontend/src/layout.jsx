@@ -2,10 +2,11 @@ import { useState, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 import DesktopNavbar from '@/components/DesktopNavbar';
 import MobileNavbar from '@/components/MobileNavbar';
-import Footer from '@/components/Footer';
+import Footer from '@/components/footer';
+import ScrollToTop from '@/components/scroll-to-top';
 
 export default function Layout() {
-  const [isMobileScreen, setIsMobileScreen] = useState(window.innerWidth < 768); // 768px is a common breakpoint for mobile screens
+  const [isMobileScreen, setIsMobileScreen] = useState(window.innerWidth < 768);
   const [isNavbarFixed, setIsNavbarFixed] = useState(false);
 
   useEffect(() => {
@@ -25,7 +26,7 @@ export default function Layout() {
   };
 
   return (
-    <div>
+    <div className='text-accent'>
       <header>
         {isMobileScreen ? (
           <MobileNavbar />
@@ -39,9 +40,8 @@ export default function Layout() {
       <main className='page' style={mainStyle}>
         <Outlet />
       </main>
-      <footer>
-        <Footer />
-      </footer>
+      <ScrollToTop />
+      <Footer />
     </div>
   );
 }

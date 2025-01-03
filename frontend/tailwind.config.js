@@ -6,6 +6,14 @@ export default {
     'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}',
   ],
   theme: {
+    screens: {
+      xs: '350px',
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+      '2xl': '1536px',
+    },
     extend: {
       colors: {
         accent: 'var(--accent)',
@@ -24,14 +32,6 @@ export default {
       fontFamily: {
         'main-font': ['Chicle', 'serif'],
         'general-font': ['Open Sans', 'sans-serif'],
-      },
-      screens: {
-        xs: '350px',
-        sm: '640px',
-        md: '768px',
-        lg: '1024px',
-        xl: '1280px',
-        '2xl': '1536px',
       },
     },
   },

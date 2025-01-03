@@ -271,41 +271,6 @@ input::placeholder {
   background-color: var(--accent);
 }
 
-/* arrow Up - Footer */
-.arrowUp {
-  width: 60px;
-  height: 60px;
-  background-color: var(--primary);
-  border-radius: 100%;
-  position: fixed;
-  right: 1rem;
-  bottom: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 4px 6px var(--accent);
-  z-index: var(--z-index-v-6);
-  overflow: hidden;
-  transition: all 0.5s linear;
-}
-
-.arrowUp:hover {
-  transform: scale(1.1);
-}
-
-.arrowUp:hover .arrow {
-  opacity: 0;
-}
-
-.iconArrowUp {
-  color: var(--fontColorLight);
-}
-
-.arrow {
-  font-size: 3rem;
-  color: var(--accent);
-}
-
 .logoImage {
   width: 60px;
   height: 60px;
